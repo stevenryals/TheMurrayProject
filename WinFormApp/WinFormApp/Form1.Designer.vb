@@ -25,7 +25,7 @@ Partial Class Form1
         Me.productTextbox = New System.Windows.Forms.TextBox()
         Me.searchButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.resultTextBox = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -53,20 +53,20 @@ Partial Class Form1
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Product to Search"
         '
-        'RichTextBox1
+        'resultTextBox
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(3, 62)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(564, 368)
-        Me.RichTextBox1.TabIndex = 3
-        Me.RichTextBox1.Text = ""
+        Me.resultTextBox.Location = New System.Drawing.Point(34, 61)
+        Me.resultTextBox.Name = "resultTextBox"
+        Me.resultTextBox.Size = New System.Drawing.Size(564, 368)
+        Me.resultTextBox.TabIndex = 3
+        Me.resultTextBox.Text = ""
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(610, 451)
-        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.resultTextBox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.searchButton)
         Me.Controls.Add(Me.productTextbox)
@@ -80,5 +80,5 @@ Partial Class Form1
     Friend WithEvents productTextbox As TextBox
     Friend WithEvents searchButton As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents resultTextBox As RichTextBox
 End Class
