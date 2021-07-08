@@ -30,12 +30,12 @@
 
     ' start of magic 8 ball ' 
     ' set random number generator 0-4, then assign each integer to a response string that will display into results. '
-    Private Sub Magic8Ball_Click(sender As Object, e As EventArgs) Handles Magic8Ball.Click
+    Private Sub Magic8Ball_Click(sender As Object, e As EventArgs) Handles Magic8BallButton.Click
         Dim getFortune As String = getResponse(productTextbox.Text)
         RichTextBox1.Text = getFortune
     End Sub
     ' math random should be set to a variable then assigned to strings '
-    Private Function getResponse(ByVal str As String)
+    Private Function getResponse(ByVal str As String) As String
         Dim randomizer As New Random()
         Dim whichResponse As Integer = randomizer.Next(0, 4)
         Dim response As String
@@ -50,6 +50,7 @@
         ElseIf whichResponse = 4 Then
             response = "Perhaps"
         End If
+        Return response
     End Function
 
     Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged

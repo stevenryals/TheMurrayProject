@@ -34,7 +34,7 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Magic8BallButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -147,21 +147,21 @@ Partial Class Form1
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Magic 8 Ball"
         '
-        'Button2
+        'Magic8BallButton
         '
-        Me.Button2.Location = New System.Drawing.Point(327, 181)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(179, 26)
-        Me.Button2.TabIndex = 12
-        Me.Button2.Text = "Get Your Answer"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Magic8BallButton.Location = New System.Drawing.Point(327, 181)
+        Me.Magic8BallButton.Name = "Magic8Ball"
+        Me.Magic8BallButton.Size = New System.Drawing.Size(179, 26)
+        Me.Magic8BallButton.TabIndex = 12
+        Me.Magic8BallButton.Text = "Get Your Answer"
+        Me.Magic8BallButton.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(813, 555)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Magic8BallButton)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label4)
@@ -194,5 +194,5 @@ Partial Class Form1
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Magic8BallButton As Button
 End Class
