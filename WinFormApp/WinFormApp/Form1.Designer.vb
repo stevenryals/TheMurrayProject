@@ -32,20 +32,25 @@ Partial Class Form1
         Me.firstNumberToAddTextBox = New System.Windows.Forms.TextBox()
         Me.secondNumberToAddTextBox = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'productTextbox
         '
-        Me.productTextbox.Location = New System.Drawing.Point(128, 21)
+        Me.productTextbox.Location = New System.Drawing.Point(171, 26)
+        Me.productTextbox.Margin = New System.Windows.Forms.Padding(4)
         Me.productTextbox.Name = "productTextbox"
-        Me.productTextbox.Size = New System.Drawing.Size(111, 20)
+        Me.productTextbox.Size = New System.Drawing.Size(147, 22)
         Me.productTextbox.TabIndex = 0
         '
         'backwardsButton
         '
-        Me.backwardsButton.Location = New System.Drawing.Point(245, 19)
+        Me.backwardsButton.Location = New System.Drawing.Point(327, 23)
+        Me.backwardsButton.Margin = New System.Windows.Forms.Padding(4)
         Me.backwardsButton.Name = "backwardsButton"
-        Me.backwardsButton.Size = New System.Drawing.Size(134, 23)
+        Me.backwardsButton.Size = New System.Drawing.Size(179, 28)
         Me.backwardsButton.TabIndex = 1
         Me.backwardsButton.Text = "Make it Backwards"
         Me.backwardsButton.UseVisualStyleBackColor = True
@@ -53,75 +58,112 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(29, 24)
+        Me.Label1.Location = New System.Drawing.Point(39, 30)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 13)
+        Me.Label1.Size = New System.Drawing.Size(118, 17)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "String to Reverse"
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(385, 21)
+        Me.RichTextBox1.Location = New System.Drawing.Point(513, 26)
+        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(198, 58)
+        Me.RichTextBox1.Size = New System.Drawing.Size(263, 70)
         Me.RichTextBox1.TabIndex = 3
         Me.RichTextBox1.Text = ""
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(428, 5)
+        Me.Label2.Location = New System.Drawing.Point(571, 6)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 13)
+        Me.Label2.Size = New System.Drawing.Size(113, 17)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Results Go Here"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(25, 91)
+        Me.Label3.Location = New System.Drawing.Point(33, 112)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(80, 13)
+        Me.Label3.Size = New System.Drawing.Size(107, 17)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "numbers to add"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(241, 86)
+        Me.Button1.Location = New System.Drawing.Point(321, 106)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(134, 23)
+        Me.Button1.Size = New System.Drawing.Size(179, 28)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Add the numbers"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'firstNumberToAddTextBox
         '
-        Me.firstNumberToAddTextBox.Location = New System.Drawing.Point(124, 88)
+        Me.firstNumberToAddTextBox.Location = New System.Drawing.Point(165, 108)
+        Me.firstNumberToAddTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.firstNumberToAddTextBox.Name = "firstNumberToAddTextBox"
-        Me.firstNumberToAddTextBox.Size = New System.Drawing.Size(26, 20)
+        Me.firstNumberToAddTextBox.Size = New System.Drawing.Size(33, 22)
         Me.firstNumberToAddTextBox.TabIndex = 5
         '
         'secondNumberToAddTextBox
         '
-        Me.secondNumberToAddTextBox.Location = New System.Drawing.Point(180, 88)
+        Me.secondNumberToAddTextBox.Location = New System.Drawing.Point(240, 108)
+        Me.secondNumberToAddTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.secondNumberToAddTextBox.Name = "secondNumberToAddTextBox"
-        Me.secondNumberToAddTextBox.Size = New System.Drawing.Size(26, 20)
+        Me.secondNumberToAddTextBox.Size = New System.Drawing.Size(33, 22)
         Me.secondNumberToAddTextBox.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(156, 95)
+        Me.Label4.Location = New System.Drawing.Point(208, 117)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(13, 13)
+        Me.Label4.Size = New System.Drawing.Size(16, 17)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "+"
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(165, 178)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(153, 156)
+        Me.TextBox1.TabIndex = 10
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(33, 181)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(84, 17)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Magic 8 Ball"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(327, 181)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(179, 26)
+        Me.Button2.TabIndex = 12
+        Me.Button2.Text = "Get Your Answer"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(610, 451)
+        Me.ClientSize = New System.Drawing.Size(813, 555)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.secondNumberToAddTextBox)
         Me.Controls.Add(Me.Label3)
@@ -132,6 +174,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.backwardsButton)
         Me.Controls.Add(Me.productTextbox)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "Product Lister Test"
         Me.ResumeLayout(False)
@@ -149,4 +192,7 @@ Partial Class Form1
     Friend WithEvents firstNumberToAddTextBox As TextBox
     Friend WithEvents secondNumberToAddTextBox As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Button2 As Button
 End Class
