@@ -28,10 +28,13 @@ Partial Class Form1
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.addNumbersButton = New System.Windows.Forms.Button()
         Me.firstNumberToAddTextBox = New System.Windows.Forms.TextBox()
         Me.secondNumberToAddTextBox = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.oddOrEvenBtn = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -85,14 +88,14 @@ Partial Class Form1
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "numbers to add"
         '
-        'Button1
+        'addNumbersButton
         '
-        Me.Button1.Location = New System.Drawing.Point(241, 86)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(134, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Add the numbers"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.addNumbersButton.Location = New System.Drawing.Point(241, 86)
+        Me.addNumbersButton.Name = "addNumbersButton"
+        Me.addNumbersButton.Size = New System.Drawing.Size(134, 23)
+        Me.addNumbersButton.TabIndex = 6
+        Me.addNumbersButton.Text = "Add the numbers"
+        Me.addNumbersButton.UseVisualStyleBackColor = True
         '
         'firstNumberToAddTextBox
         '
@@ -117,15 +120,43 @@ Partial Class Form1
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "+"
         '
+        'oddOrEvenBtn
+        '
+        Me.oddOrEvenBtn.Location = New System.Drawing.Point(385, 187)
+        Me.oddOrEvenBtn.Name = "oddOrEvenBtn"
+        Me.oddOrEvenBtn.Size = New System.Drawing.Size(75, 23)
+        Me.oddOrEvenBtn.TabIndex = 10
+        Me.oddOrEvenBtn.Text = "oddOrEvenBtn"
+        Me.oddOrEvenBtn.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(227, 187)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 11
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(29, 187)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(159, 13)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Check if Number is Odd or Even"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(610, 451)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.oddOrEvenBtn)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.secondNumberToAddTextBox)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.addNumbersButton)
         Me.Controls.Add(Me.firstNumberToAddTextBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.RichTextBox1)
@@ -145,8 +176,11 @@ Partial Class Form1
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents addNumbersButton As Button
     Friend WithEvents firstNumberToAddTextBox As TextBox
     Friend WithEvents secondNumberToAddTextBox As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents oddOrEvenBtn As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label5 As Label
 End Class
