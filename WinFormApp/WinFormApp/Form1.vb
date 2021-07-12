@@ -34,10 +34,7 @@
         'If firstNumberToAddTextBox.Text.is Then 
     End Sub
 
-    'Check if Int is even or odd
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
+    'Check if Int is even or odd, need to print to Answer box (RichTextBox1)
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles oddOrEvenBtn.Click
         Dim Mynumber As Integer
