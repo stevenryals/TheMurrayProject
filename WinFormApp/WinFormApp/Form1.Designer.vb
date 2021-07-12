@@ -35,6 +35,8 @@ Partial Class Form1
         Me.oddOrEvenBtn = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.getTitleButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -145,11 +147,30 @@ Partial Class Form1
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Check if Number is Odd or Even"
         '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Location = New System.Drawing.Point(540, 412)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(58, 27)
+        Me.WebBrowser1.TabIndex = 13
+        '
+        'getTitleButton
+        '
+        Me.getTitleButton.Location = New System.Drawing.Point(523, 383)
+        Me.getTitleButton.Name = "getTitleButton"
+        Me.getTitleButton.Size = New System.Drawing.Size(75, 23)
+        Me.getTitleButton.TabIndex = 14
+        Me.getTitleButton.Text = "GetTitle!"
+        Me.getTitleButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(610, 451)
+        Me.Controls.Add(Me.getTitleButton)
+        Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.oddOrEvenBtn)
@@ -183,4 +204,6 @@ Partial Class Form1
     Friend WithEvents oddOrEvenBtn As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents getTitleButton As Button
 End Class
