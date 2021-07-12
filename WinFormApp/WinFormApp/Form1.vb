@@ -37,16 +37,11 @@
     'Check if Int is even or odd, need to print to Answer box (RichTextBox1)
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles oddOrEvenBtn.Click
-        Dim Mynumber As Integer
-        Dim isEven As Boolean
-        Mynumber = Val(TextBox1.Text)
-        Dim oddOrEvenAnswer As String = Mynumber
-        RichTextBox1.Text = oddOrEvenAnswer
+        Dim Mynumber As String = TextBox1.Text
         If Mynumber Mod 2 = 0 Then
-            isEven = True
-            MsgBox("The number " & " " & Mynumber & " is an Even number")
+            RichTextBox1.Text = "TRUE"
         Else
-            MsgBox(Mynumber & " " & "is an Odd number")
+            RichTextBox1.Text = "FALSE"
         End If
 
     End Sub
