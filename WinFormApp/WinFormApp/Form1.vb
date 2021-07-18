@@ -38,12 +38,11 @@ Public Class Form1
         Dim options() As String = {"This will Never Happen", "This will happen soon", "Your are not capable", "aha no", "perhaps"}
         Return RichTextBox1.Text = options(New Random().Next(0, 4))
     End Function
-
+    Public resultBuilder As String = ""
     Private Sub webButton_Click(sender As Object, e As EventArgs) Handles webButton.Click
         Dim url As String = webScrape1TextBox.Text
         WebBrowser1.Navigate(url)
-
-
+        'https://www.google.com/search?q=uniswap+dai+to+eth+price&oq=uniswap+dai+to+eth+price&&uact=5
     End Sub
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
@@ -53,8 +52,13 @@ Public Class Form1
         Dim root As HtmlNode = htmldoc.DocumentNode
         Dim tst = root.SelectNodes("//a")  'gets all the links nodes
         Dim tst1 As HtmlNode = root.SelectSingleNode("//html/head/title")
-        RichTextBox1.Text = tst1.InnerText.ToString
-
+        resultBuilder = tst1.InnerText.ToString
+        Dim tst2 As HtmlNode = root.SelectSingleNode("//*[@id='rso']/div[1]/div/div[1]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr[1]/th[2]/b")
+        RichTextBox1.Text = resultBuilder
+        Dim result As Integer = CInt(tst2.InnerText)
+        If result < 0.1 Then
+            'call the email function
+        End If
     End Sub
 End Class
 
