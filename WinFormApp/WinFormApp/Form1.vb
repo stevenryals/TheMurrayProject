@@ -27,28 +27,20 @@
 
     ' start of magic 8 ball ' 
     ' set random number generator 0-4, then assign each integer to a response string that will display into results. '
-    Private Sub Magic8Ball_Click(sender As Object, e As EventArgs) Handles Magic8BallButton.Click
+    Private Sub Magic8BallButton_Click(sender As Object, e As EventArgs) Handles Magic8BallButton.Click
         Dim fortune As String = getEightBallResponse(productTextbox.Text)
         RichTextBox1.Text = fortune
     End Sub
     ' math random should be set to a variable then assigned to strings '
     Private Function getEightBallResponse(ByVal str As String) As String
-        Dim whichResponse As Integer = New Random().Next(0, 4)
-        If whichResponse = 0 Then
-            Return "This will never happen"
-        ElseIf whichResponse = 1 Then
-            Return "This will happen soon."
-        ElseIf whichResponse = 2 Then
-            Return "You are not capable."
-        ElseIf whichResponse = 3 Then
-            Return "Aha no."
-        ElseIf whichResponse = 4 Then
-            Return "Perhaps"
-        Else
-            Return "whoever changed my code.... you SUCK"
-        End If
+        Dim options() As String = {"This will Never Happen", "This will happen soon", "Your are not capable", "aha no", "perhaps"}
+        Return RichTextBox1.Text = options(New Random().Next(0, 4))
     End Function
 
+    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
+        WebBrowser1.Navigate("http://www.google.com")
+        Dim WaitForPageLoad(200)
+        Return RichTextBox1.Text = 
+    End Sub
 End Class
-
 
