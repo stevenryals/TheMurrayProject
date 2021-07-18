@@ -38,9 +38,12 @@
     End Function
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
-        WebBrowser1.Navigate("http://www.google.com")
-        Dim WaitForPageLoad(200)
-        Return RichTextBox1.Text = 
+
+    End Sub
+
+    Private Sub webButton_Click(sender As Object, e As EventArgs) Handles webButton.Click
+        Dim url As String = webScrape1TextBox.Text
+
     End Sub
 End Class
 

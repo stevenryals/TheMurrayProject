@@ -37,22 +37,22 @@ Partial Class Form1
         Me.Magic8BallButton = New System.Windows.Forms.Button()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.webButton = New System.Windows.Forms.Button()
+        Me.webScrape1TextBox = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'productTextbox
         '
-        Me.productTextbox.Location = New System.Drawing.Point(171, 26)
-        Me.productTextbox.Margin = New System.Windows.Forms.Padding(4)
+        Me.productTextbox.Location = New System.Drawing.Point(128, 21)
         Me.productTextbox.Name = "productTextbox"
-        Me.productTextbox.Size = New System.Drawing.Size(147, 22)
+        Me.productTextbox.Size = New System.Drawing.Size(111, 20)
         Me.productTextbox.TabIndex = 0
         '
         'backwardsButton
         '
-        Me.backwardsButton.Location = New System.Drawing.Point(327, 23)
-        Me.backwardsButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.backwardsButton.Location = New System.Drawing.Point(245, 19)
         Me.backwardsButton.Name = "backwardsButton"
-        Me.backwardsButton.Size = New System.Drawing.Size(179, 28)
+        Me.backwardsButton.Size = New System.Drawing.Size(134, 23)
         Me.backwardsButton.TabIndex = 1
         Me.backwardsButton.Text = "Make it Backwards"
         Me.backwardsButton.UseVisualStyleBackColor = True
@@ -60,128 +60,142 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(39, 30)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(29, 24)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(118, 17)
+        Me.Label1.Size = New System.Drawing.Size(89, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "String to Reverse"
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(575, 26)
-        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.RichTextBox1.Location = New System.Drawing.Point(431, 21)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(201, 120)
+        Me.RichTextBox1.Size = New System.Drawing.Size(152, 98)
         Me.RichTextBox1.TabIndex = 3
         Me.RichTextBox1.Text = ""
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(620, 6)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(465, 5)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(113, 17)
+        Me.Label2.Size = New System.Drawing.Size(85, 13)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Results Go Here"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(39, 75)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(29, 61)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(107, 17)
+        Me.Label3.Size = New System.Drawing.Size(80, 13)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "numbers to add"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(327, 69)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Location = New System.Drawing.Point(245, 56)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(179, 28)
+        Me.Button1.Size = New System.Drawing.Size(134, 23)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Add the numbers"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'firstNumberToAddTextBox
         '
-        Me.firstNumberToAddTextBox.Location = New System.Drawing.Point(171, 71)
-        Me.firstNumberToAddTextBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.firstNumberToAddTextBox.Location = New System.Drawing.Point(128, 58)
         Me.firstNumberToAddTextBox.Name = "firstNumberToAddTextBox"
-        Me.firstNumberToAddTextBox.Size = New System.Drawing.Size(33, 22)
+        Me.firstNumberToAddTextBox.Size = New System.Drawing.Size(26, 20)
         Me.firstNumberToAddTextBox.TabIndex = 5
         '
         'secondNumberToAddTextBox
         '
-        Me.secondNumberToAddTextBox.Location = New System.Drawing.Point(245, 71)
-        Me.secondNumberToAddTextBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.secondNumberToAddTextBox.Location = New System.Drawing.Point(184, 58)
         Me.secondNumberToAddTextBox.Name = "secondNumberToAddTextBox"
-        Me.secondNumberToAddTextBox.Size = New System.Drawing.Size(33, 22)
+        Me.secondNumberToAddTextBox.Size = New System.Drawing.Size(26, 20)
         Me.secondNumberToAddTextBox.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(213, 80)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(160, 65)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(16, 17)
+        Me.Label4.Size = New System.Drawing.Size(13, 13)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "+"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(164, 140)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextBox1.Location = New System.Drawing.Point(123, 114)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(153, 69)
+        Me.TextBox1.Size = New System.Drawing.Size(116, 57)
         Me.TextBox1.TabIndex = 10
         '
         'EightBallLabel
         '
         Me.EightBallLabel.AutoSize = True
-        Me.EightBallLabel.Location = New System.Drawing.Point(39, 144)
+        Me.EightBallLabel.Location = New System.Drawing.Point(29, 117)
+        Me.EightBallLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.EightBallLabel.Name = "EightBallLabel"
-        Me.EightBallLabel.Size = New System.Drawing.Size(92, 17)
+        Me.EightBallLabel.Size = New System.Drawing.Size(71, 13)
         Me.EightBallLabel.TabIndex = 11
         Me.EightBallLabel.Text = "Magic 8 Ball: "
         '
         'Magic8BallButton
         '
-        Me.Magic8BallButton.Location = New System.Drawing.Point(327, 144)
-        Me.Magic8BallButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Magic8BallButton.Location = New System.Drawing.Point(245, 117)
+        Me.Magic8BallButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Magic8BallButton.Name = "Magic8BallButton"
-        Me.Magic8BallButton.Size = New System.Drawing.Size(179, 26)
+        Me.Magic8BallButton.Size = New System.Drawing.Size(134, 21)
         Me.Magic8BallButton.TabIndex = 12
         Me.Magic8BallButton.Text = "Get Your Answer"
         Me.Magic8BallButton.UseVisualStyleBackColor = True
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Location = New System.Drawing.Point(320, 264)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Location = New System.Drawing.Point(502, 338)
+        Me.WebBrowser1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(15, 16)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(129, 125)
+        Me.WebBrowser1.Size = New System.Drawing.Size(97, 102)
         Me.WebBrowser1.TabIndex = 13
         '
         'webButton
         '
-        Me.webButton.Location = New System.Drawing.Point(320, 235)
+        Me.webButton.Location = New System.Drawing.Point(431, 191)
+        Me.webButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.webButton.Name = "webButton"
-        Me.webButton.Size = New System.Drawing.Size(129, 23)
+        Me.webButton.Size = New System.Drawing.Size(97, 19)
         Me.webButton.TabIndex = 14
-        Me.webButton.Text = "Web Button"
+        Me.webButton.Text = "Scrape"
         Me.webButton.UseVisualStyleBackColor = True
+        '
+        'webScrape1TextBox
+        '
+        Me.webScrape1TextBox.Location = New System.Drawing.Point(123, 191)
+        Me.webScrape1TextBox.Name = "webScrape1TextBox"
+        Me.webScrape1TextBox.Size = New System.Drawing.Size(290, 20)
+        Me.webScrape1TextBox.TabIndex = 15
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(5, 194)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(104, 13)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "Enter Web Site URL"
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(813, 555)
+        Me.ClientSize = New System.Drawing.Size(610, 451)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.webScrape1TextBox)
         Me.Controls.Add(Me.webButton)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.Magic8BallButton)
@@ -197,7 +211,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.backwardsButton)
         Me.Controls.Add(Me.productTextbox)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "Product Lister Test"
         Me.ResumeLayout(False)
@@ -220,4 +233,6 @@ Partial Class Form1
     Friend WithEvents Magic8BallButton As Button
     Friend WithEvents WebBrowser1 As WebBrowser
     Friend WithEvents webButton As Button
+    Friend WithEvents webScrape1TextBox As TextBox
+    Friend WithEvents Label5 As Label
 End Class
