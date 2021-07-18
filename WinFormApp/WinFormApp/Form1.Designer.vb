@@ -127,7 +127,7 @@ Partial Class Form1
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(123, 114)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(116, 57)
@@ -146,7 +146,7 @@ Partial Class Form1
         'Magic8BallButton
         '
         Me.Magic8BallButton.Location = New System.Drawing.Point(245, 117)
-        Me.Magic8BallButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Magic8BallButton.Margin = New System.Windows.Forms.Padding(2)
         Me.Magic8BallButton.Name = "Magic8BallButton"
         Me.Magic8BallButton.Size = New System.Drawing.Size(134, 21)
         Me.Magic8BallButton.TabIndex = 12
@@ -156,7 +156,7 @@ Partial Class Form1
         'WebBrowser1
         '
         Me.WebBrowser1.Location = New System.Drawing.Point(502, 338)
-        Me.WebBrowser1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.WebBrowser1.Margin = New System.Windows.Forms.Padding(2)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(15, 16)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(97, 102)
@@ -165,7 +165,7 @@ Partial Class Form1
         'webButton
         '
         Me.webButton.Location = New System.Drawing.Point(431, 191)
-        Me.webButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.webButton.Margin = New System.Windows.Forms.Padding(2)
         Me.webButton.Name = "webButton"
         Me.webButton.Size = New System.Drawing.Size(97, 19)
         Me.webButton.TabIndex = 14

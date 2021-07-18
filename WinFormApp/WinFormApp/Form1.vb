@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports HtmlAgilityPack
+
+Public Class Form1
 
     Public Sub New()
         InitializeComponent()
@@ -37,12 +39,21 @@
         Return RichTextBox1.Text = options(New Random().Next(0, 4))
     End Function
 
-    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
+    Private Sub webButton_Click(sender As Object, e As EventArgs) Handles webButton.Click
+        Dim url As String = webScrape1TextBox.Text
+        WebBrowser1.Navigate(url)
+
 
     End Sub
 
-    Private Sub webButton_Click(sender As Object, e As EventArgs) Handles webButton.Click
-        Dim url As String = webScrape1TextBox.Text
+    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
+        Dim html As String = WebBrowser1.DocumentText
+        Dim htmldoc As HtmlDocument = New HtmlDocument()
+        htmldoc.LoadHtml(html)
+        Dim root As HtmlNode = htmldoc.DocumentNode
+        Dim tst = root.SelectNodes("//a")  'gets all the links nodes
+        Dim tst1 As HtmlNode = root.SelectSingleNode("//html/head/title")
+        RichTextBox1.Text = tst1.InnerText.ToString
 
     End Sub
 End Class
