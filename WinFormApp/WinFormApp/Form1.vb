@@ -2,16 +2,23 @@
 
 Public Class Form1
 
+
+
+
     Public Sub New()
         InitializeComponent()
         EightBallLabel.Text = "Magic 8 Ball: " + vbNewLine + "Ask Me A Question"
 
     End Sub
 
+
+
     Public Sub backwardsButton_Click(sender As Object, e As EventArgs) Handles backwardsButton.Click
         Dim response As String = makeItBackwards(productTextbox.Text)
         RichTextBox1.Text = response
     End Sub
+
+
 
     Private Function makeItBackwards(ByVal str As String)
         Dim ss As String = str.Substring(str.Length - 1, 1)
@@ -33,32 +40,48 @@ Public Class Form1
         Dim fortune As String = getEightBallResponse(productTextbox.Text)
         RichTextBox1.Text = fortune
     End Sub
+
+
+
     ' math random should be set to a variable then assigned to strings '
     Private Function getEightBallResponse(ByVal str As String) As String
         Dim options() As String = {"This will Never Happen", "This will happen soon", "Your are not capable", "aha no", "perhaps"}
         Return RichTextBox1.Text = options(New Random().Next(0, 4))
     End Function
+
+
+
+
+
+
+
+
+
     Public resultBuilder As String = ""
     Private Sub webButton_Click(sender As Object, e As EventArgs) Handles webButton.Click
-        Dim url As String = webScrape1TextBox.Text
-        WebBrowser1.Navigate(url)
-        'https://www.google.com/search?q=uniswap+dai+to+eth+price&oq=uniswap+dai+to+eth+price&&uact=5
+        Dim URL As String = "https://www.google.com/search?q=uniswap+dai+to+eth+price&oq=uniswap+dai+to+eth+price&&uact=5"
+        WebBrowser1.Navigate(URL)
     End Sub
 
-    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
+
+
+    Private Sub WebBrowser1_DocumentCompleted(Sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
+
         Dim html As String = WebBrowser1.DocumentText
         Dim htmldoc As HtmlDocument = New HtmlDocument()
         htmldoc.LoadHtml(html)
         Dim root As HtmlNode = htmldoc.DocumentNode
         Dim tst = root.SelectNodes("//a")  'gets all the links nodes
         Dim tst1 As HtmlNode = root.SelectSingleNode("//html/head/title")
-        resultBuilder = tst1.InnerText.ToString
         Dim tst2 As HtmlNode = root.SelectSingleNode("//*[@id='rso']/div[1]/div/div[1]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr[1]/th[2]/b")
+        resultBuilder = tst2.InnerText
         RichTextBox1.Text = resultBuilder
-        Dim result As Integer = CInt(tst2.InnerText)
-        If result < 0.1 Then
-            'call the email function
-        End If
+
     End Sub
+
+
+
+
+
 End Class
 
