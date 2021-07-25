@@ -58,11 +58,25 @@ Public Class Form1
 
 
     Public resultBuilder As String = ""
-    Private Sub webButton_Click(sender As Object, e As EventArgs) Handles webButton.Click
+    Private Sub Uniswap_Click(sender As Object, e As EventArgs) Handles Uniswap.Click
         Dim URL As String = "https://www.google.com/search?q=uniswap+dai+to+eth+price&oq=uniswap+dai+to+eth+price&&uact=5"
         WebBrowser1.Navigate(URL)
     End Sub
 
+    Private Sub Sushiswap_Click(sender As Object, e As EventArgs) Handles Sushiswap.Click
+        Dim URL As String = "https://www.google.com/search?q=sushiswap+dai+to+eth+price"
+        WebBrowser1.Navigate(URL)
+    End Sub
+
+    Private Sub OneInch_Click(sender As Object, e As EventArgs) Handles OneInch.Click
+        Dim URL As String = "https://www.google.com/search?q=uniswap+dai+to+eth+price&oq=uniswap+dai+to+eth+price&&uact=5"
+        WebBrowser1.Navigate(URL)
+    End Sub
+
+    Private Sub Curve_Click(sender As Object, e As EventArgs) Handles Curve.Click
+        Dim URL As String = "https://www.google.com/search?q=uniswap+dai+to+eth+price&oq=uniswap+dai+to+eth+price&&uact=5"
+        WebBrowser1.Navigate(URL)
+    End Sub
 
 
     Private Sub WebBrowser1_DocumentCompleted(Sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
@@ -73,15 +87,11 @@ Public Class Form1
         Dim root As HtmlNode = htmldoc.DocumentNode
         Dim tst = root.SelectNodes("//a")  'gets all the links nodes
         Dim tst1 As HtmlNode = root.SelectSingleNode("//html/head/title")
-        Dim tst2 As HtmlNode = root.SelectSingleNode("//*[@id='rso']/div[1]/div/div[1]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr[1]/th[2]/b")
+        Dim tst2 As HtmlNode = root.SelectSingleNode("//*[@id='rso']/div[1]/div/div[1]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr[2]/td[2]")
         resultBuilder = tst2.InnerText
         RichTextBox1.Text = resultBuilder
 
     End Sub
-
-
-
-
 
 End Class
 

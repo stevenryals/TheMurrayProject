@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.productTextbox = New System.Windows.Forms.TextBox()
         Me.backwardsButton = New System.Windows.Forms.Button()
@@ -36,15 +36,18 @@ Partial Class Form1
         Me.EightBallLabel = New System.Windows.Forms.Label()
         Me.Magic8BallButton = New System.Windows.Forms.Button()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
-        Me.webButton = New System.Windows.Forms.Button()
+        Me.Uniswap = New System.Windows.Forms.Button()
         Me.webScrape1TextBox = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Sushiswap = New System.Windows.Forms.Button()
+        Me.OneInch = New System.Windows.Forms.Button()
+        Me.Curve = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'productTextbox
         '
         Me.productTextbox.Location = New System.Drawing.Point(171, 26)
-        Me.productTextbox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.productTextbox.Margin = New System.Windows.Forms.Padding(4)
         Me.productTextbox.Name = "productTextbox"
         Me.productTextbox.Size = New System.Drawing.Size(147, 22)
         Me.productTextbox.TabIndex = 0
@@ -52,7 +55,7 @@ Partial Class Form1
         'backwardsButton
         '
         Me.backwardsButton.Location = New System.Drawing.Point(327, 23)
-        Me.backwardsButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.backwardsButton.Margin = New System.Windows.Forms.Padding(4)
         Me.backwardsButton.Name = "backwardsButton"
         Me.backwardsButton.Size = New System.Drawing.Size(179, 28)
         Me.backwardsButton.TabIndex = 1
@@ -71,8 +74,8 @@ Partial Class Form1
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(575, 26)
-        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RichTextBox1.Location = New System.Drawing.Point(1230, 194)
+        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(201, 120)
         Me.RichTextBox1.TabIndex = 3
@@ -81,7 +84,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(620, 6)
+        Me.Label2.Location = New System.Drawing.Point(1265, 173)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(113, 17)
@@ -101,7 +104,7 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(327, 69)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(179, 28)
         Me.Button1.TabIndex = 6
@@ -111,7 +114,7 @@ Partial Class Form1
         'firstNumberToAddTextBox
         '
         Me.firstNumberToAddTextBox.Location = New System.Drawing.Point(171, 71)
-        Me.firstNumberToAddTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.firstNumberToAddTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.firstNumberToAddTextBox.Name = "firstNumberToAddTextBox"
         Me.firstNumberToAddTextBox.Size = New System.Drawing.Size(33, 22)
         Me.firstNumberToAddTextBox.TabIndex = 5
@@ -119,7 +122,7 @@ Partial Class Form1
         'secondNumberToAddTextBox
         '
         Me.secondNumberToAddTextBox.Location = New System.Drawing.Point(245, 71)
-        Me.secondNumberToAddTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.secondNumberToAddTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.secondNumberToAddTextBox.Name = "secondNumberToAddTextBox"
         Me.secondNumberToAddTextBox.Size = New System.Drawing.Size(33, 22)
         Me.secondNumberToAddTextBox.TabIndex = 8
@@ -164,27 +167,27 @@ Partial Class Form1
         '
         'WebBrowser1
         '
-        Me.WebBrowser1.Location = New System.Drawing.Point(171, 275)
+        Me.WebBrowser1.Location = New System.Drawing.Point(12, 276)
         Me.WebBrowser1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(533, 245)
         Me.WebBrowser1.TabIndex = 13
         '
-        'webButton
+        'Uniswap
         '
-        Me.webButton.Location = New System.Drawing.Point(575, 235)
-        Me.webButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.webButton.Name = "webButton"
-        Me.webButton.Size = New System.Drawing.Size(129, 23)
-        Me.webButton.TabIndex = 14
-        Me.webButton.Text = "Scrape"
-        Me.webButton.UseVisualStyleBackColor = True
+        Me.Uniswap.Location = New System.Drawing.Point(812, 27)
+        Me.Uniswap.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Uniswap.Name = "Uniswap"
+        Me.Uniswap.Size = New System.Drawing.Size(135, 23)
+        Me.Uniswap.TabIndex = 14
+        Me.Uniswap.Text = "Uniswap"
+        Me.Uniswap.UseVisualStyleBackColor = True
         '
         'webScrape1TextBox
         '
         Me.webScrape1TextBox.Location = New System.Drawing.Point(164, 235)
-        Me.webScrape1TextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.webScrape1TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.webScrape1TextBox.Name = "webScrape1TextBox"
         Me.webScrape1TextBox.Size = New System.Drawing.Size(385, 22)
         Me.webScrape1TextBox.TabIndex = 15
@@ -198,14 +201,44 @@ Partial Class Form1
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "Enter Web Site URL"
         '
+        'Sushiswap
+        '
+        Me.Sushiswap.Location = New System.Drawing.Point(812, 56)
+        Me.Sushiswap.Name = "Sushiswap"
+        Me.Sushiswap.Size = New System.Drawing.Size(135, 23)
+        Me.Sushiswap.TabIndex = 17
+        Me.Sushiswap.Text = "Sushiswap"
+        Me.Sushiswap.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.OneInch.Location = New System.Drawing.Point(812, 86)
+        Me.OneInch.Name = "Button3"
+        Me.OneInch.Size = New System.Drawing.Size(135, 23)
+        Me.OneInch.TabIndex = 18
+        Me.OneInch.Text = "1inch"
+        Me.OneInch.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Curve.Location = New System.Drawing.Point(812, 116)
+        Me.Curve.Name = "Button4"
+        Me.Curve.Size = New System.Drawing.Size(135, 23)
+        Me.Curve.TabIndex = 19
+        Me.Curve.Text = "Curve"
+        Me.Curve.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(813, 555)
+        Me.ClientSize = New System.Drawing.Size(1444, 555)
+        Me.Controls.Add(Me.Curve)
+        Me.Controls.Add(Me.OneInch)
+        Me.Controls.Add(Me.Sushiswap)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.webScrape1TextBox)
-        Me.Controls.Add(Me.webButton)
+        Me.Controls.Add(Me.Uniswap)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.Magic8BallButton)
         Me.Controls.Add(Me.EightBallLabel)
@@ -220,7 +253,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.backwardsButton)
         Me.Controls.Add(Me.productTextbox)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "Product Lister Test"
         Me.ResumeLayout(False)
@@ -242,7 +275,10 @@ Partial Class Form1
     Friend WithEvents EightBallLabel As Label
     Friend WithEvents Magic8BallButton As Button
     Friend WithEvents WebBrowser1 As WebBrowser
-    Friend WithEvents webButton As Button
+    Friend WithEvents Uniswap As Button
     Friend WithEvents webScrape1TextBox As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents Sushiswap As Button
+    Friend WithEvents OneInch As Button
+    Friend WithEvents Curve As Button
 End Class
