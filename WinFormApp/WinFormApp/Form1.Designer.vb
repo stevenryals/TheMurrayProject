@@ -41,7 +41,6 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Sushiswap = New System.Windows.Forms.Button()
         Me.OneInch = New System.Windows.Forms.Button()
-        Me.Curve = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -74,7 +73,7 @@ Partial Class Form1
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(1230, 194)
+        Me.RichTextBox1.Location = New System.Drawing.Point(746, 298)
         Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(201, 120)
@@ -84,7 +83,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(1265, 173)
+        Me.Label2.Location = New System.Drawing.Point(791, 276)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(113, 17)
@@ -210,30 +209,20 @@ Partial Class Form1
         Me.Sushiswap.Text = "Sushiswap"
         Me.Sushiswap.UseVisualStyleBackColor = True
         '
-        'Button3
+        'OneInch
         '
         Me.OneInch.Location = New System.Drawing.Point(812, 86)
-        Me.OneInch.Name = "Button3"
+        Me.OneInch.Name = "OneInch"
         Me.OneInch.Size = New System.Drawing.Size(135, 23)
         Me.OneInch.TabIndex = 18
         Me.OneInch.Text = "1inch"
         Me.OneInch.UseVisualStyleBackColor = True
         '
-        'Button4
-        '
-        Me.Curve.Location = New System.Drawing.Point(812, 116)
-        Me.Curve.Name = "Button4"
-        Me.Curve.Size = New System.Drawing.Size(135, 23)
-        Me.Curve.TabIndex = 19
-        Me.Curve.Text = "Curve"
-        Me.Curve.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1444, 555)
-        Me.Controls.Add(Me.Curve)
+        Me.ClientSize = New System.Drawing.Size(956, 555)
         Me.Controls.Add(Me.OneInch)
         Me.Controls.Add(Me.Sushiswap)
         Me.Controls.Add(Me.Label5)
@@ -280,5 +269,4 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Sushiswap As Button
     Friend WithEvents OneInch As Button
-    Friend WithEvents Curve As Button
 End Class

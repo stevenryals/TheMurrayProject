@@ -58,40 +58,30 @@ Public Class Form1
 
 
     Public resultBuilder As String = ""
-    Private Sub Uniswap_Click(sender As Object, e As EventArgs) Handles Uniswap.Click
-        Dim URL As String = "https://www.google.com/search?q=uniswap+dai+to+eth+price&oq=uniswap+dai+to+eth+price&&uact=5"
-        WebBrowser1.Navigate(URL)
+    Private Sub Uniswap_Click(WebBrowser1_DocumentCompleted As Object()) Handles Uniswap.Click
+        WebBrowser1_Navigate("https://coinranking.com/market/7C9zn0pFo6+dai-eth-uniswap")
     End Sub
 
-    Private Sub Sushiswap_Click(sender As Object, e As EventArgs) Handles Sushiswap.Click
-        Dim URL As String = "https://www.google.com/search?q=sushiswap+dai+to+eth+price"
-        WebBrowser1.Navigate(URL)
+    Private Sub Sushiswap_Click() Handles Sushiswap.Click
+        WebBrowser1_Navigate("https://coinranking.com/market/HzStwO_SYA+dai-eth-sushiswap")
     End Sub
 
     Private Sub OneInch_Click(sender As Object, e As EventArgs) Handles OneInch.Click
-        Dim URL As String = "https://www.google.com/search?q=uniswap+dai+to+eth+price&oq=uniswap+dai+to+eth+price&&uact=5"
-        WebBrowser1.Navigate(URL)
+        Call WebBrowser1_Navigate("https://coinranking.com/market/e4eXYeWe4lo+dai-eth-1inch")
     End Sub
 
-    Private Sub Curve_Click(sender As Object, e As EventArgs) Handles Curve.Click
-        Dim URL As String = "https://www.google.com/search?q=uniswap+dai+to+eth+price&oq=uniswap+dai+to+eth+price&&uact=5"
+    Public Function WebBrowser1_Navigate(URL As String)
         WebBrowser1.Navigate(URL)
-    End Sub
-
-
-    Private Sub WebBrowser1_DocumentCompleted(Sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
-
         Dim html As String = WebBrowser1.DocumentText
         Dim htmldoc As HtmlDocument = New HtmlDocument()
         htmldoc.LoadHtml(html)
         Dim root As HtmlNode = htmldoc.DocumentNode
         Dim tst = root.SelectNodes("//a")  'gets all the links nodes
-        Dim tst1 As HtmlNode = root.SelectSingleNode("//html/head/title")
-        Dim tst2 As HtmlNode = root.SelectSingleNode("//*[@id='rso']/div[1]/div/div[1]/div/div[1]/div/div[1]/div/div[2]/table/tbody/tr[2]/td[2]")
-        resultBuilder = tst2.InnerText
-        RichTextBox1.Text = resultBuilder
+        Dim tst1 As HtmlNode = root.SelectSingleNode("//*[@id='__layout']/div/div[3]/section/div[3]/div/div[1]/div/table/tbody/tr[2]/td[2]")
+        Return RichTextBox1.Text = tst1.InnerText
 
-    End Sub
+    End Function
+
 
 End Class
 
