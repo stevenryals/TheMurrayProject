@@ -1,10 +1,9 @@
-﻿Imports HtmlAgilityPack
-
-Public Class Form1
+﻿Public Class Form1
 
 
+    Public resultBuilder As String = ""
 
-
+#Region "Random Functions"
     Public Sub New()
         InitializeComponent()
         EightBallLabel.Text = "Magic 8 Ball: " + vbNewLine + "Ask Me A Question"
@@ -49,39 +48,65 @@ Public Class Form1
         Return RichTextBox1.Text = options(New Random().Next(0, 4))
     End Function
 
+#End Region
 
-
-
-
-
-
-
-
-    Public resultBuilder As String = ""
-    Private Sub Uniswap_Click(WebBrowser1_DocumentCompleted As Object()) Handles Uniswap.Click
-        WebBrowser1_Navigate("https://coinranking.com/market/7C9zn0pFo6+dai-eth-uniswap")
+#Region "D&D Characters and dice"
+    Public Sub Skill_TextboxChanged(sender As Object, e As EventArgs) Handles Skill.TextChanged
+        Try
+            Dim response As String = AddDice(Skill.Text)
+            RichTextBox1.Text = response
+            Exit Try
+        Catch ex As InvalidCastException
+            Exit Try
+        End Try
     End Sub
 
-    Private Sub Sushiswap_Click() Handles Sushiswap.Click
-        WebBrowser1_Navigate("https://coinranking.com/market/HzStwO_SYA+dai-eth-sushiswap")
+    Public Sub TwentyDice_Click(sender As Object, e As EventArgs) Handles TwentyDice.Click
+        resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Skill.Text)
+        RichTextBox1.Text = resultBuilder
     End Sub
 
-    Private Sub OneInch_Click(sender As Object, e As EventArgs) Handles OneInch.Click
-        Call WebBrowser1_Navigate("https://coinranking.com/market/e4eXYeWe4lo+dai-eth-1inch")
+    Public Sub SixDice_Click(sender As Object, e As EventArgs) Handles SixDice.Click
+        resultBuilder = AddDice(New Random().Next(2, 13)) + CInt(Skill.Text)
+        RichTextBox1.Text = resultBuilder
     End Sub
 
-    Public Function WebBrowser1_Navigate(URL As String)
-        WebBrowser1.Navigate(URL)
-        Dim html As String = WebBrowser1.DocumentText
-        Dim htmldoc As HtmlDocument = New HtmlDocument()
-        htmldoc.LoadHtml(html)
-        Dim root As HtmlNode = htmldoc.DocumentNode
-        Dim tst = root.SelectNodes("//a")  'gets all the links nodes
-        Dim tst1 As HtmlNode = root.SelectSingleNode("//*[@id='__layout']/div/div[3]/section/div[3]/div/div[1]/div/table/tbody/tr[2]/td[2]")
-        Return RichTextBox1.Text = tst1.InnerText
-
+    Private Function AddDice(Optional ByVal Skill As Integer = 1, Optional ByVal TwentyDice As Integer = 0, Optional ByVal SixDie As Integer = 0) As Integer
+        Dim TotalAmount As Integer = CInt(Skill) + TwentyDice + SixDie
+        Return TotalAmount
     End Function
 
+#End Region
+
+#Region "Web Scraper"
+
+    'Private Sub Uniswap_Click(Object) Handles Uniswap.Click
+    '    Dim getPrice = WebBrowser1_Navigate("https://coinranking.com/market/7C9zn0pFo6+dai-eth-uniswap")
+    '    resultBuilder = getPrice
+    'End Sub
+
+    'Private Sub Sushiswap_Click() Handles Sushiswap.Click
+    '    resultBuilder = WebBrowser1_Navigate("https://coinranking.com/market/HzStwO_SYA+dai-eth-sushiswap")
+    '    RichTextBox1 = resultBuilder
+    'End Sub
+
+    'Private Sub OneInch_Click(sender As Object, e As EventArgs) Handles OneInch.Click
+    '    resultBuilder = Call WebBrowser1_Navigate("https://coinranking.com/market/e4eXYeWe4lo+dai-eth-1inch")
+    '    RichTextBox1 = resultBuilder
+    'End Sub
+
+    'Public Function WebBrowser1_Navigate(URL)
+    '    WebBrowser1.Navigate(URL)
+    '    Dim html As String = WebBrowser1.DocumentText
+    '    Dim htmldoc As HtmlDocument = New HtmlDocument()
+    '    htmldoc.LoadHtml(html)
+    '    Dim root As HtmlNode = htmldoc.DocumentNode
+    '    Dim tst = root.SelectNodes("//a")  'gets all the links nodes
+    '    Dim tst1 As HtmlNode = root.SelectSingleNode("//*[@id='__layout']/div/div[3]/section/div[3]/div/div[1]/div/table/tbody/tr[2]/td[2]")
+    '    Return tst1.InnerText
+    'End Function
+
+#End Region
 
 End Class
 
