@@ -45,6 +45,7 @@ Partial Class Form1
         Me.Skill = New System.Windows.Forms.TextBox()
         Me.TwentyDice = New System.Windows.Forms.Button()
         Me.SixDice = New System.Windows.Forms.Button()
+        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -225,46 +226,55 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(1170, 107)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(1214, 148)
         Me.Label6.MinimumSize = New System.Drawing.Size(100, 20)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(100, 38)
+        Me.Label6.Size = New System.Drawing.Size(100, 25)
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "Skill"
         '
         'Skill
         '
-        Me.Skill.Location = New System.Drawing.Point(1177, 148)
+        Me.Skill.Location = New System.Drawing.Point(1278, 148)
         Me.Skill.Name = "Skill"
         Me.Skill.Size = New System.Drawing.Size(70, 22)
         Me.Skill.TabIndex = 23
         '
-        'Button2
+        'TwentyDice
         '
         Me.TwentyDice.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TwentyDice.Location = New System.Drawing.Point(1084, 176)
-        Me.TwentyDice.Name = "Button2"
+        Me.TwentyDice.Name = "TwentyDice"
         Me.TwentyDice.Size = New System.Drawing.Size(129, 37)
         Me.TwentyDice.TabIndex = 27
         Me.TwentyDice.Text = "20 Dice"
         Me.TwentyDice.UseVisualStyleBackColor = True
         '
-        'Button3
+        'SixDice
         '
         Me.SixDice.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SixDice.Location = New System.Drawing.Point(1219, 176)
-        Me.SixDice.Name = "Button3"
+        Me.SixDice.Name = "SixDice"
         Me.SixDice.Size = New System.Drawing.Size(129, 37)
         Me.SixDice.TabIndex = 28
         Me.SixDice.Text = "6 Die"
         Me.SixDice.UseVisualStyleBackColor = True
+        '
+        'CheckedListBox1
+        '
+        Me.CheckedListBox1.FormattingEnabled = True
+        Me.CheckedListBox1.Location = New System.Drawing.Point(1084, 86)
+        Me.CheckedListBox1.Name = "CheckedListBox1"
+        Me.CheckedListBox1.Size = New System.Drawing.Size(120, 89)
+        Me.CheckedListBox1.TabIndex = 29
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1496, 555)
+        Me.Controls.Add(Me.CheckedListBox1)
         Me.Controls.Add(Me.SixDice)
         Me.Controls.Add(Me.TwentyDice)
         Me.Controls.Add(Me.Skill)
@@ -319,4 +329,5 @@ Partial Class Form1
     Friend WithEvents Skill As TextBox
     Friend WithEvents TwentyDice As Button
     Friend WithEvents SixDice As Button
+    Friend WithEvents CheckedListBox1 As CheckedListBox
 End Class

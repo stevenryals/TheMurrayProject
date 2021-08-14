@@ -1,6 +1,5 @@
 ﻿Public Class Form1
 
-
     Public resultBuilder As String = ""
 
 #Region "Random Functions"
@@ -51,6 +50,59 @@
 #End Region
 
 #Region "D&D Characters and dice"
+
+    Public Class character
+        Public strength As Integer
+        Public dexterity As Integer
+        Public constitution As Integer
+        Public intelligence As Integer
+        Public wisdom As Integer
+        Public charisma As Integer
+    End Class
+
+    Private Sub Character1Stats()
+        Dim MattCharacter As character
+        MattCharacter = New character With {
+            .strength = 6,
+            .dexterity = 6,
+            .constitution = 10,
+            .intelligence = 17,
+            .wisdom = 17,
+            .charisma = 17
+            }
+        Dim Trait1 As String = "Animal Handling - Int - can command animals"
+        Dim Trait2 As String = "Perception - Wis - See in dim rooms, see far away objects, and see hidden items."
+    End Sub
+
+    Private Sub Character2Stats()
+        Dim RachelCharacter As character
+        RachelCharacter = New character With {
+            .strength = 10,
+            .dexterity = 15,
+            .constitution = 18,
+            .intelligence = 10,
+            .wisdom = 12,
+            .charisma = 8
+        }
+        Dim Trait1 As String = "Acrobatics - Dex - Scale obstacles, evade in combat"
+        Dim Trait2 As String = "Performance - Chr - Persuade groups of people"
+    End Sub
+
+    Private Sub Character3Stats()
+        Dim MarissaCharacter As character
+        MarissaCharacter = New character With {
+            .strength = 18,
+            .dexterity = 13,
+            .constitution = 15,
+            .intelligence = 9,
+            .wisdom = 9,
+            .charisma = 9
+        }
+        Dim Trait1 As String = "Stealth - Dex - Can move or perform actions undetectable"
+        Dim Trait2 As String = "Athletics - Str - Can use heavy objects and focus strength to hit harder"
+        Dim Trait3 As String = "Intimidation - Con - Can command and extort people"
+    End Sub
+
     Public Sub Skill_TextboxChanged(sender As Object, e As EventArgs) Handles Skill.TextChanged
         Try
             Dim response As String = AddDice(Skill.Text)
@@ -60,6 +112,8 @@
             Exit Try
         End Try
     End Sub
+
+
 
     Public Sub TwentyDice_Click(sender As Object, e As EventArgs) Handles TwentyDice.Click
         resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Skill.Text)
@@ -71,8 +125,10 @@
         RichTextBox1.Text = resultBuilder
     End Sub
 
-    Private Function AddDice(Optional ByVal Skill As Integer = 1, Optional ByVal TwentyDice As Integer = 0, Optional ByVal SixDie As Integer = 0) As Integer
-        Dim TotalAmount As Integer = CInt(Skill) + TwentyDice + SixDie
+
+
+    Private Function AddDice(Optional ByVal TwentyDice As Integer = 0, Optional ByVal SixDie As Integer = 0) As Integer
+        Dim TotalAmount As Integer =TwentyDice + SixDie
         Return TotalAmount
     End Function
 
@@ -109,4 +165,3 @@
 #End Region
 
 End Class
-
