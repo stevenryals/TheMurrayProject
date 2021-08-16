@@ -51,56 +51,18 @@
 
 #Region "D&D Characters and dice"
 
-    Public Class character
-        Public strength As Integer
-        Public dexterity As Integer
-        Public constitution As Integer
-        Public intelligence As Integer
-        Public wisdom As Integer
-        Public charisma As Integer
-    End Class
+    'Store player objects
+    Dim Character1 As Character
+    Dim Character2 As Character
+    Dim Character3 As Character
+    Dim Index As Integer = 1
 
-    Private Sub Character1Stats()
-        Dim MattCharacter As character
-        MattCharacter = New character With {
-            .strength = 6,
-            .dexterity = 6,
-            .constitution = 10,
-            .intelligence = 17,
-            .wisdom = 17,
-            .charisma = 17
-            }
-        Dim Trait1 As String = "Animal Handling - Int - can command animals"
-        Dim Trait2 As String = "Perception - Wis - See in dim rooms, see far away objects, and see hidden items."
-    End Sub
+    Private Sub Form1_Load(Sender As Object, e As EventArgs) Handles MyBase.Load
+        'Create Character instances
+        Character1 = New Character()
+        Character2 = New Character()
+        Character3 = New Character()
 
-    Private Sub Character2Stats()
-        Dim RachelCharacter As character
-        RachelCharacter = New character With {
-            .strength = 10,
-            .dexterity = 15,
-            .constitution = 18,
-            .intelligence = 10,
-            .wisdom = 12,
-            .charisma = 8
-        }
-        Dim Trait1 As String = "Acrobatics - Dex - Scale obstacles, evade in combat"
-        Dim Trait2 As String = "Performance - Chr - Persuade groups of people"
-    End Sub
-
-    Private Sub Character3Stats()
-        Dim MarissaCharacter As character
-        MarissaCharacter = New character With {
-            .strength = 18,
-            .dexterity = 13,
-            .constitution = 15,
-            .intelligence = 9,
-            .wisdom = 9,
-            .charisma = 9
-        }
-        Dim Trait1 As String = "Stealth - Dex - Can move or perform actions undetectable"
-        Dim Trait2 As String = "Athletics - Str - Can use heavy objects and focus strength to hit harder"
-        Dim Trait3 As String = "Intimidation - Con - Can command and extort people"
     End Sub
 
     Public Sub Skill_TextboxChanged(sender As Object, e As EventArgs) Handles Skill.TextChanged
@@ -128,9 +90,142 @@
 
 
     Private Function AddDice(Optional ByVal TwentyDice As Integer = 0, Optional ByVal SixDie As Integer = 0) As Integer
-        Dim TotalAmount As Integer =TwentyDice + SixDie
+        Dim TotalAmount As Integer = TwentyDice + SixDie
         Return TotalAmount
     End Function
+
+    Private Sub ButtonCreateCharacter_Click(sender As Object, e As EventArgs) Handles ButtonCreateCharacter.Click
+        Call SetCharacter()
+        'clear form
+        NameBox.Text = ""
+        AttributeBox.Text = ""
+        StrengthBox.Text = ""
+        DexterityBox.Text = ""
+        ConstitutionBox.Text = ""
+        IntelligenceBox.Text = ""
+        WisdomBox.Text = ""
+        CharismaBox.Text = ""
+
+        Index += 1
+    End Sub
+
+    Private Sub SetCharacter()
+        'index counts characters entered
+        If Index = 1 Then
+            Character1.Name = NameBox.Text
+            Character1.Attributes = AttributeBox.Text
+            Character1.Strength = CInt(StrengthBox.Text)
+            Character1.Dexterity = CInt(DexterityBox.Text)
+            Character1.Constitution = CInt(ConstitutionBox.Text)
+            Character1.Intelligence = CInt(IntelligenceBox.Text)
+            Character1.Wisdom = CInt(WisdomBox.Text)
+            Character1.Charisma = CInt(CharismaBox.Text)
+
+        ElseIf Index = 2 Then
+            Character2.Name = NameBox.Text
+            Character2.Attributes = AttributeBox.Text
+            Character2.Strength = CInt(StrengthBox.Text)
+            Character2.Dexterity = CInt(DexterityBox.Text)
+            Character2.Constitution = CInt(ConstitutionBox.Text)
+            Character2.Intelligence = CInt(IntelligenceBox.Text)
+            Character2.Wisdom = CInt(WisdomBox.Text)
+            Character2.Charisma = CInt(CharismaBox.Text)
+
+        Else
+            Character3.Name = NameBox.Text
+            Character3.Attributes = AttributeBox.Text
+            Character3.Strength = CInt(StrengthBox.Text)
+            Character3.Dexterity = CInt(DexterityBox.Text)
+            Character3.Constitution = CInt(ConstitutionBox.Text)
+            Character3.Intelligence = CInt(IntelligenceBox.Text)
+            Character3.Wisdom = CInt(WisdomBox.Text)
+            Character3.Charisma = CInt(CharismaBox.Text)
+        End If
+    End Sub
+
+    Private Sub NameBox_TextChanged(sender As Object, e As EventArgs) Handles NameBox.TextChanged
+
+    End Sub
+
+    Private Sub AttributeBox_TextChanged(sender As Object, e As EventArgs) Handles AttributeBox.TextChanged
+
+    End Sub
+
+    Private Sub StrengthBox_TextChanged(sender As Object, e As EventArgs) Handles StrengthBox.TextChanged
+
+    End Sub
+
+    Private Sub DexterityBox_TextChanged(sender As Object, e As EventArgs) Handles DexterityBox.TextChanged
+
+    End Sub
+
+    Private Sub ConstitutionBox_TextChanged(sender As Object, e As EventArgs) Handles ConstitutionBox.TextChanged
+
+    End Sub
+
+    Private Sub IntelligenceBox_TextChanged(sender As Object, e As EventArgs) Handles IntelligenceBox.TextChanged
+
+    End Sub
+
+    Private Sub WisdomBox_TextChanged(sender As Object, e As EventArgs) Handles WisdomBox.TextChanged
+
+    End Sub
+
+    Private Sub CharismaBox_TextChanged(sender As Object, e As EventArgs) Handles CharismaBox.TextChanged
+
+    End Sub
+
+    Private Sub ButtonClear_Click(sender As Object, e As EventArgs) Handles ButtonClear.Click
+
+    End Sub
+
+    Private Sub ButtonDisplayCharacter_Click(sender As Object, e As EventArgs) Handles ButtonDisplayCharacter1.Click
+
+        Dim btn As Button = CType(sender, Button)
+        Call DisplayCharacter(btn.Tag)
+
+    End Sub
+
+    Private Sub DisplayCharacter(i As Integer)
+        'create string to display character info
+        Dim StrToString As String = ""
+
+        'set string to desired output
+        If i = 0 Then
+            StrToString = Character1.Name & " " _
+                & Character1.Attributes _
+                & " str " & Character1.Strength _
+                & " dex " & Character1.Dexterity _
+                & " con " & Character1.Constitution _
+                & " int " & Character1.Intelligence _
+                & " wis " & Character1.Wisdom _
+                & " chr " & Character1.Charisma
+        ElseIf i = 1 Then
+            StrToString = Character3.Name & " " _
+                & Character2.Attributes _
+                & " str " & Character2.Strength _
+                & " dex " & Character2.Dexterity _
+                & " con " & Character2.Constitution _
+                & " int " & Character2.Intelligence _
+                & " wis " & Character2.Wisdom _
+                & " chr " & Character2.Charisma
+        Else
+            StrToString = Character3.Name & " " _
+                & Character3.Attributes _
+                & " str " & Character3.Strength _
+                & " dex " & Character3.Dexterity _
+                & " con " & Character3.Constitution _
+                & " int " & Character3.Intelligence _
+                & " wis " & Character3.Wisdom _
+                & " chr " & Character3.Charisma
+        End If
+
+        ListBox1.Items.Add(StrToString)
+    End Sub
+
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+
+    End Sub
 
 #End Region
 

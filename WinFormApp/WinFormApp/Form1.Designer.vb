@@ -45,7 +45,26 @@ Partial Class Form1
         Me.Skill = New System.Windows.Forms.TextBox()
         Me.TwentyDice = New System.Windows.Forms.Button()
         Me.SixDice = New System.Windows.Forms.Button()
-        Me.CheckedListBox1 = New System.Windows.Forms.CheckedListBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.StrengthBox = New System.Windows.Forms.TextBox()
+        Me.DexterityBox = New System.Windows.Forms.TextBox()
+        Me.ConstitutionBox = New System.Windows.Forms.TextBox()
+        Me.IntelligenceBox = New System.Windows.Forms.TextBox()
+        Me.WisdomBox = New System.Windows.Forms.TextBox()
+        Me.CharismaBox = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.NameBox = New System.Windows.Forms.TextBox()
+        Me.AttributeBox = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.ButtonCreateCharacter = New System.Windows.Forms.Button()
+        Me.ButtonClear = New System.Windows.Forms.Button()
+        Me.ButtonDisplayCharacter1 = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -180,7 +199,7 @@ Partial Class Form1
         '
         'Uniswap
         '
-        Me.Uniswap.Location = New System.Drawing.Point(812, 27)
+        Me.Uniswap.Location = New System.Drawing.Point(653, 11)
         Me.Uniswap.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Uniswap.Name = "Uniswap"
         Me.Uniswap.Size = New System.Drawing.Size(135, 23)
@@ -207,7 +226,7 @@ Partial Class Form1
         '
         'Sushiswap
         '
-        Me.Sushiswap.Location = New System.Drawing.Point(812, 56)
+        Me.Sushiswap.Location = New System.Drawing.Point(653, 39)
         Me.Sushiswap.Name = "Sushiswap"
         Me.Sushiswap.Size = New System.Drawing.Size(135, 23)
         Me.Sushiswap.TabIndex = 17
@@ -216,7 +235,7 @@ Partial Class Form1
         '
         'OneInch
         '
-        Me.OneInch.Location = New System.Drawing.Point(812, 86)
+        Me.OneInch.Location = New System.Drawing.Point(653, 68)
         Me.OneInch.Name = "OneInch"
         Me.OneInch.Size = New System.Drawing.Size(135, 23)
         Me.OneInch.TabIndex = 18
@@ -227,7 +246,7 @@ Partial Class Form1
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(1214, 148)
+        Me.Label6.Location = New System.Drawing.Point(1350, 281)
         Me.Label6.MinimumSize = New System.Drawing.Size(100, 20)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(100, 25)
@@ -236,7 +255,7 @@ Partial Class Form1
         '
         'Skill
         '
-        Me.Skill.Location = New System.Drawing.Point(1278, 148)
+        Me.Skill.Location = New System.Drawing.Point(1355, 309)
         Me.Skill.Name = "Skill"
         Me.Skill.Size = New System.Drawing.Size(70, 22)
         Me.Skill.TabIndex = 23
@@ -244,7 +263,7 @@ Partial Class Form1
         'TwentyDice
         '
         Me.TwentyDice.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TwentyDice.Location = New System.Drawing.Point(1084, 176)
+        Me.TwentyDice.Location = New System.Drawing.Point(987, 404)
         Me.TwentyDice.Name = "TwentyDice"
         Me.TwentyDice.Size = New System.Drawing.Size(129, 37)
         Me.TwentyDice.TabIndex = 27
@@ -254,27 +273,204 @@ Partial Class Form1
         'SixDice
         '
         Me.SixDice.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SixDice.Location = New System.Drawing.Point(1219, 176)
+        Me.SixDice.Location = New System.Drawing.Point(1122, 404)
         Me.SixDice.Name = "SixDice"
         Me.SixDice.Size = New System.Drawing.Size(129, 37)
         Me.SixDice.TabIndex = 28
         Me.SixDice.Text = "6 Die"
         Me.SixDice.UseVisualStyleBackColor = True
         '
-        'CheckedListBox1
+        'Label7
         '
-        Me.CheckedListBox1.FormattingEnabled = True
-        Me.CheckedListBox1.Location = New System.Drawing.Point(1084, 86)
-        Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(120, 89)
-        Me.CheckedListBox1.TabIndex = 29
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(1071, 101)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(62, 17)
+        Me.Label7.TabIndex = 29
+        Me.Label7.Text = "Strength"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(1071, 129)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(63, 17)
+        Me.Label8.TabIndex = 30
+        Me.Label8.Text = "Dexterity"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(1071, 157)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(82, 17)
+        Me.Label9.TabIndex = 31
+        Me.Label9.Text = "Constitution"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(1071, 185)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(79, 17)
+        Me.Label10.TabIndex = 32
+        Me.Label10.Text = "Intelligence"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(1071, 213)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(58, 17)
+        Me.Label11.TabIndex = 33
+        Me.Label11.Text = "Wisdom"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(1071, 241)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(67, 17)
+        Me.Label12.TabIndex = 34
+        Me.Label12.Text = "Charisma"
+        '
+        'StrengthBox
+        '
+        Me.StrengthBox.Location = New System.Drawing.Point(1167, 96)
+        Me.StrengthBox.Name = "StrengthBox"
+        Me.StrengthBox.Size = New System.Drawing.Size(100, 22)
+        Me.StrengthBox.TabIndex = 35
+        '
+        'DexterityBox
+        '
+        Me.DexterityBox.Location = New System.Drawing.Point(1167, 124)
+        Me.DexterityBox.Name = "DexterityBox"
+        Me.DexterityBox.Size = New System.Drawing.Size(100, 22)
+        Me.DexterityBox.TabIndex = 36
+        '
+        'ConstitutionBox
+        '
+        Me.ConstitutionBox.Location = New System.Drawing.Point(1167, 152)
+        Me.ConstitutionBox.Name = "ConstitutionBox"
+        Me.ConstitutionBox.Size = New System.Drawing.Size(100, 22)
+        Me.ConstitutionBox.TabIndex = 37
+        '
+        'IntelligenceBox
+        '
+        Me.IntelligenceBox.Location = New System.Drawing.Point(1167, 180)
+        Me.IntelligenceBox.Name = "IntelligenceBox"
+        Me.IntelligenceBox.Size = New System.Drawing.Size(100, 22)
+        Me.IntelligenceBox.TabIndex = 38
+        '
+        'WisdomBox
+        '
+        Me.WisdomBox.Location = New System.Drawing.Point(1167, 208)
+        Me.WisdomBox.Name = "WisdomBox"
+        Me.WisdomBox.Size = New System.Drawing.Size(100, 22)
+        Me.WisdomBox.TabIndex = 39
+        '
+        'CharismaBox
+        '
+        Me.CharismaBox.Location = New System.Drawing.Point(1167, 236)
+        Me.CharismaBox.Name = "CharismaBox"
+        Me.CharismaBox.Size = New System.Drawing.Size(100, 22)
+        Me.CharismaBox.TabIndex = 40
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(1071, 44)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(45, 17)
+        Me.Label13.TabIndex = 41
+        Me.Label13.Text = "Name"
+        '
+        'NameBox
+        '
+        Me.NameBox.Location = New System.Drawing.Point(1167, 39)
+        Me.NameBox.Name = "NameBox"
+        Me.NameBox.Size = New System.Drawing.Size(100, 22)
+        Me.NameBox.TabIndex = 42
+        '
+        'AttributeBox
+        '
+        Me.AttributeBox.Location = New System.Drawing.Point(1167, 68)
+        Me.AttributeBox.Name = "AttributeBox"
+        Me.AttributeBox.Size = New System.Drawing.Size(100, 22)
+        Me.AttributeBox.TabIndex = 43
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(1071, 73)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(61, 17)
+        Me.Label14.TabIndex = 44
+        Me.Label14.Text = "Attribute"
+        '
+        'ButtonCreateCharacter
+        '
+        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(1074, 264)
+        Me.ButtonCreateCharacter.Name = "ButtonCreateCharacter"
+        Me.ButtonCreateCharacter.Size = New System.Drawing.Size(96, 64)
+        Me.ButtonCreateCharacter.TabIndex = 45
+        Me.ButtonCreateCharacter.Text = "Create Character"
+        Me.ButtonCreateCharacter.UseVisualStyleBackColor = True
+        '
+        'ButtonClear
+        '
+        Me.ButtonClear.Location = New System.Drawing.Point(1122, 334)
+        Me.ButtonClear.Name = "ButtonClear"
+        Me.ButtonClear.Size = New System.Drawing.Size(97, 64)
+        Me.ButtonClear.TabIndex = 46
+        Me.ButtonClear.Text = "Clear"
+        Me.ButtonClear.UseVisualStyleBackColor = True
+        '
+        'ButtonDisplayCharacter1
+        '
+        Me.ButtonDisplayCharacter1.Location = New System.Drawing.Point(987, 447)
+        Me.ButtonDisplayCharacter1.Name = "ButtonDisplayCharacter1"
+        Me.ButtonDisplayCharacter1.Size = New System.Drawing.Size(96, 64)
+        Me.ButtonDisplayCharacter1.TabIndex = 47
+        Me.ButtonDisplayCharacter1.Text = "Display Character 1"
+        Me.ButtonDisplayCharacter1.UseVisualStyleBackColor = True
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 16
+        Me.ListBox1.Location = New System.Drawing.Point(653, 101)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(412, 180)
+        Me.ListBox1.TabIndex = 48
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1496, 555)
-        Me.Controls.Add(Me.CheckedListBox1)
+        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.ButtonDisplayCharacter1)
+        Me.Controls.Add(Me.ButtonClear)
+        Me.Controls.Add(Me.ButtonCreateCharacter)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.AttributeBox)
+        Me.Controls.Add(Me.NameBox)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.CharismaBox)
+        Me.Controls.Add(Me.WisdomBox)
+        Me.Controls.Add(Me.IntelligenceBox)
+        Me.Controls.Add(Me.ConstitutionBox)
+        Me.Controls.Add(Me.DexterityBox)
+        Me.Controls.Add(Me.StrengthBox)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.SixDice)
         Me.Controls.Add(Me.TwentyDice)
         Me.Controls.Add(Me.Skill)
@@ -329,5 +525,24 @@ Partial Class Form1
     Friend WithEvents Skill As TextBox
     Friend WithEvents TwentyDice As Button
     Friend WithEvents SixDice As Button
-    Friend WithEvents CheckedListBox1 As CheckedListBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents StrengthBox As TextBox
+    Friend WithEvents DexterityBox As TextBox
+    Friend WithEvents ConstitutionBox As TextBox
+    Friend WithEvents IntelligenceBox As TextBox
+    Friend WithEvents WisdomBox As TextBox
+    Friend WithEvents CharismaBox As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents NameBox As TextBox
+    Friend WithEvents AttributeBox As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents ButtonCreateCharacter As Button
+    Friend WithEvents ButtonClear As Button
+    Friend WithEvents ButtonDisplayCharacter1 As Button
+    Friend WithEvents ListBox1 As ListBox
 End Class
