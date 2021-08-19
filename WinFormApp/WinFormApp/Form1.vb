@@ -176,10 +176,12 @@
     End Sub
 
     Private Sub ButtonClear_Click(sender As Object, e As EventArgs) Handles ButtonClear.Click
-
+        'Clear ListBox
+        ListBox1.Items.Clear()
+        ListBox1.Text = ""
     End Sub
 
-    Private Sub ButtonDisplayCharacter_Click(sender As Object, e As EventArgs) Handles ButtonDisplayCharacter1.Click
+    Private Sub ButtonDisplayCharacter_Click(sender As Object, e As EventArgs) Handles ButtonDisplayCharacter1.Click, ButtonDisplayCharacter2.Click, ButtonDisplayCharacter3.Click
 
         Dim btn As Button = CType(sender, Button)
         Call DisplayCharacter(btn.Tag)
@@ -194,30 +196,30 @@
         If i = 0 Then
             StrToString = Character1.Name & " " _
                 & Character1.Attributes _
-                & " str " & Character1.Strength _
-                & " dex " & Character1.Dexterity _
-                & " con " & Character1.Constitution _
-                & " int " & Character1.Intelligence _
-                & " wis " & Character1.Wisdom _
-                & " chr " & Character1.Charisma
+                & " STR: " & Character1.Strength _
+                & " DEX: " & Character1.Dexterity _
+                & " CON: " & Character1.Constitution _
+                & " INT: " & Character1.Intelligence _
+                & " WIS: " & Character1.Wisdom _
+                & " CHR: " & Character1.Charisma
         ElseIf i = 1 Then
             StrToString = Character3.Name & " " _
                 & Character2.Attributes _
-                & " str " & Character2.Strength _
-                & " dex " & Character2.Dexterity _
-                & " con " & Character2.Constitution _
-                & " int " & Character2.Intelligence _
-                & " wis " & Character2.Wisdom _
-                & " chr " & Character2.Charisma
+                & " STR: " & Character2.Strength _
+                & " DEX: " & Character2.Dexterity _
+                & " CON: " & Character2.Constitution _
+                & " INT: " & Character2.Intelligence _
+                & " WIS: " & Character2.Wisdom _
+                & " CHR: " & Character2.Charisma
         Else
             StrToString = Character3.Name & " " _
                 & Character3.Attributes _
-                & " str " & Character3.Strength _
-                & " dex " & Character3.Dexterity _
-                & " con " & Character3.Constitution _
-                & " int " & Character3.Intelligence _
-                & " wis " & Character3.Wisdom _
-                & " chr " & Character3.Charisma
+                & " STR: " & Character3.Strength _
+                & " DEX: " & Character3.Dexterity _
+                & " CON: " & Character3.Constitution _
+                & " INT: " & Character3.Intelligence _
+                & " WIS: " & Character3.Wisdom _
+                & " CHR: " & Character3.Charisma
         End If
 
         ListBox1.Items.Add(StrToString)

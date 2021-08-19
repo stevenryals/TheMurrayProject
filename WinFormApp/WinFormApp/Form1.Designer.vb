@@ -65,6 +65,8 @@ Partial Class Form1
         Me.ButtonClear = New System.Windows.Forms.Button()
         Me.ButtonDisplayCharacter1 = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.ButtonDisplayCharacter3 = New System.Windows.Forms.Button()
+        Me.ButtonDisplayCharacter2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -432,6 +434,7 @@ Partial Class Form1
         Me.ButtonDisplayCharacter1.Name = "ButtonDisplayCharacter1"
         Me.ButtonDisplayCharacter1.Size = New System.Drawing.Size(96, 64)
         Me.ButtonDisplayCharacter1.TabIndex = 47
+        Me.ButtonDisplayCharacter1.Tag = "0"
         Me.ButtonDisplayCharacter1.Text = "Display Character 1"
         Me.ButtonDisplayCharacter1.UseVisualStyleBackColor = True
         '
@@ -444,6 +447,26 @@ Partial Class Form1
         Me.ListBox1.Size = New System.Drawing.Size(412, 180)
         Me.ListBox1.TabIndex = 48
         '
+        'ButtonDisplayCharacter3
+        '
+        Me.ButtonDisplayCharacter3.Location = New System.Drawing.Point(1191, 447)
+        Me.ButtonDisplayCharacter3.Name = "ButtonDisplayCharacter3"
+        Me.ButtonDisplayCharacter3.Size = New System.Drawing.Size(96, 64)
+        Me.ButtonDisplayCharacter3.TabIndex = 49
+        Me.ButtonDisplayCharacter3.Tag = "2"
+        Me.ButtonDisplayCharacter3.Text = "Display Character 3"
+        Me.ButtonDisplayCharacter3.UseVisualStyleBackColor = True
+        '
+        'ButtonDisplayCharacter2
+        '
+        Me.ButtonDisplayCharacter2.Location = New System.Drawing.Point(1089, 447)
+        Me.ButtonDisplayCharacter2.Name = "ButtonDisplayCharacter2"
+        Me.ButtonDisplayCharacter2.Size = New System.Drawing.Size(96, 64)
+        Me.ButtonDisplayCharacter2.TabIndex = 50
+        Me.ButtonDisplayCharacter2.Tag = "1"
+        Me.ButtonDisplayCharacter2.Text = "Display Character 2"
+        Me.ButtonDisplayCharacter2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -451,6 +474,8 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1496, 555)
+        Me.Controls.Add(Me.ButtonDisplayCharacter2)
+        Me.Controls.Add(Me.ButtonDisplayCharacter3)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.ButtonDisplayCharacter1)
         Me.Controls.Add(Me.ButtonClear)
@@ -545,4 +570,6 @@ Partial Class Form1
     Friend WithEvents ButtonClear As Button
     Friend WithEvents ButtonDisplayCharacter1 As Button
     Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents ButtonDisplayCharacter3 As Button
+    Friend WithEvents ButtonDisplayCharacter2 As Button
 End Class
