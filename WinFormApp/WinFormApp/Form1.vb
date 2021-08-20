@@ -51,6 +51,8 @@
 
 #Region "D&D Characters and dice"
 
+
+
     'Store player objects
     Dim Character1 As Character
     Dim Character2 As Character
@@ -143,38 +145,6 @@
         End If
     End Sub
 
-    Private Sub NameBox_TextChanged(sender As Object, e As EventArgs) Handles NameBox.TextChanged
-
-    End Sub
-
-    Private Sub AttributeBox_TextChanged(sender As Object, e As EventArgs) Handles AttributeBox.TextChanged
-
-    End Sub
-
-    Private Sub StrengthBox_TextChanged(sender As Object, e As EventArgs) Handles StrengthBox.TextChanged
-
-    End Sub
-
-    Private Sub DexterityBox_TextChanged(sender As Object, e As EventArgs) Handles DexterityBox.TextChanged
-
-    End Sub
-
-    Private Sub ConstitutionBox_TextChanged(sender As Object, e As EventArgs) Handles ConstitutionBox.TextChanged
-
-    End Sub
-
-    Private Sub IntelligenceBox_TextChanged(sender As Object, e As EventArgs) Handles IntelligenceBox.TextChanged
-
-    End Sub
-
-    Private Sub WisdomBox_TextChanged(sender As Object, e As EventArgs) Handles WisdomBox.TextChanged
-
-    End Sub
-
-    Private Sub CharismaBox_TextChanged(sender As Object, e As EventArgs) Handles CharismaBox.TextChanged
-
-    End Sub
-
     Private Sub ButtonClear_Click(sender As Object, e As EventArgs) Handles ButtonClear.Click
         'Clear ListBox
         ListBox1.Items.Clear()
@@ -191,43 +161,51 @@
     Private Sub DisplayCharacter(i As Integer)
         'create string to display character info
         Dim StrToString As String = ""
+        Dim StrToString2 As String = ""
 
         'set string to desired output
         If i = 0 Then
-            StrToString = Character1.Name & " " _
-                & Character1.Attributes _
-                & " STR: " & Character1.Strength _
-                & " DEX: " & Character1.Dexterity _
-                & " CON: " & Character1.Constitution _
-                & " INT: " & Character1.Intelligence _
-                & " WIS: " & Character1.Wisdom _
-                & " CHR: " & Character1.Charisma
+            StrToString = "1. " & Character1.Name & ":  " _
+                & Character1.Attributes
+            StrToString2 = "     STR: " & Character1.Strength _
+                & "  DEX: " & Character1.Dexterity _
+                & "  CON: " & Character1.Constitution _
+                & "  INT: " & Character1.Intelligence _
+                & "  WIS: " & Character1.Wisdom _
+                & "  CHR: " & Character1.Charisma
         ElseIf i = 1 Then
-            StrToString = Character3.Name & " " _
-                & Character2.Attributes _
-                & " STR: " & Character2.Strength _
-                & " DEX: " & Character2.Dexterity _
-                & " CON: " & Character2.Constitution _
-                & " INT: " & Character2.Intelligence _
-                & " WIS: " & Character2.Wisdom _
-                & " CHR: " & Character2.Charisma
+            StrToString = "2. " & Character2.Name & ":  " _
+                & Character2.Attributes
+            StrToString2 = "     STR: " & Character2.Strength _
+                & "  DEX: " & Character2.Dexterity _
+                & "  CON: " & Character2.Constitution _
+                & "  INT: " & Character2.Intelligence _
+                & "  WIS: " & Character2.Wisdom _
+                & "  CHR: " & Character2.Charisma
         Else
-            StrToString = Character3.Name & " " _
-                & Character3.Attributes _
-                & " STR: " & Character3.Strength _
-                & " DEX: " & Character3.Dexterity _
-                & " CON: " & Character3.Constitution _
-                & " INT: " & Character3.Intelligence _
-                & " WIS: " & Character3.Wisdom _
-                & " CHR: " & Character3.Charisma
+            StrToString = "3. " & Character3.Name & ":  " _
+                & Character3.Attributes
+            StrToString2 = "     STR: " & Character3.Strength _
+                & "  DEX: " & Character3.Dexterity _
+                & "  CON: " & Character3.Constitution _
+                & "  INT: " & Character3.Intelligence _
+                & "  WIS: " & Character3.Wisdom _
+                & "  CHR: " & Character3.Charisma
         End If
 
         ListBox1.Items.Add(StrToString)
+        ListBox1.Items.Add(StrToString2)
     End Sub
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+    Private Sub SkillRoller_Click(sender As Object, e As EventArgs) Handles StrRoller.Click, DexRoller.Click, ConRoller.Click, IntRoller.Click, WisRoller.Click, ChrRoller.Click
 
     End Sub
+
+    Private Sub CharacterRadio_Click(sender As Object, e As EventArgs) Handles Character1Radio.Click, Character2Radio.Click, Character3Radio.Click
+        Dim btn As Button = CType(sender, Button)
+    End Sub
+
+
 
 #End Region
 
