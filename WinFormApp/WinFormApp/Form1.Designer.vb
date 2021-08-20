@@ -41,8 +41,6 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Sushiswap = New System.Windows.Forms.Button()
         Me.OneInch = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Skill = New System.Windows.Forms.TextBox()
         Me.TwentyDice = New System.Windows.Forms.Button()
         Me.SixDice = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -247,26 +245,6 @@ Partial Class Form1
         Me.OneInch.TabIndex = 18
         Me.OneInch.Text = "1inch"
         Me.OneInch.UseVisualStyleBackColor = True
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(1012, 228)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.MinimumSize = New System.Drawing.Size(75, 16)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(75, 20)
-        Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Skill"
-        '
-        'Skill
-        '
-        Me.Skill.Location = New System.Drawing.Point(1016, 251)
-        Me.Skill.Margin = New System.Windows.Forms.Padding(2)
-        Me.Skill.Name = "Skill"
-        Me.Skill.Size = New System.Drawing.Size(54, 20)
-        Me.Skill.TabIndex = 23
         '
         'TwentyDice
         '
@@ -504,6 +482,7 @@ Partial Class Form1
         Me.ChrRoller.Name = "ChrRoller"
         Me.ChrRoller.Size = New System.Drawing.Size(97, 21)
         Me.ChrRoller.TabIndex = 51
+        Me.ChrRoller.Tag = "5"
         Me.ChrRoller.Text = "Chr"
         Me.ChrRoller.UseVisualStyleBackColor = True
         '
@@ -515,6 +494,7 @@ Partial Class Form1
         Me.WisRoller.Name = "WisRoller"
         Me.WisRoller.Size = New System.Drawing.Size(97, 21)
         Me.WisRoller.TabIndex = 52
+        Me.WisRoller.Tag = "4"
         Me.WisRoller.Text = "Wis"
         Me.WisRoller.UseVisualStyleBackColor = True
         '
@@ -526,6 +506,7 @@ Partial Class Form1
         Me.IntRoller.Name = "IntRoller"
         Me.IntRoller.Size = New System.Drawing.Size(97, 21)
         Me.IntRoller.TabIndex = 53
+        Me.IntRoller.Tag = "3"
         Me.IntRoller.Text = "Int"
         Me.IntRoller.UseVisualStyleBackColor = True
         '
@@ -537,6 +518,7 @@ Partial Class Form1
         Me.ConRoller.Name = "ConRoller"
         Me.ConRoller.Size = New System.Drawing.Size(97, 21)
         Me.ConRoller.TabIndex = 54
+        Me.ConRoller.Tag = "2"
         Me.ConRoller.Text = "Con"
         Me.ConRoller.UseVisualStyleBackColor = True
         '
@@ -548,6 +530,7 @@ Partial Class Form1
         Me.DexRoller.Name = "DexRoller"
         Me.DexRoller.Size = New System.Drawing.Size(97, 21)
         Me.DexRoller.TabIndex = 55
+        Me.DexRoller.Tag = "1"
         Me.DexRoller.Text = "Dex"
         Me.DexRoller.UseVisualStyleBackColor = True
         '
@@ -559,6 +542,7 @@ Partial Class Form1
         Me.StrRoller.Name = "StrRoller"
         Me.StrRoller.Size = New System.Drawing.Size(97, 21)
         Me.StrRoller.TabIndex = 56
+        Me.StrRoller.Tag = "0"
         Me.StrRoller.Text = "Str"
         Me.StrRoller.UseVisualStyleBackColor = True
         '
@@ -648,8 +632,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.SixDice)
         Me.Controls.Add(Me.TwentyDice)
-        Me.Controls.Add(Me.Skill)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.OneInch)
         Me.Controls.Add(Me.Sushiswap)
         Me.Controls.Add(Me.Label5)
@@ -698,8 +680,6 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Sushiswap As Button
     Friend WithEvents OneInch As Button
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Skill As TextBox
     Friend WithEvents TwentyDice As Button
     Friend WithEvents SixDice As Button
     Friend WithEvents Label7 As Label
