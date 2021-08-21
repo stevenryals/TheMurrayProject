@@ -51,6 +51,18 @@
 
 #Region "D&D Player"
 
+    Public Class Character
+
+        Public Name As String
+        Public Attributes As String
+        Public Strength As Integer
+        Public Dexterity As Integer
+        Public Constitution As Integer
+        Public Intelligence As Integer
+        Public Wisdom As Integer
+        Public Charisma As Integer
+
+    End Class
 
 
     'Store player objects
@@ -69,7 +81,7 @@
 
     Private Sub ButtonCreateCharacter_Click(sender As Object, e As EventArgs) Handles ButtonCreateCharacter.Click
         Call SetCharacter()
-        'clear form
+        'blank form
         NameBox.Text = ""
         AttributeBox.Text = ""
         StrengthBox.Text = ""
@@ -82,6 +94,79 @@
         Index += 1
     End Sub
 
+    'Private Sub ButtonResetCharacter_Click(sender As Object, e As EventArgs) Handles ButtonResetCharacter.Click, Character1Radio.CheckedChanged, Character2Radio.CheckedChanged, Character3Radio.CheckedChanged
+    'will clear the form
+    'Call SetCharacter()
+    'Dim radio As Integer
+    'Try
+    'If Character1Radio.Checked = True Then
+    '           radio = 0
+    'ElseIf Character2Radio.Checked = True Then
+    '           radio = 1
+    'Else
+    '           radio = 2
+    'End If
+    '       NameBox.Text = ""
+    '      AttributeBox.Text = ""
+    '     StrengthBox.Text = ""
+    '    DexterityBox.Text = ""
+    '   ConstitutionBox.Text = ""
+    '  IntelligenceBox.Text = ""
+    ' WisdomBox.Text = ""
+    'CharismaBox.Text = ""
+    'Exit Try
+    'Catch ex As InvalidCastException
+    'End Try
+    'End Sub
+
+    Private Sub CharacterResetter(i As Integer, j As Integer)
+
+        ' 2 params, 1st is for radio button of 3 characters, 2nd is which skill button is being pressed
+        If i = 0 Then
+            If j = 0 Then
+                Character1.Strength = 0
+            ElseIf j = 1 Then
+                Character1.Dexterity = 0
+            ElseIf j = 2 Then
+                Character1.Constitution = 0
+            ElseIf j = 3 Then
+                Character1.Intelligence = 0
+            ElseIf j = 4 Then
+                Character1.Wisdom = 0
+            ElseIf j = 5 Then
+                Character1.Charisma = 0
+            End If
+        ElseIf i = 1 Then
+            If j = 0 Then
+                Character1.Strength = 0
+            ElseIf j = 1 Then
+                Character2.Dexterity = 0
+            ElseIf j = 2 Then
+                Character2.Constitution = 0
+            ElseIf j = 3 Then
+                Character2.Intelligence = 0
+            ElseIf j = 4 Then
+                Character2.Wisdom = 0
+            ElseIf j = 5 Then
+                Character2.Charisma = 0
+            End If
+        Else
+            If j = 0 Then
+                Character3.Strength = 0
+            ElseIf j = 1 Then
+                Character3.Dexterity = 0
+            ElseIf j = 2 Then
+                Character3.Constitution = 0
+            ElseIf j = 3 Then
+                Character3.Intelligence = 0
+            ElseIf j = 4 Then
+                Character3.Wisdom = 0
+            ElseIf j = 5 Then
+                Character3.Charisma = 0
+            End If
+        End If
+
+    End Sub
     Private Sub SetCharacter()
         'index counts characters entered
         If Index = 1 Then
@@ -123,7 +208,7 @@
     End Sub
 
     Private Sub ButtonDisplayCharacter_Click(sender As Object, e As EventArgs) Handles ButtonDisplayCharacter1.Click, ButtonDisplayCharacter2.Click, ButtonDisplayCharacter3.Click
-
+        'displays character based on each buttons Tag property
         Dim btn As Button = CType(sender, Button)
         Call DisplayCharacter(btn.Tag)
 
@@ -131,12 +216,12 @@
 
     Private Sub DisplayCharacter(i As Integer)
         'create string to display character info
-        Dim StrToString As String = ""
-        Dim StrToString2 As String = ""
+        Dim StrToString1 As String
+        Dim StrToString2 As String
 
-        'set string to desired output
+        'string 1 is top row of name and attributes, 2 is second row of your stats
         If i = 0 Then
-            StrToString = "1. " & Character1.Name & ":  " _
+            StrToString1 = "1. " & Character1.Name & ":  " _
                 & Character1.Attributes
             StrToString2 = "     STR: " & Character1.Strength _
                 & "  DEX: " & Character1.Dexterity _
@@ -145,7 +230,7 @@
                 & "  WIS: " & Character1.Wisdom _
                 & "  CHR: " & Character1.Charisma
         ElseIf i = 1 Then
-            StrToString = "2. " & Character2.Name & ":  " _
+            StrToString1 = "2. " & Character2.Name & ":  " _
                 & Character2.Attributes
             StrToString2 = "     STR: " & Character2.Strength _
                 & "  DEX: " & Character2.Dexterity _
@@ -154,7 +239,7 @@
                 & "  WIS: " & Character2.Wisdom _
                 & "  CHR: " & Character2.Charisma
         Else
-            StrToString = "3. " & Character3.Name & ":  " _
+            StrToString1 = "3. " & Character3.Name & ":  " _
                 & Character3.Attributes
             StrToString2 = "     STR: " & Character3.Strength _
                 & "  DEX: " & Character3.Dexterity _
@@ -164,25 +249,16 @@
                 & "  CHR: " & Character3.Charisma
         End If
 
-        ListBox1.Items.Add(StrToString)
+        ListBox1.Items.Add(StrToString1)
         ListBox1.Items.Add(StrToString2)
     End Sub
 
-    Private Sub SkillRoller_Click(sender As Object, e As EventArgs) Handles Character1Radio.CheckedChanged, Character2Radio.CheckedChanged, Character3Radio.CheckedChanged, StrRoller.Click, DexRoller.Click, ConRoller.Click, IntRoller.Click, WisRoller.Click, ChrRoller.Click
-        Dim radio As Integer
-        Try
-            If Character1Radio.Checked = True Then
-                radio = 0
-            ElseIf Character2Radio.Checked = True Then
-                radio = 1
-            Else
-                radio = 2
-            End If
-            Dim btn As Button = CType(sender, Button)
-            Call DiceRollSkill(radio, btn.Tag)
-            Exit Try
-        Catch ex As InvalidCastException
-        End Try
+    Private Sub SkillRoller_Click(sender As Object, e As EventArgs) Handles StrRoller.Click, DexRoller.Click, ConRoller.Click, IntRoller.Click, WisRoller.Click, ChrRoller.Click
+        'takes initial input of the radiobutton checked and combines it with the Tag of the skill button clicked
+        Call WhichCharacter()
+        Dim btn As Button = CType(sender, Button)
+        Call DiceRollSkill(WhichCharacter, btn.Tag)
+
     End Sub
 
 
@@ -238,8 +314,26 @@
     End Sub
 
     Private Function AddDice(Skill) As Integer
+        'le dice
         Dim TotalAmount As Integer = New Random().Next(0, 21) + CInt(Skill)
         Return TotalAmount
+    End Function
+
+    Private Function WhichCharacter() Handles Character1Radio.CheckedChanged, Character2Radio.CheckedChanged, Character3Radio.CheckedChanged
+        'Checks for which character is selected
+        Dim radio As Integer
+        Try
+            If Character1Radio.Checked = True Then
+                radio = 0
+            ElseIf Character2Radio.Checked = True Then
+                radio = 1
+            Else
+                radio = 2
+            End If
+            Exit Try
+        Catch ex As InvalidCastException
+        End Try
+        Return radio
     End Function
 
 #End Region
