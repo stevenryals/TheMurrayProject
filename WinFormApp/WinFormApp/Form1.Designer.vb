@@ -41,8 +41,6 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Sushiswap = New System.Windows.Forms.Button()
         Me.OneInch = New System.Windows.Forms.Button()
-        Me.TwentyDice = New System.Windows.Forms.Button()
-        Me.SixDice = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -246,28 +244,6 @@ Partial Class Form1
         Me.OneInch.Text = "1inch"
         Me.OneInch.UseVisualStyleBackColor = True
         '
-        'TwentyDice
-        '
-        Me.TwentyDice.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TwentyDice.Location = New System.Drawing.Point(740, 354)
-        Me.TwentyDice.Margin = New System.Windows.Forms.Padding(2)
-        Me.TwentyDice.Name = "TwentyDice"
-        Me.TwentyDice.Size = New System.Drawing.Size(97, 30)
-        Me.TwentyDice.TabIndex = 27
-        Me.TwentyDice.Text = "20 Dice"
-        Me.TwentyDice.UseVisualStyleBackColor = True
-        '
-        'SixDice
-        '
-        Me.SixDice.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SixDice.Location = New System.Drawing.Point(842, 354)
-        Me.SixDice.Margin = New System.Windows.Forms.Padding(2)
-        Me.SixDice.Name = "SixDice"
-        Me.SixDice.Size = New System.Drawing.Size(97, 30)
-        Me.SixDice.TabIndex = 28
-        Me.SixDice.Text = "6 Die"
-        Me.SixDice.UseVisualStyleBackColor = True
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -414,7 +390,7 @@ Partial Class Form1
         '
         'ButtonCreateCharacter
         '
-        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(765, 298)
+        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(903, 216)
         Me.ButtonCreateCharacter.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonCreateCharacter.Name = "ButtonCreateCharacter"
         Me.ButtonCreateCharacter.Size = New System.Drawing.Size(72, 52)
@@ -424,7 +400,7 @@ Partial Class Form1
         '
         'ButtonClear
         '
-        Me.ButtonClear.Location = New System.Drawing.Point(842, 298)
+        Me.ButtonClear.Location = New System.Drawing.Point(979, 216)
         Me.ButtonClear.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonClear.Name = "ButtonClear"
         Me.ButtonClear.Size = New System.Drawing.Size(73, 52)
@@ -434,7 +410,7 @@ Partial Class Form1
         '
         'ButtonDisplayCharacter1
         '
-        Me.ButtonDisplayCharacter1.Location = New System.Drawing.Point(728, 388)
+        Me.ButtonDisplayCharacter1.Location = New System.Drawing.Point(863, 272)
         Me.ButtonDisplayCharacter1.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonDisplayCharacter1.Name = "ButtonDisplayCharacter1"
         Me.ButtonDisplayCharacter1.Size = New System.Drawing.Size(72, 52)
@@ -454,7 +430,7 @@ Partial Class Form1
         '
         'ButtonDisplayCharacter3
         '
-        Me.ButtonDisplayCharacter3.Location = New System.Drawing.Point(880, 388)
+        Me.ButtonDisplayCharacter3.Location = New System.Drawing.Point(1015, 272)
         Me.ButtonDisplayCharacter3.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonDisplayCharacter3.Name = "ButtonDisplayCharacter3"
         Me.ButtonDisplayCharacter3.Size = New System.Drawing.Size(72, 52)
@@ -465,7 +441,7 @@ Partial Class Form1
         '
         'ButtonDisplayCharacter2
         '
-        Me.ButtonDisplayCharacter2.Location = New System.Drawing.Point(804, 388)
+        Me.ButtonDisplayCharacter2.Location = New System.Drawing.Point(939, 272)
         Me.ButtonDisplayCharacter2.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonDisplayCharacter2.Name = "ButtonDisplayCharacter2"
         Me.ButtonDisplayCharacter2.Size = New System.Drawing.Size(72, 52)
@@ -630,8 +606,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.SixDice)
-        Me.Controls.Add(Me.TwentyDice)
         Me.Controls.Add(Me.OneInch)
         Me.Controls.Add(Me.Sushiswap)
         Me.Controls.Add(Me.Label5)
@@ -680,8 +654,6 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Sushiswap As Button
     Friend WithEvents OneInch As Button
-    Friend WithEvents TwentyDice As Button
-    Friend WithEvents SixDice As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label

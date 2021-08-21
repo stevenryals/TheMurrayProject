@@ -49,7 +49,7 @@
 
 #End Region
 
-#Region "D&D Characters and dice"
+#Region "D&D Player"
 
 
 
@@ -67,30 +67,6 @@
 
     End Sub
 
-    Public Sub Skill_TextboxChanged(sender As Object, e As EventArgs)
-        Try
-            Dim response As String = AddDice()
-            RichTextBox1.Text = response
-            Exit Try
-        Catch ex As InvalidCastException
-            Exit Try
-        End Try
-    End Sub
-
-
-
-    Public Sub TwentyDice_Click(sender As Object, e As EventArgs) Handles TwentyDice.Click
-        resultBuilder = AddDice(New Random().Next(0, 21))
-        RichTextBox1.Text = resultBuilder
-    End Sub
-
-    Public Sub SixDice_Click(sender As Object, e As EventArgs) Handles SixDice.Click
-        resultBuilder = AddDice(New Random().Next(2, 13))
-        RichTextBox1.Text = resultBuilder
-    End Sub
-
-
-
     Private Sub ButtonCreateCharacter_Click(sender As Object, e As EventArgs) Handles ButtonCreateCharacter.Click
         Call SetCharacter()
         'clear form
@@ -105,8 +81,6 @@
 
         Index += 1
     End Sub
-
-
 
     Private Sub SetCharacter()
         'index counts characters entered
@@ -194,71 +168,77 @@
         ListBox1.Items.Add(StrToString2)
     End Sub
 
-
-
-    Public Sub CharacterRadio_Click(sender As Object, e As EventArgs) Handles Character1Radio.Click, Character2Radio.Click, Character3Radio.Click
-        Dim btn As RadioButton = CType(sender, RadioButton)
-        Call DiceRollSkill(btn.Tag, )
+    Private Sub SkillRoller_Click(sender As Object, e As EventArgs) Handles Character1Radio.CheckedChanged, Character2Radio.CheckedChanged, Character3Radio.CheckedChanged, StrRoller.Click, DexRoller.Click, ConRoller.Click, IntRoller.Click, WisRoller.Click, ChrRoller.Click
+        Dim radio As Integer
+        Try
+            If Character1Radio.Checked = True Then
+                radio = 0
+            ElseIf Character2Radio.Checked = True Then
+                radio = 1
+            Else
+                radio = 2
+            End If
+            Dim btn As Button = CType(sender, Button)
+            Call DiceRollSkill(radio, btn.Tag)
+            Exit Try
+        Catch ex As InvalidCastException
+        End Try
     End Sub
 
-    Private Sub SkillRoller_Click(sender As Object, e As EventArgs) Handles StrRoller.Click, DexRoller.Click, ConRoller.Click, IntRoller.Click, WisRoller.Click, ChrRoller.Click
 
-        Dim btn As Button = CType(sender, Button)
-        Call DiceRollSkill(, btn.Tag)
-    End Sub
-
-
-    Private Sub DiceRollSkill(Optional i As Integer = 0, Optional j As Integer = 0)
+    Private Sub DiceRollSkill(i As Integer, j As Integer)
 
         ' 2 params, 1st is for radio button of 3 characters, 2nd is which skill button is being pressed
         If i = 0 Then
             If j = 0 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character1.Strength)
+                resultBuilder = AddDice(Character1.Strength)
             ElseIf j = 1 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character1.Dexterity)
+                resultBuilder = AddDice(Character1.Dexterity)
             ElseIf j = 2 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character1.Constitution)
+                resultBuilder = AddDice(Character1.Constitution)
             ElseIf j = 3 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character1.Intelligence)
+                resultBuilder = AddDice(Character1.Intelligence)
             ElseIf j = 4 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character1.Wisdom)
+                resultBuilder = AddDice(Character1.Wisdom)
             ElseIf j = 5 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character1.Charisma)
+                resultBuilder = AddDice(Character1.Charisma)
             End If
         ElseIf i = 1 Then
             If j = 0 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character2.Strength)
+                resultBuilder = AddDice(Character2.Strength)
             ElseIf j = 1 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character2.Dexterity)
+                resultBuilder = AddDice(Character2.Dexterity)
             ElseIf j = 2 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character2.Constitution)
+                resultBuilder = AddDice(Character2.Constitution)
             ElseIf j = 3 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character2.Intelligence)
+                resultBuilder = AddDice(Character2.Intelligence)
             ElseIf j = 4 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character2.Wisdom)
+                resultBuilder = AddDice(Character2.Wisdom)
             ElseIf j = 5 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character2.Charisma)
+                resultBuilder = AddDice(Character2.Charisma)
             End If
-        ElseIf i = 2 Then
+        Else
             If j = 0 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character3.Strength)
+                resultBuilder = AddDice(Character3.Strength)
             ElseIf j = 1 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character3.Dexterity)
+                resultBuilder = AddDice(Character3.Dexterity)
             ElseIf j = 2 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character3.Constitution)
+                resultBuilder = AddDice(Character3.Constitution)
             ElseIf j = 3 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character3.Intelligence)
+                resultBuilder = AddDice(Character3.Intelligence)
             ElseIf j = 4 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character3.Wisdom)
+                resultBuilder = AddDice(Character3.Wisdom)
             ElseIf j = 5 Then
-                resultBuilder = AddDice(New Random().Next(0, 21)) + CInt(Character3.Charisma)
+                resultBuilder = AddDice(Character3.Charisma)
             End If
         End If
+
+
         RichTextBox1.Text = resultBuilder
     End Sub
 
-    Private Function AddDice(Optional ByVal TwentyDice As Integer = 0, Optional ByVal SixDie As Integer = 0) As Integer
-        Dim TotalAmount As Integer = TwentyDice
+    Private Function AddDice(Skill) As Integer
+        Dim TotalAmount As Integer = New Random().Next(0, 21) + CInt(Skill)
         Return TotalAmount
     End Function
 
