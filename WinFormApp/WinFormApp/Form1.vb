@@ -253,17 +253,20 @@
         ListBox1.Items.Add(StrToString2)
     End Sub
 
-    Private Sub SkillRoller_Click(sender As Object, e As EventArgs)
+    Private Sub SkillRoller_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'takes initial input of the radiobutton checked and combines it with the Tag of the skill button clicked
         Call WhichCharacter()
-        Dim btn As Button = CType(sender, Button)
-        'Call WhichSkill(WhichCharacter, btn.Tag)
+        Call WhichSkill()
+        Call AddDice(WhichCharacter, WhichSkill)
+        Dim Roll20 = AddDice(WhichCharacter, WhichSkill)
+        'Dim btn As Button = CType(sender, Button)
+        RichTextBox1.Text = Roll20.ToString
 
     End Sub
 
 
-    Private Function WhichSkill() Handles StrengthRadio.CheckedChanged, DexterityRadio.CheckedChanged, ConstitutionRadio.CheckedChanged, IntelligenceRadio.CheckedChanged, WisdomRadio.CheckedChanged, CharismaRadio.CheckedChanged,
-        ' 2 params, 1st is for radio button of 3 characters, 2nd is which skill button is being pressed
+    Private Function WhichSkill() Handles StrengthRadio.CheckedChanged, DexterityRadio.CheckedChanged, ConstitutionRadio.CheckedChanged, IntelligenceRadio.CheckedChanged, WisdomRadio.CheckedChanged, CharismaRadio.CheckedChanged
+        ' Checks which skill is selected
         Dim button As Integer
         Try
             If StrengthRadio.Checked = True Then
@@ -287,55 +290,56 @@
 
     Private Function AddDice(i As Integer, j As Integer) As Integer
         'le dice
-        'Dim TotalAmount As Integer = New Random().Next(0, 21) + CInt(Skill)
-        'Return TotalAmount
+        Dim TotalAmount As Integer = New Random().Next(0, 21)
+
 
         If i = 0 Then
             If j = 0 Then
-                resultBuilder = AddDice(Character1.Strength)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 1 Then
-                resultBuilder = AddDice(Character1.Dexterity)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 2 Then
-                resultBuilder = AddDice(Character1.Constitution)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 3 Then
-                resultBuilder = AddDice(Character1.Intelligence)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 4 Then
-                resultBuilder = AddDice(Character1.Wisdom)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 5 Then
-                resultBuilder = AddDice(Character1.Charisma)
+                resultBuilder = TotalAmount + Character1.Strength
             End If
         ElseIf i = 1 Then
             If j = 0 Then
-                resultBuilder = AddDice(Character2.Strength)
+                resultBuilder = TotalAmount + Character2.Strength
             ElseIf j = 1 Then
-                resultBuilder = AddDice(Character2.Dexterity)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 2 Then
-                resultBuilder = AddDice(Character2.Constitution)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 3 Then
-                resultBuilder = AddDice(Character2.Intelligence)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 4 Then
-                resultBuilder = AddDice(Character2.Wisdom)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 5 Then
-                resultBuilder = AddDice(Character2.Charisma)
+                resultBuilder = TotalAmount + Character1.Strength
             End If
         Else
             If j = 0 Then
-                resultBuilder = AddDice(Character3.Strength)
+                resultBuilder = TotalAmount + Character3.Strength
             ElseIf j = 1 Then
-                resultBuilder = AddDice(Character3.Dexterity)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 2 Then
-                resultBuilder = AddDice(Character3.Constitution)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 3 Then
-                resultBuilder = AddDice(Character3.Intelligence)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 4 Then
-                resultBuilder = AddDice(Character3.Wisdom)
+                resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 5 Then
-                resultBuilder = AddDice(Character3.Charisma)
+                resultBuilder = TotalAmount + Character1.Strength
             End If
         End If
 
+        Return resultBuilder
 
-        RichTextBox1.Text = resultBuilder
+
 
     End Function
 
@@ -355,8 +359,6 @@
         End Try
         Return radio
     End Function
-
-
 
 #End Region
 

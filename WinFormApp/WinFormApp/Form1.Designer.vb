@@ -68,12 +68,13 @@ Partial Class Form1
         Me.Character2Radio = New System.Windows.Forms.RadioButton()
         Me.Character1Radio = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.CharismaRadio = New System.Windows.Forms.RadioButton()
+        Me.WisdomRadio = New System.Windows.Forms.RadioButton()
+        Me.IntelligenceRadio = New System.Windows.Forms.RadioButton()
         Me.ConstitutionRadio = New System.Windows.Forms.RadioButton()
         Me.DexterityRadio = New System.Windows.Forms.RadioButton()
         Me.StrengthRadio = New System.Windows.Forms.RadioButton()
-        Me.IntelligenceRadio = New System.Windows.Forms.RadioButton()
-        Me.WisdomRadio = New System.Windows.Forms.RadioButton()
-        Me.CharismaRadio = New System.Windows.Forms.RadioButton()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -515,6 +516,42 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "GroupBox2"
         '
+        'CharismaRadio
+        '
+        Me.CharismaRadio.AutoSize = True
+        Me.CharismaRadio.Location = New System.Drawing.Point(6, 112)
+        Me.CharismaRadio.Name = "CharismaRadio"
+        Me.CharismaRadio.Size = New System.Drawing.Size(41, 17)
+        Me.CharismaRadio.TabIndex = 5
+        Me.CharismaRadio.TabStop = True
+        Me.CharismaRadio.Tag = "1"
+        Me.CharismaRadio.Text = "Chr"
+        Me.CharismaRadio.UseVisualStyleBackColor = True
+        '
+        'WisdomRadio
+        '
+        Me.WisdomRadio.AutoSize = True
+        Me.WisdomRadio.Location = New System.Drawing.Point(6, 87)
+        Me.WisdomRadio.Name = "WisdomRadio"
+        Me.WisdomRadio.Size = New System.Drawing.Size(43, 17)
+        Me.WisdomRadio.TabIndex = 4
+        Me.WisdomRadio.TabStop = True
+        Me.WisdomRadio.Tag = "1"
+        Me.WisdomRadio.Text = "Wis"
+        Me.WisdomRadio.UseVisualStyleBackColor = True
+        '
+        'IntelligenceRadio
+        '
+        Me.IntelligenceRadio.AutoSize = True
+        Me.IntelligenceRadio.Location = New System.Drawing.Point(0, 72)
+        Me.IntelligenceRadio.Name = "IntelligenceRadio"
+        Me.IntelligenceRadio.Size = New System.Drawing.Size(37, 17)
+        Me.IntelligenceRadio.TabIndex = 3
+        Me.IntelligenceRadio.TabStop = True
+        Me.IntelligenceRadio.Tag = "1"
+        Me.IntelligenceRadio.Text = "Int"
+        Me.IntelligenceRadio.UseVisualStyleBackColor = True
+        '
         'ConstitutionRadio
         '
         Me.ConstitutionRadio.AutoSize = True
@@ -551,41 +588,14 @@ Partial Class Form1
         Me.StrengthRadio.Text = "Str"
         Me.StrengthRadio.UseVisualStyleBackColor = True
         '
-        'IntelligenceRadio
+        'Button2
         '
-        Me.IntelligenceRadio.AutoSize = True
-        Me.IntelligenceRadio.Location = New System.Drawing.Point(0, 72)
-        Me.IntelligenceRadio.Name = "IntelligenceRadio"
-        Me.IntelligenceRadio.Size = New System.Drawing.Size(37, 17)
-        Me.IntelligenceRadio.TabIndex = 3
-        Me.IntelligenceRadio.TabStop = True
-        Me.IntelligenceRadio.Tag = "1"
-        Me.IntelligenceRadio.Text = "Int"
-        Me.IntelligenceRadio.UseVisualStyleBackColor = True
-        '
-        'WisdomRadio
-        '
-        Me.WisdomRadio.AutoSize = True
-        Me.WisdomRadio.Location = New System.Drawing.Point(6, 87)
-        Me.WisdomRadio.Name = "WisdomRadio"
-        Me.WisdomRadio.Size = New System.Drawing.Size(43, 17)
-        Me.WisdomRadio.TabIndex = 4
-        Me.WisdomRadio.TabStop = True
-        Me.WisdomRadio.Tag = "1"
-        Me.WisdomRadio.Text = "Wis"
-        Me.WisdomRadio.UseVisualStyleBackColor = True
-        '
-        'CharismaRadio
-        '
-        Me.CharismaRadio.AutoSize = True
-        Me.CharismaRadio.Location = New System.Drawing.Point(6, 112)
-        Me.CharismaRadio.Name = "CharismaRadio"
-        Me.CharismaRadio.Size = New System.Drawing.Size(41, 17)
-        Me.CharismaRadio.TabIndex = 5
-        Me.CharismaRadio.TabStop = True
-        Me.CharismaRadio.Tag = "1"
-        Me.CharismaRadio.Text = "Chr"
-        Me.CharismaRadio.UseVisualStyleBackColor = True
+        Me.Button2.Location = New System.Drawing.Point(979, 117)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 59
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -593,7 +603,8 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1119, 465)
+        Me.ClientSize = New System.Drawing.Size(1101, 473)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ButtonDisplayCharacter2)
@@ -701,4 +712,5 @@ Partial Class Form1
     Friend WithEvents ConstitutionRadio As RadioButton
     Friend WithEvents DexterityRadio As RadioButton
     Friend WithEvents StrengthRadio As RadioButton
+    Friend WithEvents Button2 As Button
 End Class
