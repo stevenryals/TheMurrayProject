@@ -253,18 +253,43 @@
         ListBox1.Items.Add(StrToString2)
     End Sub
 
-    Private Sub SkillRoller_Click(sender As Object, e As EventArgs) Handles StrRoller.Click, DexRoller.Click, ConRoller.Click, IntRoller.Click, WisRoller.Click, ChrRoller.Click
+    Private Sub SkillRoller_Click(sender As Object, e As EventArgs)
         'takes initial input of the radiobutton checked and combines it with the Tag of the skill button clicked
         Call WhichCharacter()
         Dim btn As Button = CType(sender, Button)
-        Call DiceRollSkill(WhichCharacter, btn.Tag)
+        'Call WhichSkill(WhichCharacter, btn.Tag)
 
     End Sub
 
 
-    Private Sub DiceRollSkill(i As Integer, j As Integer)
-
+    Private Function WhichSkill() Handles StrengthRadio.CheckedChanged, DexterityRadio.CheckedChanged, ConstitutionRadio.CheckedChanged, IntelligenceRadio.CheckedChanged, WisdomRadio.CheckedChanged, CharismaRadio.CheckedChanged,
         ' 2 params, 1st is for radio button of 3 characters, 2nd is which skill button is being pressed
+        Dim button As Integer
+        Try
+            If StrengthRadio.Checked = True Then
+                button = 0
+            ElseIf DexterityRadio.Checked = True Then
+                button = 1
+            ElseIf ConstitutionRadio.Checked = True Then
+                button = 2
+            ElseIf IntelligenceRadio.Checked = True Then
+                button = 3
+            ElseIf WisdomRadio.Checked = True Then
+                button = 4
+            Else
+                button = 5
+            End If
+            Exit Try
+        Catch ex As InvalidCastException
+        End Try
+        Return button
+    End Function
+
+    Private Function AddDice(i As Integer, j As Integer) As Integer
+        'le dice
+        'Dim TotalAmount As Integer = New Random().Next(0, 21) + CInt(Skill)
+        'Return TotalAmount
+
         If i = 0 Then
             If j = 0 Then
                 resultBuilder = AddDice(Character1.Strength)
@@ -311,12 +336,7 @@
 
 
         RichTextBox1.Text = resultBuilder
-    End Sub
 
-    Private Function AddDice(Skill) As Integer
-        'le dice
-        Dim TotalAmount As Integer = New Random().Next(0, 21) + CInt(Skill)
-        Return TotalAmount
     End Function
 
     Private Function WhichCharacter() Handles Character1Radio.CheckedChanged, Character2Radio.CheckedChanged, Character3Radio.CheckedChanged
@@ -335,6 +355,8 @@
         End Try
         Return radio
     End Function
+
+
 
 #End Region
 

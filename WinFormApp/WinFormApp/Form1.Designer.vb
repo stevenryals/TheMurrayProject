@@ -63,17 +63,19 @@ Partial Class Form1
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.ButtonDisplayCharacter3 = New System.Windows.Forms.Button()
         Me.ButtonDisplayCharacter2 = New System.Windows.Forms.Button()
-        Me.ChrRoller = New System.Windows.Forms.Button()
-        Me.WisRoller = New System.Windows.Forms.Button()
-        Me.IntRoller = New System.Windows.Forms.Button()
-        Me.ConRoller = New System.Windows.Forms.Button()
-        Me.DexRoller = New System.Windows.Forms.Button()
-        Me.StrRoller = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Character3Radio = New System.Windows.Forms.RadioButton()
         Me.Character2Radio = New System.Windows.Forms.RadioButton()
         Me.Character1Radio = New System.Windows.Forms.RadioButton()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ConstitutionRadio = New System.Windows.Forms.RadioButton()
+        Me.DexterityRadio = New System.Windows.Forms.RadioButton()
+        Me.StrengthRadio = New System.Windows.Forms.RadioButton()
+        Me.IntelligenceRadio = New System.Windows.Forms.RadioButton()
+        Me.WisdomRadio = New System.Windows.Forms.RadioButton()
+        Me.CharismaRadio = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -450,78 +452,6 @@ Partial Class Form1
         Me.ButtonDisplayCharacter2.Text = "Display Character 2"
         Me.ButtonDisplayCharacter2.UseVisualStyleBackColor = True
         '
-        'ChrRoller
-        '
-        Me.ChrRoller.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChrRoller.Location = New System.Drawing.Point(955, 191)
-        Me.ChrRoller.Margin = New System.Windows.Forms.Padding(2)
-        Me.ChrRoller.Name = "ChrRoller"
-        Me.ChrRoller.Size = New System.Drawing.Size(97, 21)
-        Me.ChrRoller.TabIndex = 51
-        Me.ChrRoller.Tag = "5"
-        Me.ChrRoller.Text = "Chr"
-        Me.ChrRoller.UseVisualStyleBackColor = True
-        '
-        'WisRoller
-        '
-        Me.WisRoller.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WisRoller.Location = New System.Drawing.Point(955, 169)
-        Me.WisRoller.Margin = New System.Windows.Forms.Padding(2)
-        Me.WisRoller.Name = "WisRoller"
-        Me.WisRoller.Size = New System.Drawing.Size(97, 21)
-        Me.WisRoller.TabIndex = 52
-        Me.WisRoller.Tag = "4"
-        Me.WisRoller.Text = "Wis"
-        Me.WisRoller.UseVisualStyleBackColor = True
-        '
-        'IntRoller
-        '
-        Me.IntRoller.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IntRoller.Location = New System.Drawing.Point(955, 145)
-        Me.IntRoller.Margin = New System.Windows.Forms.Padding(2)
-        Me.IntRoller.Name = "IntRoller"
-        Me.IntRoller.Size = New System.Drawing.Size(97, 21)
-        Me.IntRoller.TabIndex = 53
-        Me.IntRoller.Tag = "3"
-        Me.IntRoller.Text = "Int"
-        Me.IntRoller.UseVisualStyleBackColor = True
-        '
-        'ConRoller
-        '
-        Me.ConRoller.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ConRoller.Location = New System.Drawing.Point(955, 124)
-        Me.ConRoller.Margin = New System.Windows.Forms.Padding(2)
-        Me.ConRoller.Name = "ConRoller"
-        Me.ConRoller.Size = New System.Drawing.Size(97, 21)
-        Me.ConRoller.TabIndex = 54
-        Me.ConRoller.Tag = "2"
-        Me.ConRoller.Text = "Con"
-        Me.ConRoller.UseVisualStyleBackColor = True
-        '
-        'DexRoller
-        '
-        Me.DexRoller.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DexRoller.Location = New System.Drawing.Point(955, 100)
-        Me.DexRoller.Margin = New System.Windows.Forms.Padding(2)
-        Me.DexRoller.Name = "DexRoller"
-        Me.DexRoller.Size = New System.Drawing.Size(97, 21)
-        Me.DexRoller.TabIndex = 55
-        Me.DexRoller.Tag = "1"
-        Me.DexRoller.Text = "Dex"
-        Me.DexRoller.UseVisualStyleBackColor = True
-        '
-        'StrRoller
-        '
-        Me.StrRoller.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StrRoller.Location = New System.Drawing.Point(955, 78)
-        Me.StrRoller.Margin = New System.Windows.Forms.Padding(2)
-        Me.StrRoller.Name = "StrRoller"
-        Me.StrRoller.Size = New System.Drawing.Size(97, 21)
-        Me.StrRoller.TabIndex = 56
-        Me.StrRoller.Tag = "0"
-        Me.StrRoller.Text = "Str"
-        Me.StrRoller.UseVisualStyleBackColor = True
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Character3Radio)
@@ -570,20 +500,102 @@ Partial Class Form1
         Me.Character1Radio.Text = "Character 1"
         Me.Character1Radio.UseVisualStyleBackColor = True
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.CharismaRadio)
+        Me.GroupBox2.Controls.Add(Me.WisdomRadio)
+        Me.GroupBox2.Controls.Add(Me.IntelligenceRadio)
+        Me.GroupBox2.Controls.Add(Me.ConstitutionRadio)
+        Me.GroupBox2.Controls.Add(Me.DexterityRadio)
+        Me.GroupBox2.Controls.Add(Me.StrengthRadio)
+        Me.GroupBox2.Location = New System.Drawing.Point(751, 272)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(97, 130)
+        Me.GroupBox2.TabIndex = 58
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "GroupBox2"
+        '
+        'ConstitutionRadio
+        '
+        Me.ConstitutionRadio.AutoSize = True
+        Me.ConstitutionRadio.Location = New System.Drawing.Point(-2, 52)
+        Me.ConstitutionRadio.Name = "ConstitutionRadio"
+        Me.ConstitutionRadio.Size = New System.Drawing.Size(44, 17)
+        Me.ConstitutionRadio.TabIndex = 2
+        Me.ConstitutionRadio.TabStop = True
+        Me.ConstitutionRadio.Tag = "2"
+        Me.ConstitutionRadio.Text = "Con"
+        Me.ConstitutionRadio.UseVisualStyleBackColor = True
+        '
+        'DexterityRadio
+        '
+        Me.DexterityRadio.AutoSize = True
+        Me.DexterityRadio.Location = New System.Drawing.Point(0, 33)
+        Me.DexterityRadio.Name = "DexterityRadio"
+        Me.DexterityRadio.Size = New System.Drawing.Size(44, 17)
+        Me.DexterityRadio.TabIndex = 1
+        Me.DexterityRadio.TabStop = True
+        Me.DexterityRadio.Tag = "1"
+        Me.DexterityRadio.Text = "Dex"
+        Me.DexterityRadio.UseVisualStyleBackColor = True
+        '
+        'StrengthRadio
+        '
+        Me.StrengthRadio.AutoSize = True
+        Me.StrengthRadio.Location = New System.Drawing.Point(0, 16)
+        Me.StrengthRadio.Name = "StrengthRadio"
+        Me.StrengthRadio.Size = New System.Drawing.Size(38, 17)
+        Me.StrengthRadio.TabIndex = 0
+        Me.StrengthRadio.TabStop = True
+        Me.StrengthRadio.Tag = "0"
+        Me.StrengthRadio.Text = "Str"
+        Me.StrengthRadio.UseVisualStyleBackColor = True
+        '
+        'IntelligenceRadio
+        '
+        Me.IntelligenceRadio.AutoSize = True
+        Me.IntelligenceRadio.Location = New System.Drawing.Point(0, 72)
+        Me.IntelligenceRadio.Name = "IntelligenceRadio"
+        Me.IntelligenceRadio.Size = New System.Drawing.Size(37, 17)
+        Me.IntelligenceRadio.TabIndex = 3
+        Me.IntelligenceRadio.TabStop = True
+        Me.IntelligenceRadio.Tag = "1"
+        Me.IntelligenceRadio.Text = "Int"
+        Me.IntelligenceRadio.UseVisualStyleBackColor = True
+        '
+        'WisdomRadio
+        '
+        Me.WisdomRadio.AutoSize = True
+        Me.WisdomRadio.Location = New System.Drawing.Point(6, 87)
+        Me.WisdomRadio.Name = "WisdomRadio"
+        Me.WisdomRadio.Size = New System.Drawing.Size(43, 17)
+        Me.WisdomRadio.TabIndex = 4
+        Me.WisdomRadio.TabStop = True
+        Me.WisdomRadio.Tag = "1"
+        Me.WisdomRadio.Text = "Wis"
+        Me.WisdomRadio.UseVisualStyleBackColor = True
+        '
+        'CharismaRadio
+        '
+        Me.CharismaRadio.AutoSize = True
+        Me.CharismaRadio.Location = New System.Drawing.Point(6, 112)
+        Me.CharismaRadio.Name = "CharismaRadio"
+        Me.CharismaRadio.Size = New System.Drawing.Size(41, 17)
+        Me.CharismaRadio.TabIndex = 5
+        Me.CharismaRadio.TabStop = True
+        Me.CharismaRadio.Tag = "1"
+        Me.CharismaRadio.Text = "Chr"
+        Me.CharismaRadio.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1122, 451)
+        Me.ClientSize = New System.Drawing.Size(1119, 465)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.StrRoller)
-        Me.Controls.Add(Me.DexRoller)
-        Me.Controls.Add(Me.ConRoller)
-        Me.Controls.Add(Me.IntRoller)
-        Me.Controls.Add(Me.WisRoller)
-        Me.Controls.Add(Me.ChrRoller)
         Me.Controls.Add(Me.ButtonDisplayCharacter2)
         Me.Controls.Add(Me.ButtonDisplayCharacter3)
         Me.Controls.Add(Me.ListBox1)
@@ -630,6 +642,8 @@ Partial Class Form1
         Me.Text = "Murray Project"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -676,14 +690,15 @@ Partial Class Form1
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents ButtonDisplayCharacter3 As Button
     Friend WithEvents ButtonDisplayCharacter2 As Button
-    Friend WithEvents ChrRoller As Button
-    Friend WithEvents WisRoller As Button
-    Friend WithEvents IntRoller As Button
-    Friend WithEvents ConRoller As Button
-    Friend WithEvents DexRoller As Button
-    Friend WithEvents StrRoller As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Character2Radio As RadioButton
     Friend WithEvents Character1Radio As RadioButton
     Friend WithEvents Character3Radio As RadioButton
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents CharismaRadio As RadioButton
+    Friend WithEvents WisdomRadio As RadioButton
+    Friend WithEvents IntelligenceRadio As RadioButton
+    Friend WithEvents ConstitutionRadio As RadioButton
+    Friend WithEvents DexterityRadio As RadioButton
+    Friend WithEvents StrengthRadio As RadioButton
 End Class
