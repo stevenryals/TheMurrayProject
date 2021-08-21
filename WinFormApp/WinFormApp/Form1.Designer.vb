@@ -41,12 +41,6 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Sushiswap = New System.Windows.Forms.Button()
         Me.OneInch = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.StrengthBox = New System.Windows.Forms.TextBox()
         Me.DexterityBox = New System.Windows.Forms.TextBox()
         Me.ConstitutionBox = New System.Windows.Forms.TextBox()
@@ -75,8 +69,20 @@ Partial Class Form1
         Me.DexterityRadio = New System.Windows.Forms.RadioButton()
         Me.StrengthRadio = New System.Windows.Forms.RadioButton()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown4 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown6 = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -106,7 +112,7 @@ Partial Class Form1
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(518, 326)
+        Me.RichTextBox1.Location = New System.Drawing.Point(512, 328)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(152, 98)
         Me.RichTextBox1.TabIndex = 3
@@ -115,7 +121,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(516, 309)
+        Me.Label2.Location = New System.Drawing.Point(509, 311)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(85, 13)
         Me.Label2.TabIndex = 4
@@ -247,72 +253,12 @@ Partial Class Form1
         Me.OneInch.Text = "1inch"
         Me.OneInch.UseVisualStyleBackColor = True
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(803, 82)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(47, 13)
-        Me.Label7.TabIndex = 29
-        Me.Label7.Text = "Strength"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(803, 105)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(48, 13)
-        Me.Label8.TabIndex = 30
-        Me.Label8.Text = "Dexterity"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(803, 128)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(62, 13)
-        Me.Label9.TabIndex = 31
-        Me.Label9.Text = "Constitution"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(803, 150)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(61, 13)
-        Me.Label10.TabIndex = 32
-        Me.Label10.Text = "Intelligence"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(803, 173)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(45, 13)
-        Me.Label11.TabIndex = 33
-        Me.Label11.Text = "Wisdom"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(803, 196)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(50, 13)
-        Me.Label12.TabIndex = 34
-        Me.Label12.Text = "Charisma"
-        '
         'StrengthBox
         '
         Me.StrengthBox.Location = New System.Drawing.Point(875, 78)
         Me.StrengthBox.Margin = New System.Windows.Forms.Padding(2)
         Me.StrengthBox.Name = "StrengthBox"
-        Me.StrengthBox.Size = New System.Drawing.Size(76, 20)
+        Me.StrengthBox.Size = New System.Drawing.Size(34, 20)
         Me.StrengthBox.TabIndex = 35
         '
         'DexterityBox
@@ -320,7 +266,7 @@ Partial Class Form1
         Me.DexterityBox.Location = New System.Drawing.Point(875, 101)
         Me.DexterityBox.Margin = New System.Windows.Forms.Padding(2)
         Me.DexterityBox.Name = "DexterityBox"
-        Me.DexterityBox.Size = New System.Drawing.Size(76, 20)
+        Me.DexterityBox.Size = New System.Drawing.Size(34, 20)
         Me.DexterityBox.TabIndex = 36
         '
         'ConstitutionBox
@@ -328,7 +274,7 @@ Partial Class Form1
         Me.ConstitutionBox.Location = New System.Drawing.Point(875, 124)
         Me.ConstitutionBox.Margin = New System.Windows.Forms.Padding(2)
         Me.ConstitutionBox.Name = "ConstitutionBox"
-        Me.ConstitutionBox.Size = New System.Drawing.Size(76, 20)
+        Me.ConstitutionBox.Size = New System.Drawing.Size(34, 20)
         Me.ConstitutionBox.TabIndex = 37
         '
         'IntelligenceBox
@@ -336,7 +282,7 @@ Partial Class Form1
         Me.IntelligenceBox.Location = New System.Drawing.Point(875, 146)
         Me.IntelligenceBox.Margin = New System.Windows.Forms.Padding(2)
         Me.IntelligenceBox.Name = "IntelligenceBox"
-        Me.IntelligenceBox.Size = New System.Drawing.Size(76, 20)
+        Me.IntelligenceBox.Size = New System.Drawing.Size(34, 20)
         Me.IntelligenceBox.TabIndex = 38
         '
         'WisdomBox
@@ -344,21 +290,21 @@ Partial Class Form1
         Me.WisdomBox.Location = New System.Drawing.Point(875, 169)
         Me.WisdomBox.Margin = New System.Windows.Forms.Padding(2)
         Me.WisdomBox.Name = "WisdomBox"
-        Me.WisdomBox.Size = New System.Drawing.Size(76, 20)
+        Me.WisdomBox.Size = New System.Drawing.Size(34, 20)
         Me.WisdomBox.TabIndex = 39
         '
         'CharismaBox
         '
-        Me.CharismaBox.Location = New System.Drawing.Point(875, 192)
+        Me.CharismaBox.Location = New System.Drawing.Point(875, 193)
         Me.CharismaBox.Margin = New System.Windows.Forms.Padding(2)
         Me.CharismaBox.Name = "CharismaBox"
-        Me.CharismaBox.Size = New System.Drawing.Size(76, 20)
+        Me.CharismaBox.Size = New System.Drawing.Size(34, 20)
         Me.CharismaBox.TabIndex = 40
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(803, 36)
+        Me.Label13.Location = New System.Drawing.Point(26, 7)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(35, 13)
@@ -384,7 +330,7 @@ Partial Class Form1
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(803, 59)
+        Me.Label14.Location = New System.Drawing.Point(26, 30)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(46, 13)
@@ -393,17 +339,17 @@ Partial Class Form1
         '
         'ButtonCreateCharacter
         '
-        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(903, 216)
+        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(956, 32)
         Me.ButtonCreateCharacter.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonCreateCharacter.Name = "ButtonCreateCharacter"
-        Me.ButtonCreateCharacter.Size = New System.Drawing.Size(72, 52)
+        Me.ButtonCreateCharacter.Size = New System.Drawing.Size(72, 43)
         Me.ButtonCreateCharacter.TabIndex = 45
         Me.ButtonCreateCharacter.Text = "Create Character"
         Me.ButtonCreateCharacter.UseVisualStyleBackColor = True
         '
         'ButtonClear
         '
-        Me.ButtonClear.Location = New System.Drawing.Point(979, 216)
+        Me.ButtonClear.Location = New System.Drawing.Point(695, 229)
         Me.ButtonClear.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonClear.Name = "ButtonClear"
         Me.ButtonClear.Size = New System.Drawing.Size(73, 52)
@@ -413,7 +359,7 @@ Partial Class Form1
         '
         'ButtonDisplayCharacter1
         '
-        Me.ButtonDisplayCharacter1.Location = New System.Drawing.Point(863, 272)
+        Me.ButtonDisplayCharacter1.Location = New System.Drawing.Point(865, 401)
         Me.ButtonDisplayCharacter1.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonDisplayCharacter1.Name = "ButtonDisplayCharacter1"
         Me.ButtonDisplayCharacter1.Size = New System.Drawing.Size(72, 52)
@@ -425,15 +371,15 @@ Partial Class Form1
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(490, 82)
+        Me.ListBox1.Location = New System.Drawing.Point(490, 78)
         Me.ListBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(310, 147)
+        Me.ListBox1.Size = New System.Drawing.Size(305, 147)
         Me.ListBox1.TabIndex = 48
         '
         'ButtonDisplayCharacter3
         '
-        Me.ButtonDisplayCharacter3.Location = New System.Drawing.Point(1015, 272)
+        Me.ButtonDisplayCharacter3.Location = New System.Drawing.Point(1017, 401)
         Me.ButtonDisplayCharacter3.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonDisplayCharacter3.Name = "ButtonDisplayCharacter3"
         Me.ButtonDisplayCharacter3.Size = New System.Drawing.Size(72, 52)
@@ -444,7 +390,7 @@ Partial Class Form1
         '
         'ButtonDisplayCharacter2
         '
-        Me.ButtonDisplayCharacter2.Location = New System.Drawing.Point(939, 272)
+        Me.ButtonDisplayCharacter2.Location = New System.Drawing.Point(941, 401)
         Me.ButtonDisplayCharacter2.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonDisplayCharacter2.Name = "ButtonDisplayCharacter2"
         Me.ButtonDisplayCharacter2.Size = New System.Drawing.Size(72, 52)
@@ -458,12 +404,11 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Character3Radio)
         Me.GroupBox1.Controls.Add(Me.Character2Radio)
         Me.GroupBox1.Controls.Add(Me.Character1Radio)
-        Me.GroupBox1.Location = New System.Drawing.Point(955, 3)
+        Me.GroupBox1.Location = New System.Drawing.Point(829, 219)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(97, 69)
         Me.GroupBox1.TabIndex = 57
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
         '
         'Character3Radio
         '
@@ -509,17 +454,18 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.ConstitutionRadio)
         Me.GroupBox2.Controls.Add(Me.DexterityRadio)
         Me.GroupBox2.Controls.Add(Me.StrengthRadio)
-        Me.GroupBox2.Location = New System.Drawing.Point(751, 272)
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Location = New System.Drawing.Point(800, 32)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(97, 130)
+        Me.GroupBox2.Size = New System.Drawing.Size(70, 180)
         Me.GroupBox2.TabIndex = 58
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
         '
         'CharismaRadio
         '
         Me.CharismaRadio.AutoSize = True
-        Me.CharismaRadio.Location = New System.Drawing.Point(6, 112)
+        Me.CharismaRadio.Location = New System.Drawing.Point(29, 164)
         Me.CharismaRadio.Name = "CharismaRadio"
         Me.CharismaRadio.Size = New System.Drawing.Size(41, 17)
         Me.CharismaRadio.TabIndex = 5
@@ -531,7 +477,7 @@ Partial Class Form1
         'WisdomRadio
         '
         Me.WisdomRadio.AutoSize = True
-        Me.WisdomRadio.Location = New System.Drawing.Point(6, 87)
+        Me.WisdomRadio.Location = New System.Drawing.Point(29, 140)
         Me.WisdomRadio.Name = "WisdomRadio"
         Me.WisdomRadio.Size = New System.Drawing.Size(43, 17)
         Me.WisdomRadio.TabIndex = 4
@@ -543,7 +489,7 @@ Partial Class Form1
         'IntelligenceRadio
         '
         Me.IntelligenceRadio.AutoSize = True
-        Me.IntelligenceRadio.Location = New System.Drawing.Point(0, 72)
+        Me.IntelligenceRadio.Location = New System.Drawing.Point(29, 117)
         Me.IntelligenceRadio.Name = "IntelligenceRadio"
         Me.IntelligenceRadio.Size = New System.Drawing.Size(37, 17)
         Me.IntelligenceRadio.TabIndex = 3
@@ -555,7 +501,7 @@ Partial Class Form1
         'ConstitutionRadio
         '
         Me.ConstitutionRadio.AutoSize = True
-        Me.ConstitutionRadio.Location = New System.Drawing.Point(-2, 52)
+        Me.ConstitutionRadio.Location = New System.Drawing.Point(29, 95)
         Me.ConstitutionRadio.Name = "ConstitutionRadio"
         Me.ConstitutionRadio.Size = New System.Drawing.Size(44, 17)
         Me.ConstitutionRadio.TabIndex = 2
@@ -567,7 +513,7 @@ Partial Class Form1
         'DexterityRadio
         '
         Me.DexterityRadio.AutoSize = True
-        Me.DexterityRadio.Location = New System.Drawing.Point(0, 33)
+        Me.DexterityRadio.Location = New System.Drawing.Point(29, 73)
         Me.DexterityRadio.Name = "DexterityRadio"
         Me.DexterityRadio.Size = New System.Drawing.Size(44, 17)
         Me.DexterityRadio.TabIndex = 1
@@ -579,7 +525,7 @@ Partial Class Form1
         'StrengthRadio
         '
         Me.StrengthRadio.AutoSize = True
-        Me.StrengthRadio.Location = New System.Drawing.Point(0, 16)
+        Me.StrengthRadio.Location = New System.Drawing.Point(29, 49)
         Me.StrengthRadio.Name = "StrengthRadio"
         Me.StrengthRadio.Size = New System.Drawing.Size(38, 17)
         Me.StrengthRadio.TabIndex = 0
@@ -590,12 +536,54 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(979, 117)
+        Me.Button2.Location = New System.Drawing.Point(932, 224)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(72, 64)
         Me.Button2.TabIndex = 59
-        Me.Button2.Text = "Button2"
+        Me.Button2.Text = "d20 Skill Roll"
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(922, 78)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(29, 20)
+        Me.NumericUpDown1.TabIndex = 60
+        '
+        'NumericUpDown2
+        '
+        Me.NumericUpDown2.Location = New System.Drawing.Point(922, 193)
+        Me.NumericUpDown2.Name = "NumericUpDown2"
+        Me.NumericUpDown2.Size = New System.Drawing.Size(29, 20)
+        Me.NumericUpDown2.TabIndex = 61
+        '
+        'NumericUpDown3
+        '
+        Me.NumericUpDown3.Location = New System.Drawing.Point(922, 169)
+        Me.NumericUpDown3.Name = "NumericUpDown3"
+        Me.NumericUpDown3.Size = New System.Drawing.Size(29, 20)
+        Me.NumericUpDown3.TabIndex = 62
+        '
+        'NumericUpDown4
+        '
+        Me.NumericUpDown4.Location = New System.Drawing.Point(922, 146)
+        Me.NumericUpDown4.Name = "NumericUpDown4"
+        Me.NumericUpDown4.Size = New System.Drawing.Size(29, 20)
+        Me.NumericUpDown4.TabIndex = 63
+        '
+        'NumericUpDown5
+        '
+        Me.NumericUpDown5.Location = New System.Drawing.Point(922, 124)
+        Me.NumericUpDown5.Name = "NumericUpDown5"
+        Me.NumericUpDown5.Size = New System.Drawing.Size(29, 20)
+        Me.NumericUpDown5.TabIndex = 64
+        '
+        'NumericUpDown6
+        '
+        Me.NumericUpDown6.Location = New System.Drawing.Point(922, 101)
+        Me.NumericUpDown6.Name = "NumericUpDown6"
+        Me.NumericUpDown6.Size = New System.Drawing.Size(29, 20)
+        Me.NumericUpDown6.TabIndex = 65
         '
         'Form1
         '
@@ -604,6 +592,12 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1101, 473)
+        Me.Controls.Add(Me.NumericUpDown6)
+        Me.Controls.Add(Me.NumericUpDown5)
+        Me.Controls.Add(Me.NumericUpDown4)
+        Me.Controls.Add(Me.NumericUpDown3)
+        Me.Controls.Add(Me.NumericUpDown2)
+        Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -613,22 +607,14 @@ Partial Class Form1
         Me.Controls.Add(Me.ButtonDisplayCharacter1)
         Me.Controls.Add(Me.ButtonClear)
         Me.Controls.Add(Me.ButtonCreateCharacter)
-        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.AttributeBox)
         Me.Controls.Add(Me.NameBox)
-        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.CharismaBox)
         Me.Controls.Add(Me.WisdomBox)
         Me.Controls.Add(Me.IntelligenceBox)
         Me.Controls.Add(Me.ConstitutionBox)
         Me.Controls.Add(Me.DexterityBox)
         Me.Controls.Add(Me.StrengthBox)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.OneInch)
         Me.Controls.Add(Me.Sushiswap)
         Me.Controls.Add(Me.Label5)
@@ -655,6 +641,12 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -679,12 +671,6 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Sushiswap As Button
     Friend WithEvents OneInch As Button
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
     Friend WithEvents StrengthBox As TextBox
     Friend WithEvents DexterityBox As TextBox
     Friend WithEvents ConstitutionBox As TextBox
@@ -713,4 +699,10 @@ Partial Class Form1
     Friend WithEvents DexterityRadio As RadioButton
     Friend WithEvents StrengthRadio As RadioButton
     Friend WithEvents Button2 As Button
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents NumericUpDown3 As NumericUpDown
+    Friend WithEvents NumericUpDown4 As NumericUpDown
+    Friend WithEvents NumericUpDown5 As NumericUpDown
+    Friend WithEvents NumericUpDown6 As NumericUpDown
 End Class

@@ -223,7 +223,7 @@
         If i = 0 Then
             StrToString1 = "1. " & Character1.Name & ":  " _
                 & Character1.Attributes
-            StrToString2 = "     STR: " & Character1.Strength _
+            StrToString2 = "   STR: " & Character1.Strength _
                 & "  DEX: " & Character1.Dexterity _
                 & "  CON: " & Character1.Constitution _
                 & "  INT: " & Character1.Intelligence _
@@ -232,7 +232,7 @@
         ElseIf i = 1 Then
             StrToString1 = "2. " & Character2.Name & ":  " _
                 & Character2.Attributes
-            StrToString2 = "     STR: " & Character2.Strength _
+            StrToString2 = "   STR: " & Character2.Strength _
                 & "  DEX: " & Character2.Dexterity _
                 & "  CON: " & Character2.Constitution _
                 & "  INT: " & Character2.Intelligence _
@@ -241,7 +241,7 @@
         Else
             StrToString1 = "3. " & Character3.Name & ":  " _
                 & Character3.Attributes
-            StrToString2 = "     STR: " & Character3.Strength _
+            StrToString2 = "   STR: " & Character3.Strength _
                 & "  DEX: " & Character3.Dexterity _
                 & "  CON: " & Character3.Constitution _
                 & "  INT: " & Character3.Intelligence _
@@ -255,11 +255,7 @@
 
     Private Sub SkillRoller_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'takes initial input of the radiobutton checked and combines it with the Tag of the skill button clicked
-        Call WhichCharacter()
-        Call WhichSkill()
-        Call AddDice(WhichCharacter, WhichSkill)
         Dim Roll20 = AddDice(WhichCharacter, WhichSkill)
-        'Dim btn As Button = CType(sender, Button)
         RichTextBox1.Text = Roll20.ToString
 
     End Sub
@@ -297,43 +293,43 @@
             If j = 0 Then
                 resultBuilder = TotalAmount + Character1.Strength
             ElseIf j = 1 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character1.Dexterity
             ElseIf j = 2 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character1.Constitution
             ElseIf j = 3 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character1.Intelligence
             ElseIf j = 4 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character1.Wisdom
             ElseIf j = 5 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character1.Charisma
             End If
         ElseIf i = 1 Then
             If j = 0 Then
                 resultBuilder = TotalAmount + Character2.Strength
             ElseIf j = 1 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character2.Dexterity
             ElseIf j = 2 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character2.Constitution
             ElseIf j = 3 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character2.Intelligence
             ElseIf j = 4 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character2.Wisdom
             ElseIf j = 5 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character2.Charisma
             End If
         Else
             If j = 0 Then
                 resultBuilder = TotalAmount + Character3.Strength
             ElseIf j = 1 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character3.Dexterity
             ElseIf j = 2 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character3.Constitution
             ElseIf j = 3 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character3.Intelligence
             ElseIf j = 4 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character3.Wisdom
             ElseIf j = 5 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                resultBuilder = TotalAmount + Character3.Charisma
             End If
         End If
 
@@ -359,6 +355,11 @@
         End Try
         Return radio
     End Function
+
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+
+    End Sub
+
 
 #End Region
 
