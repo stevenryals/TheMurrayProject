@@ -339,7 +339,7 @@ Partial Class Form1
         '
         'ButtonCreateCharacter
         '
-        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(956, 32)
+        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(956, 169)
         Me.ButtonCreateCharacter.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonCreateCharacter.Name = "ButtonCreateCharacter"
         Me.ButtonCreateCharacter.Size = New System.Drawing.Size(72, 43)

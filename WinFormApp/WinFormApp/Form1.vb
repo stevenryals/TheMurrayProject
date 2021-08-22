@@ -69,7 +69,7 @@
     Dim Character1 As Character
     Dim Character2 As Character
     Dim Character3 As Character
-    Dim Index As Integer = 1
+    Dim Index As Integer = 0
 
     Private Sub Form1_Load(Sender As Object, e As EventArgs) Handles MyBase.Load
         'Create Character instances
@@ -82,6 +82,7 @@
     Private Sub ButtonCreateCharacter_Click(sender As Object, e As EventArgs) Handles ButtonCreateCharacter.Click
         Call SetCharacter()
         'blank form
+
         NameBox.Text = ""
         AttributeBox.Text = ""
         StrengthBox.Text = ""
@@ -91,7 +92,9 @@
         WisdomBox.Text = ""
         CharismaBox.Text = ""
 
+        Call DisplayCharacter(Index)
         Index += 1
+
     End Sub
 
     'Private Sub ButtonResetCharacter_Click(sender As Object, e As EventArgs) Handles ButtonResetCharacter.Click, Character1Radio.CheckedChanged, Character2Radio.CheckedChanged, Character3Radio.CheckedChanged
@@ -169,7 +172,7 @@
     End Sub
     Private Sub SetCharacter()
         'index counts characters entered
-        If Index = 1 Then
+        If Index = 0 Then
             Character1.Name = NameBox.Text
             Character1.Attributes = AttributeBox.Text
             Character1.Strength = CInt(StrengthBox.Text)
@@ -179,7 +182,7 @@
             Character1.Wisdom = CInt(WisdomBox.Text)
             Character1.Charisma = CInt(CharismaBox.Text)
 
-        ElseIf Index = 2 Then
+        ElseIf Index = 1 Then
             Character2.Name = NameBox.Text
             Character2.Attributes = AttributeBox.Text
             Character2.Strength = CInt(StrengthBox.Text)
@@ -255,7 +258,7 @@
 
     Private Sub SkillRoller_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'takes initial input of the radiobutton checked and combines it with the Tag of the skill button clicked
-        Dim Roll20 = AddDice(WhichCharacter, WhichSkill)
+        Dim Roll20 = AddD20(WhichCharacterAndSkill(WhichCharacter, WhichSkill))
         RichTextBox1.Text = Roll20.ToString
 
     End Sub
@@ -284,59 +287,66 @@
         Return button
     End Function
 
-    Private Function AddDice(i As Integer, j As Integer) As Integer
+    Private Function WhichCharacterAndSkill(i As Integer, j As Integer) As Integer
         'le dice
-        Dim TotalAmount As Integer = New Random().Next(0, 21)
+        Dim Selected As Object
 
+        i = WhichCharacter()
+        j = WhichSkill()
 
         If i = 0 Then
             If j = 0 Then
-                resultBuilder = TotalAmount + Character1.Strength
+                Selected = Character1.Strength
             ElseIf j = 1 Then
-                resultBuilder = TotalAmount + Character1.Dexterity
+                Selected = Character1.Dexterity
             ElseIf j = 2 Then
-                resultBuilder = TotalAmount + Character1.Constitution
+                Selected = Character1.Constitution
             ElseIf j = 3 Then
-                resultBuilder = TotalAmount + Character1.Intelligence
+                Selected = Character1.Intelligence
             ElseIf j = 4 Then
-                resultBuilder = TotalAmount + Character1.Wisdom
+                Selected = Character1.Wisdom
             ElseIf j = 5 Then
-                resultBuilder = TotalAmount + Character1.Charisma
+                Selected = Character1.Charisma
             End If
         ElseIf i = 1 Then
             If j = 0 Then
-                resultBuilder = TotalAmount + Character2.Strength
+                Selected = Character2.Strength
             ElseIf j = 1 Then
-                resultBuilder = TotalAmount + Character2.Dexterity
+                Selected = Character2.Dexterity
             ElseIf j = 2 Then
-                resultBuilder = TotalAmount + Character2.Constitution
+                Selected = Character2.Constitution
             ElseIf j = 3 Then
-                resultBuilder = TotalAmount + Character2.Intelligence
+                Selected = Character2.Intelligence
             ElseIf j = 4 Then
-                resultBuilder = TotalAmount + Character2.Wisdom
+                Selected = Character2.Wisdom
             ElseIf j = 5 Then
-                resultBuilder = TotalAmount + Character2.Charisma
+                Selected = Character2.Charisma
             End If
         Else
             If j = 0 Then
-                resultBuilder = TotalAmount + Character3.Strength
+                Selected = Character3.Strength
             ElseIf j = 1 Then
-                resultBuilder = TotalAmount + Character3.Dexterity
+                Selected = Character3.Dexterity
             ElseIf j = 2 Then
-                resultBuilder = TotalAmount + Character3.Constitution
+                Selected = Character3.Constitution
             ElseIf j = 3 Then
-                resultBuilder = TotalAmount + Character3.Intelligence
+                Selected = Character3.Intelligence
             ElseIf j = 4 Then
-                resultBuilder = TotalAmount + Character3.Wisdom
+                Selected = Character3.Wisdom
             ElseIf j = 5 Then
-                resultBuilder = TotalAmount + Character3.Charisma
+                Selected = Character3.Charisma
             End If
         End If
 
-        Return resultBuilder
+        Return Selected
 
 
 
+    End Function
+
+    Private Function AddD20(SelectedCharacterAndSkill) As Integer
+        Dim DiceResult As Integer = New Random().Next(0, 21) + SelectedCharacterAndSkill
+        Return DiceResult
     End Function
 
     Private Function WhichCharacter() Handles Character1Radio.CheckedChanged, Character2Radio.CheckedChanged, Character3Radio.CheckedChanged
@@ -356,9 +366,9 @@
         Return radio
     End Function
 
-    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+    'Private Sub ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
 
-    End Sub
+    'End Sub
 
 
 #End Region
