@@ -41,22 +41,14 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Sushiswap = New System.Windows.Forms.Button()
         Me.OneInch = New System.Windows.Forms.Button()
-        Me.StrengthBox = New System.Windows.Forms.TextBox()
-        Me.DexterityBox = New System.Windows.Forms.TextBox()
-        Me.ConstitutionBox = New System.Windows.Forms.TextBox()
-        Me.IntelligenceBox = New System.Windows.Forms.TextBox()
-        Me.WisdomBox = New System.Windows.Forms.TextBox()
-        Me.CharismaBox = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.NameBox = New System.Windows.Forms.TextBox()
         Me.AttributeBox = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.ButtonCreateCharacter = New System.Windows.Forms.Button()
         Me.ButtonClear = New System.Windows.Forms.Button()
-        Me.ButtonDisplayCharacter1 = New System.Windows.Forms.Button()
+        Me.ButtonDisplayAllCharacters = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ButtonDisplayCharacter3 = New System.Windows.Forms.Button()
-        Me.ButtonDisplayCharacter2 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Character3Radio = New System.Windows.Forms.RadioButton()
         Me.Character2Radio = New System.Windows.Forms.RadioButton()
@@ -68,21 +60,22 @@ Partial Class Form1
         Me.ConstitutionRadio = New System.Windows.Forms.RadioButton()
         Me.DexterityRadio = New System.Windows.Forms.RadioButton()
         Me.StrengthRadio = New System.Windows.Forms.RadioButton()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown4 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown6 = New System.Windows.Forms.NumericUpDown()
+        Me.ButtonSkillRoll = New System.Windows.Forms.Button()
+        Me.StrTicker = New System.Windows.Forms.NumericUpDown()
+        Me.ChrTicker = New System.Windows.Forms.NumericUpDown()
+        Me.WisTicker = New System.Windows.Forms.NumericUpDown()
+        Me.IntTicker = New System.Windows.Forms.NumericUpDown()
+        Me.ConTicker = New System.Windows.Forms.NumericUpDown()
+        Me.DexTicker = New System.Windows.Forms.NumericUpDown()
+        Me.ButtonResetCharacter = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StrTicker, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChrTicker, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WisTicker, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IntTicker, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConTicker, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DexTicker, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -253,58 +246,10 @@ Partial Class Form1
         Me.OneInch.Text = "1inch"
         Me.OneInch.UseVisualStyleBackColor = True
         '
-        'StrengthBox
-        '
-        Me.StrengthBox.Location = New System.Drawing.Point(875, 78)
-        Me.StrengthBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.StrengthBox.Name = "StrengthBox"
-        Me.StrengthBox.Size = New System.Drawing.Size(34, 20)
-        Me.StrengthBox.TabIndex = 35
-        '
-        'DexterityBox
-        '
-        Me.DexterityBox.Location = New System.Drawing.Point(875, 101)
-        Me.DexterityBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.DexterityBox.Name = "DexterityBox"
-        Me.DexterityBox.Size = New System.Drawing.Size(34, 20)
-        Me.DexterityBox.TabIndex = 36
-        '
-        'ConstitutionBox
-        '
-        Me.ConstitutionBox.Location = New System.Drawing.Point(875, 124)
-        Me.ConstitutionBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.ConstitutionBox.Name = "ConstitutionBox"
-        Me.ConstitutionBox.Size = New System.Drawing.Size(34, 20)
-        Me.ConstitutionBox.TabIndex = 37
-        '
-        'IntelligenceBox
-        '
-        Me.IntelligenceBox.Location = New System.Drawing.Point(875, 146)
-        Me.IntelligenceBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.IntelligenceBox.Name = "IntelligenceBox"
-        Me.IntelligenceBox.Size = New System.Drawing.Size(34, 20)
-        Me.IntelligenceBox.TabIndex = 38
-        '
-        'WisdomBox
-        '
-        Me.WisdomBox.Location = New System.Drawing.Point(875, 169)
-        Me.WisdomBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.WisdomBox.Name = "WisdomBox"
-        Me.WisdomBox.Size = New System.Drawing.Size(34, 20)
-        Me.WisdomBox.TabIndex = 39
-        '
-        'CharismaBox
-        '
-        Me.CharismaBox.Location = New System.Drawing.Point(875, 193)
-        Me.CharismaBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.CharismaBox.Name = "CharismaBox"
-        Me.CharismaBox.Size = New System.Drawing.Size(34, 20)
-        Me.CharismaBox.TabIndex = 40
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(26, 7)
+        Me.Label13.Location = New System.Drawing.Point(8, 7)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(35, 13)
@@ -330,7 +275,7 @@ Partial Class Form1
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(26, 30)
+        Me.Label14.Location = New System.Drawing.Point(7, 30)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(46, 13)
@@ -339,7 +284,7 @@ Partial Class Form1
         '
         'ButtonCreateCharacter
         '
-        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(956, 169)
+        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(932, 170)
         Me.ButtonCreateCharacter.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonCreateCharacter.Name = "ButtonCreateCharacter"
         Me.ButtonCreateCharacter.Size = New System.Drawing.Size(72, 43)
@@ -349,7 +294,7 @@ Partial Class Form1
         '
         'ButtonClear
         '
-        Me.ButtonClear.Location = New System.Drawing.Point(695, 229)
+        Me.ButtonClear.Location = New System.Drawing.Point(740, 214)
         Me.ButtonClear.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonClear.Name = "ButtonClear"
         Me.ButtonClear.Size = New System.Drawing.Size(73, 52)
@@ -359,45 +304,25 @@ Partial Class Form1
         '
         'ButtonDisplayCharacter1
         '
-        Me.ButtonDisplayCharacter1.Location = New System.Drawing.Point(865, 401)
-        Me.ButtonDisplayCharacter1.Margin = New System.Windows.Forms.Padding(2)
-        Me.ButtonDisplayCharacter1.Name = "ButtonDisplayCharacter1"
-        Me.ButtonDisplayCharacter1.Size = New System.Drawing.Size(72, 52)
-        Me.ButtonDisplayCharacter1.TabIndex = 47
-        Me.ButtonDisplayCharacter1.Tag = "0"
-        Me.ButtonDisplayCharacter1.Text = "Display Character 1"
-        Me.ButtonDisplayCharacter1.UseVisualStyleBackColor = True
+        Me.ButtonDisplayAllCharacters.Location = New System.Drawing.Point(664, 214)
+        Me.ButtonDisplayAllCharacters.Margin = New System.Windows.Forms.Padding(2)
+        Me.ButtonDisplayAllCharacters.Name = "ButtonDisplayCharacter1"
+        Me.ButtonDisplayAllCharacters.Size = New System.Drawing.Size(72, 52)
+        Me.ButtonDisplayAllCharacters.TabIndex = 47
+        Me.ButtonDisplayAllCharacters.Tag = "0"
+        Me.ButtonDisplayAllCharacters.Text = "Display Characters"
+        Me.ButtonDisplayAllCharacters.UseVisualStyleBackColor = True
         '
         'ListBox1
         '
+        Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 16
         Me.ListBox1.Location = New System.Drawing.Point(490, 78)
         Me.ListBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(305, 147)
+        Me.ListBox1.Size = New System.Drawing.Size(323, 132)
         Me.ListBox1.TabIndex = 48
-        '
-        'ButtonDisplayCharacter3
-        '
-        Me.ButtonDisplayCharacter3.Location = New System.Drawing.Point(1017, 401)
-        Me.ButtonDisplayCharacter3.Margin = New System.Windows.Forms.Padding(2)
-        Me.ButtonDisplayCharacter3.Name = "ButtonDisplayCharacter3"
-        Me.ButtonDisplayCharacter3.Size = New System.Drawing.Size(72, 52)
-        Me.ButtonDisplayCharacter3.TabIndex = 49
-        Me.ButtonDisplayCharacter3.Tag = "2"
-        Me.ButtonDisplayCharacter3.Text = "Display Character 3"
-        Me.ButtonDisplayCharacter3.UseVisualStyleBackColor = True
-        '
-        'ButtonDisplayCharacter2
-        '
-        Me.ButtonDisplayCharacter2.Location = New System.Drawing.Point(941, 401)
-        Me.ButtonDisplayCharacter2.Margin = New System.Windows.Forms.Padding(2)
-        Me.ButtonDisplayCharacter2.Name = "ButtonDisplayCharacter2"
-        Me.ButtonDisplayCharacter2.Size = New System.Drawing.Size(72, 52)
-        Me.ButtonDisplayCharacter2.TabIndex = 50
-        Me.ButtonDisplayCharacter2.Tag = "1"
-        Me.ButtonDisplayCharacter2.Text = "Display Character 2"
-        Me.ButtonDisplayCharacter2.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -456,16 +381,16 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.StrengthRadio)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Location = New System.Drawing.Point(800, 32)
+        Me.GroupBox2.Location = New System.Drawing.Point(818, 32)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(70, 180)
+        Me.GroupBox2.Size = New System.Drawing.Size(52, 180)
         Me.GroupBox2.TabIndex = 58
         Me.GroupBox2.TabStop = False
         '
         'CharismaRadio
         '
         Me.CharismaRadio.AutoSize = True
-        Me.CharismaRadio.Location = New System.Drawing.Point(29, 164)
+        Me.CharismaRadio.Location = New System.Drawing.Point(10, 164)
         Me.CharismaRadio.Name = "CharismaRadio"
         Me.CharismaRadio.Size = New System.Drawing.Size(41, 17)
         Me.CharismaRadio.TabIndex = 5
@@ -477,7 +402,7 @@ Partial Class Form1
         'WisdomRadio
         '
         Me.WisdomRadio.AutoSize = True
-        Me.WisdomRadio.Location = New System.Drawing.Point(29, 140)
+        Me.WisdomRadio.Location = New System.Drawing.Point(10, 140)
         Me.WisdomRadio.Name = "WisdomRadio"
         Me.WisdomRadio.Size = New System.Drawing.Size(43, 17)
         Me.WisdomRadio.TabIndex = 4
@@ -489,7 +414,7 @@ Partial Class Form1
         'IntelligenceRadio
         '
         Me.IntelligenceRadio.AutoSize = True
-        Me.IntelligenceRadio.Location = New System.Drawing.Point(29, 117)
+        Me.IntelligenceRadio.Location = New System.Drawing.Point(10, 117)
         Me.IntelligenceRadio.Name = "IntelligenceRadio"
         Me.IntelligenceRadio.Size = New System.Drawing.Size(37, 17)
         Me.IntelligenceRadio.TabIndex = 3
@@ -501,7 +426,7 @@ Partial Class Form1
         'ConstitutionRadio
         '
         Me.ConstitutionRadio.AutoSize = True
-        Me.ConstitutionRadio.Location = New System.Drawing.Point(29, 95)
+        Me.ConstitutionRadio.Location = New System.Drawing.Point(10, 95)
         Me.ConstitutionRadio.Name = "ConstitutionRadio"
         Me.ConstitutionRadio.Size = New System.Drawing.Size(44, 17)
         Me.ConstitutionRadio.TabIndex = 2
@@ -513,7 +438,7 @@ Partial Class Form1
         'DexterityRadio
         '
         Me.DexterityRadio.AutoSize = True
-        Me.DexterityRadio.Location = New System.Drawing.Point(29, 73)
+        Me.DexterityRadio.Location = New System.Drawing.Point(10, 73)
         Me.DexterityRadio.Name = "DexterityRadio"
         Me.DexterityRadio.Size = New System.Drawing.Size(44, 17)
         Me.DexterityRadio.TabIndex = 1
@@ -525,7 +450,7 @@ Partial Class Form1
         'StrengthRadio
         '
         Me.StrengthRadio.AutoSize = True
-        Me.StrengthRadio.Location = New System.Drawing.Point(29, 49)
+        Me.StrengthRadio.Location = New System.Drawing.Point(10, 51)
         Me.StrengthRadio.Name = "StrengthRadio"
         Me.StrengthRadio.Size = New System.Drawing.Size(38, 17)
         Me.StrengthRadio.TabIndex = 0
@@ -536,54 +461,89 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(932, 224)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(72, 64)
-        Me.Button2.TabIndex = 59
-        Me.Button2.Text = "d20 Skill Roll"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ButtonSkillRoll.Location = New System.Drawing.Point(932, 224)
+        Me.ButtonSkillRoll.Name = "Button2"
+        Me.ButtonSkillRoll.Size = New System.Drawing.Size(72, 64)
+        Me.ButtonSkillRoll.TabIndex = 59
+        Me.ButtonSkillRoll.Text = "d20 Skill Roll"
+        Me.ButtonSkillRoll.UseVisualStyleBackColor = True
         '
-        'NumericUpDown1
+        'StrTicker
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(922, 78)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(29, 20)
-        Me.NumericUpDown1.TabIndex = 60
+        Me.StrTicker.Location = New System.Drawing.Point(875, 80)
+        Me.StrTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
+        Me.StrTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.StrTicker.Name = "StrTicker"
+        Me.StrTicker.Size = New System.Drawing.Size(51, 20)
+        Me.StrTicker.TabIndex = 60
+        Me.StrTicker.Tag = "0"
+        Me.StrTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown2
+        'ChrTicker
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(922, 193)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(29, 20)
-        Me.NumericUpDown2.TabIndex = 61
+        Me.ChrTicker.Location = New System.Drawing.Point(875, 193)
+        Me.ChrTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
+        Me.ChrTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.ChrTicker.Name = "ChrTicker"
+        Me.ChrTicker.Size = New System.Drawing.Size(51, 20)
+        Me.ChrTicker.TabIndex = 61
+        Me.ChrTicker.Tag = "5"
+        Me.ChrTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown3
+        'WisTicker
         '
-        Me.NumericUpDown3.Location = New System.Drawing.Point(922, 169)
-        Me.NumericUpDown3.Name = "NumericUpDown3"
-        Me.NumericUpDown3.Size = New System.Drawing.Size(29, 20)
-        Me.NumericUpDown3.TabIndex = 62
+        Me.WisTicker.Location = New System.Drawing.Point(875, 169)
+        Me.WisTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
+        Me.WisTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.WisTicker.Name = "WisTicker"
+        Me.WisTicker.Size = New System.Drawing.Size(51, 20)
+        Me.WisTicker.TabIndex = 62
+        Me.WisTicker.Tag = "4"
+        Me.WisTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown4
+        'IntTicker
         '
-        Me.NumericUpDown4.Location = New System.Drawing.Point(922, 146)
-        Me.NumericUpDown4.Name = "NumericUpDown4"
-        Me.NumericUpDown4.Size = New System.Drawing.Size(29, 20)
-        Me.NumericUpDown4.TabIndex = 63
+        Me.IntTicker.Location = New System.Drawing.Point(875, 146)
+        Me.IntTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
+        Me.IntTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.IntTicker.Name = "IntTicker"
+        Me.IntTicker.Size = New System.Drawing.Size(51, 20)
+        Me.IntTicker.TabIndex = 63
+        Me.IntTicker.Tag = "3"
+        Me.IntTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown5
+        'ConTicker
         '
-        Me.NumericUpDown5.Location = New System.Drawing.Point(922, 124)
-        Me.NumericUpDown5.Name = "NumericUpDown5"
-        Me.NumericUpDown5.Size = New System.Drawing.Size(29, 20)
-        Me.NumericUpDown5.TabIndex = 64
+        Me.ConTicker.Location = New System.Drawing.Point(876, 124)
+        Me.ConTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
+        Me.ConTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.ConTicker.Name = "ConTicker"
+        Me.ConTicker.Size = New System.Drawing.Size(50, 20)
+        Me.ConTicker.TabIndex = 64
+        Me.ConTicker.Tag = "2"
+        Me.ConTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown6
+        'DexTicker
         '
-        Me.NumericUpDown6.Location = New System.Drawing.Point(922, 101)
-        Me.NumericUpDown6.Name = "NumericUpDown6"
-        Me.NumericUpDown6.Size = New System.Drawing.Size(29, 20)
-        Me.NumericUpDown6.TabIndex = 65
+        Me.DexTicker.Location = New System.Drawing.Point(876, 102)
+        Me.DexTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
+        Me.DexTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.DexTicker.Name = "DexTicker"
+        Me.DexTicker.Size = New System.Drawing.Size(50, 20)
+        Me.DexTicker.TabIndex = 65
+        Me.DexTicker.Tag = "1"
+        Me.DexTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'ResetCharacterButton
+        '
+        Me.ButtonResetCharacter.Location = New System.Drawing.Point(865, 401)
+        Me.ButtonResetCharacter.Margin = New System.Windows.Forms.Padding(2)
+        Me.ButtonResetCharacter.Name = "ResetCharacterButton"
+        Me.ButtonResetCharacter.Size = New System.Drawing.Size(72, 52)
+        Me.ButtonResetCharacter.TabIndex = 66
+        Me.ButtonResetCharacter.Tag = "1"
+        Me.ButtonResetCharacter.Text = "Reset Character"
+        Me.ButtonResetCharacter.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -592,29 +552,22 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1101, 473)
-        Me.Controls.Add(Me.NumericUpDown6)
-        Me.Controls.Add(Me.NumericUpDown5)
-        Me.Controls.Add(Me.NumericUpDown4)
-        Me.Controls.Add(Me.NumericUpDown3)
-        Me.Controls.Add(Me.NumericUpDown2)
-        Me.Controls.Add(Me.NumericUpDown1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.ButtonResetCharacter)
+        Me.Controls.Add(Me.DexTicker)
+        Me.Controls.Add(Me.ConTicker)
+        Me.Controls.Add(Me.IntTicker)
+        Me.Controls.Add(Me.WisTicker)
+        Me.Controls.Add(Me.ChrTicker)
+        Me.Controls.Add(Me.StrTicker)
+        Me.Controls.Add(Me.ButtonSkillRoll)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.ButtonDisplayCharacter2)
-        Me.Controls.Add(Me.ButtonDisplayCharacter3)
         Me.Controls.Add(Me.ListBox1)
-        Me.Controls.Add(Me.ButtonDisplayCharacter1)
+        Me.Controls.Add(Me.ButtonDisplayAllCharacters)
         Me.Controls.Add(Me.ButtonClear)
         Me.Controls.Add(Me.ButtonCreateCharacter)
         Me.Controls.Add(Me.AttributeBox)
         Me.Controls.Add(Me.NameBox)
-        Me.Controls.Add(Me.CharismaBox)
-        Me.Controls.Add(Me.WisdomBox)
-        Me.Controls.Add(Me.IntelligenceBox)
-        Me.Controls.Add(Me.ConstitutionBox)
-        Me.Controls.Add(Me.DexterityBox)
-        Me.Controls.Add(Me.StrengthBox)
         Me.Controls.Add(Me.OneInch)
         Me.Controls.Add(Me.Sushiswap)
         Me.Controls.Add(Me.Label5)
@@ -641,12 +594,12 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StrTicker, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChrTicker, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WisTicker, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IntTicker, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConTicker, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DexTicker, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -671,22 +624,14 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Sushiswap As Button
     Friend WithEvents OneInch As Button
-    Friend WithEvents StrengthBox As TextBox
-    Friend WithEvents DexterityBox As TextBox
-    Friend WithEvents ConstitutionBox As TextBox
-    Friend WithEvents IntelligenceBox As TextBox
-    Friend WithEvents WisdomBox As TextBox
-    Friend WithEvents CharismaBox As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents NameBox As TextBox
     Friend WithEvents AttributeBox As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents ButtonCreateCharacter As Button
     Friend WithEvents ButtonClear As Button
-    Friend WithEvents ButtonDisplayCharacter1 As Button
+    Friend WithEvents ButtonDisplayAllCharacters As Button
     Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents ButtonDisplayCharacter3 As Button
-    Friend WithEvents ButtonDisplayCharacter2 As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Character2Radio As RadioButton
     Friend WithEvents Character1Radio As RadioButton
@@ -698,11 +643,12 @@ Partial Class Form1
     Friend WithEvents ConstitutionRadio As RadioButton
     Friend WithEvents DexterityRadio As RadioButton
     Friend WithEvents StrengthRadio As RadioButton
-    Friend WithEvents Button2 As Button
-    Friend WithEvents NumericUpDown1 As NumericUpDown
-    Friend WithEvents NumericUpDown2 As NumericUpDown
-    Friend WithEvents NumericUpDown3 As NumericUpDown
-    Friend WithEvents NumericUpDown4 As NumericUpDown
-    Friend WithEvents NumericUpDown5 As NumericUpDown
-    Friend WithEvents NumericUpDown6 As NumericUpDown
+    Friend WithEvents ButtonSkillRoll As Button
+    Friend WithEvents StrTicker As NumericUpDown
+    Friend WithEvents ChrTicker As NumericUpDown
+    Friend WithEvents WisTicker As NumericUpDown
+    Friend WithEvents IntTicker As NumericUpDown
+    Friend WithEvents ConTicker As NumericUpDown
+    Friend WithEvents DexTicker As NumericUpDown
+    Friend WithEvents ButtonResetCharacter As Button
 End Class
