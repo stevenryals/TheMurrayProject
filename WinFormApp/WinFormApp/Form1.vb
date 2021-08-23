@@ -135,25 +135,17 @@
 
     Private Sub ButtonUpdateStats_Click(sender As Object, e As EventArgs) Handles ButtonUpdateStats.Click
 
-        If WhichCharacter() = False Then
-
-            Call SetCharacter(Index)
-            Call DisplayCharacter(Index, 0, 0)
-            Index += 1
-
-        Else
-
-            Call SetCharacter(WhichCharacter)
-            Call DisplayCharacter(WhichCharacter, 0, 0)
-
-        End If
+        ListBox1.Items.Clear()
+        ListBox1.Text = ""
+        Call UpdateCharacter(WhichCharacterAndSkill(WhichCharacter, WhichSkill)) 
+        Call DisplayCharacter(0, 1, 2)
 
     End Sub
 
 #End Region
 #Region "Functions"
 
-    Private Sub SetCharacter(i As Integer, Optional j = 0, Optional l = 0)
+    Private Sub SetCharacter(i As Integer)
         'index counts characters entered
         Try
             If i = 0 Then
@@ -381,6 +373,19 @@
         Catch ex As NullReferenceException
         End Try
 
+
+    End Function
+
+    Private Function UpdateCharacter(ByRef Selected)
+
+        'index counts characters entered
+        Dim OriginalCharacter As Character = WhichCharacter.Name And WhichCharacter.Attributes And WhichSkill.Value
+
+        Call CharacterResetter(Selected)
+
+        Dim UpdatedCharacter = OriginalCharacter + WhichSkill.Value
+
+        Return UpdatedCharacter
 
     End Function
 
