@@ -84,9 +84,9 @@
     Private Sub ButtonCreateCharacter_Click(sender As Object, e As EventArgs) Handles ButtonCreateCharacter.Click
         'Creates and displays character. When character is unspecified, goes 1, 2, 3. Or can create a specified character
 
-        If WhichCharacter() = False Then
+        If WhichCharacter() Is Nothing Then
 
-            Call SetCharacter(Index)
+            Call SetCharacter(Index, )
             NameBox.Text = ""
             AttributeBox.Text = ""
             Call DisplayCharacter(Index, 0, 0)
@@ -94,7 +94,7 @@
 
         Else
 
-            Call SetCharacter(WhichCharacter)
+            Call SetCharacter(, WhichCharacter)
             NameBox.Text = ""
             AttributeBox.Text = ""
             Call DisplayCharacter(WhichCharacter, 0, 0)
@@ -145,10 +145,10 @@
 #End Region
 #Region "Functions"
 
-    Private Sub SetCharacter(i As Integer)
+    Private Sub SetCharacter(Optional i As Integer = 0, Optional Selected As Character = Nothing)
         'index counts characters entered
         Try
-            If i = 0 Then
+            If i = 0 Or Selected Is Character1 Then
                 Character1.Name = NameBox.Text
                 Character1.Attributes = AttributeBox.Text
                 Character1.Strength = CInt(StrTicker.Value)
@@ -158,7 +158,7 @@
                 Character1.Wisdom = CInt(WisTicker.Value)
                 Character1.Charisma = CInt(ChrTicker.Value)
 
-            ElseIf i = 1 Then
+            ElseIf i = 1 Or Selected Is Character2 Then
                 Character2.Name = NameBox.Text
                 Character2.Attributes = AttributeBox.Text
                 Character2.Strength = CInt(StrTicker.Value)
@@ -182,10 +182,10 @@
         End Try
     End Sub
 
-    Private Sub CharacterResetter(i As Integer)
+    Private Sub CharacterResetter(i As Character)
 
         'finds what character is selected then resets it
-        If i = 0 Then
+        If i Is Character1 Then
             Character1.Name = ""
             Character1.Attributes = ""
             Character1.Strength = 0
@@ -194,7 +194,7 @@
             Character1.Intelligence = 0
             Character1.Wisdom = 0
             Character1.Charisma = 0
-        ElseIf i = 1 Then
+        ElseIf i Is Character2 Then
             Character2.Name = ""
             Character2.Attributes = ""
             Character2.Strength = 0
@@ -276,28 +276,65 @@
 
     End Sub
 
-    Private Function WhichCharacter() Handles Character1Radio.CheckedChanged, Character2Radio.CheckedChanged, Character3Radio.CheckedChanged
+    Private Function WhichCharacter()
+
         'Checks for which character is selected
-        Dim radio As Integer
         If Character1Radio.Checked = True Or Character2Radio.Checked = True Or Character3Radio.Checked = True Then
+
+            Dim radio As Integer
+            Dim Selected As Character
+
             Try
                 If Character1Radio.Checked = True Then
-                    radio = 0
+
+                    If Character1 IsNot Nothing Then
+
+                        Selected = Character1
+                        Return Selected
+
+                    Else
+
+                        radio = 0
+
+                    End If
+
                 ElseIf Character2Radio.Checked = True Then
-                    radio = 1
+
+                    If Character2 IsNot Nothing Then
+
+                        Selected = Character1
+                        Return Selected
+
+                    Else
+
+                        radio = 1
+
+                    End If
                 Else
-                    radio = 2
+
+                    If Character3 IsNot Nothing Then
+
+                        Selected = Character3
+                        Return Selected
+
+                    Else
+
+                        radio = 2
+
+                    End If
                 End If
                 Exit Try
-            Catch ex As InvalidCastException
+            Catch ex As NullReferenceException
             End Try
             Return True And radio
         Else
             Return False
         End If
+
+
     End Function
 
-    Private Function WhichSkill() Handles StrengthRadio.CheckedChanged, DexterityRadio.CheckedChanged, ConstitutionRadio.CheckedChanged, IntelligenceRadio.CheckedChanged, WisdomRadio.CheckedChanged, CharismaRadio.CheckedChanged
+    Private Function WhichSkill()
         ' Checks which skill is selected
         Dim button As Integer
         Try
@@ -317,15 +354,14 @@
             Exit Try
         Catch ex As InvalidCastException
         End Try
-        Return button
-
+        Return True And button
     End Function
 
-    Private Function WhichCharacterAndSkill(i As Integer, j As Integer) As Integer
+    Private Function WhichCharacterAndSkill(i As Character, j As Integer) As Integer
 
         Try
             Dim Selected As Integer
-            If i = 0 Then
+            If i Is Character1 Then
                 If j = 0 Then
                     Selected = Character1.Strength
                 ElseIf j = 1 Then
@@ -339,7 +375,7 @@
                 ElseIf j = 5 Then
                     Selected = Character1.Charisma
                 End If
-            ElseIf i = 1 Then
+            ElseIf i Is Character2 Then
                 If j = 0 Then
                     Selected = Character2.Strength
                 ElseIf j = 1 Then
@@ -379,13 +415,16 @@
     Private Function UpdateCharacter(ByRef Selected)
 
         'index counts characters entered
-        Dim OriginalCharacter As Character = WhichCharacter.Name And WhichCharacter.Attributes And WhichSkill.Value
+        Dim OriginalCharacter As Character
+        OriginalCharacter.Name = WhichCharacter.Name
+        OriginalCharacter.Attributes = WhichCharacter.Attributes
+
 
         Call CharacterResetter(Selected)
 
         Dim UpdatedCharacter = OriginalCharacter + WhichSkill.Value
 
-        Return UpdatedCharacter
+        Return OriginalCharacter
 
     End Function
 
