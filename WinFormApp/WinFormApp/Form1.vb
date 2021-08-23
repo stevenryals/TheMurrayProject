@@ -72,6 +72,7 @@
 
     Private Sub Form1_Load(Sender As Object, e As EventArgs) Handles MyBase.Load
         'Create Character instances
+
         Character1 = New Character()
         Character2 = New Character()
         Character3 = New Character()
@@ -93,7 +94,6 @@
 
         Else
 
-            Call WhichCharacter()
             Call SetCharacter(WhichCharacter)
             NameBox.Text = ""
             AttributeBox.Text = ""
@@ -109,8 +109,6 @@
 
     End Sub
 
-
-
     Private Sub ButtonClear_Click(sender As Object, e As EventArgs) Handles ButtonClear.Click
         'Clear ListBox
         ListBox1.Items.Clear()
@@ -118,8 +116,11 @@
 
     End Sub
 
-    Private Sub ButtonDisplayAllCharacters_Click(sender As Object, e As EventArgs) Handles ButtonDisplayAllCharacters.Click
-        'displays character based on each buttons Tag property
+    Private Sub ButtonDisplayAllCharacters_Click(sender As Object, e As EventArgs) Handles ButtonDisplayAllCharacters.Click, ButtonCreateCharacter.Click
+        'clears listbox then displays character based on each buttons Tag property
+        ListBox1.Items.Clear()
+        ListBox1.Text = ""
+
         Dim btn As Button = CType(sender, Button)
         Call DisplayCharacter(0, 1, 2)
 
@@ -132,8 +133,62 @@
 
     End Sub
 
+    Private Sub ButtonUpdateStats_Click(sender As Object, e As EventArgs) Handles ButtonUpdateStats.Click
+
+        If WhichCharacter() = False Then
+
+            Call SetCharacter(Index)
+            Call DisplayCharacter(Index, 0, 0)
+            Index += 1
+
+        Else
+
+            Call SetCharacter(WhichCharacter)
+            Call DisplayCharacter(WhichCharacter, 0, 0)
+
+        End If
+
+    End Sub
+
 #End Region
 #Region "Functions"
+
+    Private Sub SetCharacter(i As Integer, Optional j = 0, Optional l = 0)
+        'index counts characters entered
+        Try
+            If i = 0 Then
+                Character1.Name = NameBox.Text
+                Character1.Attributes = AttributeBox.Text
+                Character1.Strength = CInt(StrTicker.Value)
+                Character1.Dexterity = CInt(DexTicker.Value)
+                Character1.Constitution = CInt(ConTicker.Value)
+                Character1.Intelligence = CInt(IntTicker.Value)
+                Character1.Wisdom = CInt(WisTicker.Value)
+                Character1.Charisma = CInt(ChrTicker.Value)
+
+            ElseIf i = 1 Then
+                Character2.Name = NameBox.Text
+                Character2.Attributes = AttributeBox.Text
+                Character2.Strength = CInt(StrTicker.Value)
+                Character2.Dexterity = CInt(DexTicker.Value)
+                Character2.Constitution = CInt(ConTicker.Value)
+                Character2.Intelligence = CInt(IntTicker.Value)
+                Character2.Wisdom = CInt(WisTicker.Value)
+                Character2.Charisma = CInt(ChrTicker.Value)
+
+            Else
+                Character3.Name = NameBox.Text
+                Character3.Attributes = AttributeBox.Text
+                Character3.Strength = CInt(StrTicker.Value)
+                Character3.Dexterity = CInt(DexTicker.Value)
+                Character3.Constitution = CInt(ConTicker.Value)
+                Character3.Intelligence = CInt(IntTicker.Value)
+                Character3.Wisdom = CInt(WisTicker.Value)
+                Character3.Charisma = CInt(ChrTicker.Value)
+            End If
+        Catch ex As NullReferenceException
+        End Try
+    End Sub
 
     Private Sub CharacterResetter(i As Integer)
 
@@ -169,41 +224,6 @@
 
     End Sub
 
-    Private Sub SetCharacter(i As Integer)
-        'index counts characters entered
-        If i = 0 Then
-            Character1.Name = NameBox.Text
-            Character1.Attributes = AttributeBox.Text
-            Character1.Strength = CInt(StrTicker.Value)
-            Character1.Dexterity = CInt(DexTicker.Value)
-            Character1.Constitution = CInt(ConTicker.Value)
-            Character1.Intelligence = CInt(IntTicker.Value)
-            Character1.Wisdom = CInt(WisTicker.Value)
-            Character1.Charisma = CInt(ChrTicker.Value)
-
-        ElseIf i = 1 Then
-            Character2.Name = NameBox.Text
-            Character2.Attributes = AttributeBox.Text
-            Character2.Strength = CInt(StrTicker.Value)
-            Character2.Dexterity = CInt(DexTicker.Value)
-            Character2.Constitution = CInt(ConTicker.Value)
-            Character2.Intelligence = CInt(IntTicker.Value)
-            Character2.Wisdom = CInt(WisTicker.Value)
-            Character2.Charisma = CInt(ChrTicker.Value)
-
-        Else
-            Character3.Name = NameBox.Text
-            Character3.Attributes = AttributeBox.Text
-            Character3.Strength = CInt(StrTicker.Value)
-            Character3.Dexterity = CInt(DexTicker.Value)
-            Character3.Constitution = CInt(ConTicker.Value)
-            Character3.Intelligence = CInt(IntTicker.Value)
-            Character3.Wisdom = CInt(WisTicker.Value)
-            Character3.Charisma = CInt(ChrTicker.Value)
-        End If
-
-    End Sub
-
     Private Sub DisplayCharacter(i As Integer, Optional j As Integer = 0, Optional l As Integer = 0)
         'create string to display character info
         Dim StrToString1 As String
@@ -216,6 +236,7 @@
         'string 1 is top row of name and attributes, 2 is second row of your stats
         Try
             If i = 0 Then
+
                 StrToString1 = "1. " & Character1.Name & ":  " _
                     & Character1.Attributes
                 StrToString2 = "   STR: " & Character1.Strength _
@@ -224,10 +245,12 @@
                     & "  INT: " & Character1.Intelligence _
                     & "  WIS: " & Character1.Wisdom _
                     & "  CHR: " & Character1.Charisma
+
                 ListBox1.Items.Add(StrToString1)
                 ListBox1.Items.Add(StrToString2)
             End If
             If i = 1 Or j = 1 Then
+
                 StrToString3 = "2. " & Character2.Name & ":  " _
                     & Character2.Attributes
                 StrToString4 = "   STR: " & Character2.Strength _
@@ -236,10 +259,12 @@
                 & "  INT: " & Character2.Intelligence _
                 & "  WIS: " & Character2.Wisdom _
                 & "  CHR: " & Character2.Charisma
+
                 ListBox1.Items.Add(StrToString3)
                 ListBox1.Items.Add(StrToString4)
             End If
             If i = 2 Or l = 2 Then
+
                 StrToString5 = "3. " & Character3.Name & ":  " _
                     & Character3.Attributes
                 StrToString6 = "   STR: " & Character3.Strength _
@@ -248,6 +273,7 @@
                     & "  INT: " & Character3.Intelligence _
                     & "  WIS: " & Character3.Wisdom _
                     & "  CHR: " & Character3.Charisma
+
                 ListBox1.Items.Add(StrToString5)
                 ListBox1.Items.Add(StrToString6)
             End If
@@ -304,62 +330,62 @@
     End Function
 
     Private Function WhichCharacterAndSkill(i As Integer, j As Integer) As Integer
-        'le dice
-        Dim Selected As Object
 
-        i = WhichCharacter()
-        j = WhichSkill()
+        Try
+            Dim Selected As Integer
+            If i = 0 Then
+                If j = 0 Then
+                    Selected = Character1.Strength
+                ElseIf j = 1 Then
+                    Selected = Character1.Dexterity
+                ElseIf j = 2 Then
+                    Selected = Character1.Constitution
+                ElseIf j = 3 Then
+                    Selected = Character1.Intelligence
+                ElseIf j = 4 Then
+                    Selected = Character1.Wisdom
+                ElseIf j = 5 Then
+                    Selected = Character1.Charisma
+                End If
+            ElseIf i = 1 Then
+                If j = 0 Then
+                    Selected = Character2.Strength
+                ElseIf j = 1 Then
+                    Selected = Character2.Dexterity
+                ElseIf j = 2 Then
+                    Selected = Character2.Constitution
+                ElseIf j = 3 Then
+                    Selected = Character2.Intelligence
+                ElseIf j = 4 Then
+                    Selected = Character2.Wisdom
+                ElseIf j = 5 Then
+                    Selected = Character2.Charisma
+                End If
+            Else
+                If j = 0 Then
+                    Selected = Character3.Strength
+                ElseIf j = 1 Then
+                    Selected = Character3.Dexterity
+                ElseIf j = 2 Then
+                    Selected = Character3.Constitution
+                ElseIf j = 3 Then
+                    Selected = Character3.Intelligence
+                ElseIf j = 4 Then
+                    Selected = Character3.Wisdom
+                ElseIf j = 5 Then
+                    Selected = Character3.Charisma
+                End If
+            End If
 
-        If i = 0 Then
-            If j = 0 Then
-                Selected = Character1.Strength
-            ElseIf j = 1 Then
-                Selected = Character1.Dexterity
-            ElseIf j = 2 Then
-                Selected = Character1.Constitution
-            ElseIf j = 3 Then
-                Selected = Character1.Intelligence
-            ElseIf j = 4 Then
-                Selected = Character1.Wisdom
-            ElseIf j = 5 Then
-                Selected = Character1.Charisma
-            End If
-        ElseIf i = 1 Then
-            If j = 0 Then
-                Selected = Character2.Strength
-            ElseIf j = 1 Then
-                Selected = Character2.Dexterity
-            ElseIf j = 2 Then
-                Selected = Character2.Constitution
-            ElseIf j = 3 Then
-                Selected = Character2.Intelligence
-            ElseIf j = 4 Then
-                Selected = Character2.Wisdom
-            ElseIf j = 5 Then
-                Selected = Character2.Charisma
-            End If
-        Else
-            If j = 0 Then
-                Selected = Character3.Strength
-            ElseIf j = 1 Then
-                Selected = Character3.Dexterity
-            ElseIf j = 2 Then
-                Selected = Character3.Constitution
-            ElseIf j = 3 Then
-                Selected = Character3.Intelligence
-            ElseIf j = 4 Then
-                Selected = Character3.Wisdom
-            ElseIf j = 5 Then
-                Selected = Character3.Charisma
-            End If
-        End If
+            Return Selected
+        Catch ex As NullReferenceException
+        End Try
 
-        Return Selected
 
     End Function
 
     Private Function AddD20(SelectedCharacterAndSkill) As Integer
-
+        ' le dice
         Dim DiceResult As Integer = New Random().Next(0, 21) + SelectedCharacterAndSkill
         Return DiceResult
 

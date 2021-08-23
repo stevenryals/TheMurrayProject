@@ -68,6 +68,7 @@ Partial Class Form1
         Me.ConTicker = New System.Windows.Forms.NumericUpDown()
         Me.DexTicker = New System.Windows.Forms.NumericUpDown()
         Me.ButtonResetCharacter = New System.Windows.Forms.Button()
+        Me.ButtonUpdateStats = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.StrTicker, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -302,11 +303,11 @@ Partial Class Form1
         Me.ButtonClear.Text = "Clear"
         Me.ButtonClear.UseVisualStyleBackColor = True
         '
-        'ButtonDisplayCharacter1
+        'ButtonDisplayAllCharacters
         '
         Me.ButtonDisplayAllCharacters.Location = New System.Drawing.Point(664, 214)
         Me.ButtonDisplayAllCharacters.Margin = New System.Windows.Forms.Padding(2)
-        Me.ButtonDisplayAllCharacters.Name = "ButtonDisplayCharacter1"
+        Me.ButtonDisplayAllCharacters.Name = "ButtonDisplayAllCharacters"
         Me.ButtonDisplayAllCharacters.Size = New System.Drawing.Size(72, 52)
         Me.ButtonDisplayAllCharacters.TabIndex = 47
         Me.ButtonDisplayAllCharacters.Tag = "0"
@@ -459,10 +460,10 @@ Partial Class Form1
         Me.StrengthRadio.Text = "Str"
         Me.StrengthRadio.UseVisualStyleBackColor = True
         '
-        'Button2
+        'ButtonSkillRoll
         '
         Me.ButtonSkillRoll.Location = New System.Drawing.Point(932, 224)
-        Me.ButtonSkillRoll.Name = "Button2"
+        Me.ButtonSkillRoll.Name = "ButtonSkillRoll"
         Me.ButtonSkillRoll.Size = New System.Drawing.Size(72, 64)
         Me.ButtonSkillRoll.TabIndex = 59
         Me.ButtonSkillRoll.Text = "d20 Skill Roll"
@@ -534,16 +535,26 @@ Partial Class Form1
         Me.DexTicker.Tag = "1"
         Me.DexTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'ResetCharacterButton
+        'ButtonResetCharacter
         '
         Me.ButtonResetCharacter.Location = New System.Drawing.Point(865, 401)
         Me.ButtonResetCharacter.Margin = New System.Windows.Forms.Padding(2)
-        Me.ButtonResetCharacter.Name = "ResetCharacterButton"
+        Me.ButtonResetCharacter.Name = "ButtonResetCharacter"
         Me.ButtonResetCharacter.Size = New System.Drawing.Size(72, 52)
         Me.ButtonResetCharacter.TabIndex = 66
         Me.ButtonResetCharacter.Tag = "1"
         Me.ButtonResetCharacter.Text = "Reset Character"
         Me.ButtonResetCharacter.UseVisualStyleBackColor = True
+        '
+        'ButtonUpdateStats
+        '
+        Me.ButtonUpdateStats.Location = New System.Drawing.Point(932, 123)
+        Me.ButtonUpdateStats.Margin = New System.Windows.Forms.Padding(2)
+        Me.ButtonUpdateStats.Name = "ButtonUpdateStats"
+        Me.ButtonUpdateStats.Size = New System.Drawing.Size(72, 43)
+        Me.ButtonUpdateStats.TabIndex = 67
+        Me.ButtonUpdateStats.Text = "Update Stats"
+        Me.ButtonUpdateStats.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -552,6 +563,7 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1101, 473)
+        Me.Controls.Add(Me.ButtonUpdateStats)
         Me.Controls.Add(Me.ButtonResetCharacter)
         Me.Controls.Add(Me.DexTicker)
         Me.Controls.Add(Me.ConTicker)
@@ -651,4 +663,5 @@ Partial Class Form1
     Friend WithEvents ConTicker As NumericUpDown
     Friend WithEvents DexTicker As NumericUpDown
     Friend WithEvents ButtonResetCharacter As Button
+    Friend WithEvents ButtonUpdateStats As Button
 End Class
