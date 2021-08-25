@@ -479,7 +479,7 @@ Public Class Form1
 
     Private Sub OneInch_Click() Handles OneInch.Click
 
-        RichTextBox1.Text = ScrapeEthPrice("https://coinranking.com/market/HzStwO_SYA+dai-eth-sushiswap")
+        RichTextBox1.Text = ScrapeEthPrice("https://coinranking.com/market/e4eXYeWe4lo%2Bdai-eth-1inch")
 
     End Sub
 
