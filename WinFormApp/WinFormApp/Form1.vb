@@ -463,41 +463,68 @@ Public Class Form1
     '#End Region
 
 #Region "Web Scraper"
+#Region "Buttons"
+    Private Sub DaiToEthPrices_Click() Handles DaiToEthPrices.Click
 
-    Private Sub Uniswap_Click() Handles Uniswap.Click
+        RichTextBox1.Text = "Via https://coinranking.com" & vbCrLf & vbCrLf _
+        & "Uniswap: " & ScrapeDaiToEthPriceCoinranking("https://coinranking.com/market/7C9zn0pFo6+dai-eth-uniswap") & vbCrLf _
+        & "Shushiswap: " & ScrapeDaiToEthPriceCoinranking("https://coinranking.com/market/HzStwO_SYA+dai-eth-sushiswap") & vbCrLf _
+        & "1inch: " & ScrapeDaiToEthPriceCoinranking("https://coinranking.com/market/e4eXYeWe4lo%2Bdai-eth-1inch") & vbCrLf _
+        & "Kyber Network: " & ScrapeDaiToEthPriceCoinranking("https://coinranking.com/market/tclz4I8eFR%2Bdai-eth-kyber-network") & vbCrLf _
+        & "LinTax: " & ScrapeDaiToEthPriceCoinranking("https://coinranking.com/market/ReIMxQiTdz%2Bdai-eth-lintax")
 
-        RichTextBox1.Text = ScrapeEthPrice("https://coinranking.com/market/7C9zn0pFo6+dai-eth-uniswap")
-
-
-    End Sub
-
-    Private Sub Sushiswap_Click() Handles Sushiswap.Click
-
-        RichTextBox1.Text = ScrapeEthPrice("https://coinranking.com/market/HzStwO_SYA+dai-eth-sushiswap")
-
-    End Sub
-
-    Private Sub OneInch_Click() Handles OneInch.Click
-
-        RichTextBox1.Text = ScrapeEthPrice("https://coinranking.com/market/e4eXYeWe4lo%2Bdai-eth-1inch")
 
     End Sub
 
-    Private Function ScrapeEthPrice(URL)
+    Private Sub WebBrowserScraper_Click() Handles WebBrowserScraper.Click
 
-        Dim GivenURL = URL
-        Dim web = New HtmlWeb
-        Dim doc = web.Load(GivenURL)
-        Dim titleNode = doc.DocumentNode.SelectSingleNode("//*[@id='__layout']/div/div[3]/section/div[3]/div/div[1]/div/table/tbody/tr[2]/td[2]")
-        Dim title As String
-        If titleNode IsNot Nothing Then
-            title = titleNode.InnerText
-            Return title
+        RichTextBox1.Text = WebScrapeForTitle(WebScrape1TextBox.Text)
+        Call WebBrowserNavigate("https://www." & WebScrape1TextBox.Text)
+
+    End Sub
+
+#End Region
+
+#Region "Functions"
+
+    Private Function WebScrapeForTitle(URL As String)
+
+        Dim Web = New HtmlWeb
+        Dim Doc = Web.Load(URL)
+        Dim TitleNode = Doc.DocumentNode.SelectSingleNode("/html/head/title")
+        Dim Title As String
+        If TitleNode IsNot Nothing Then
+            Title = TitleNode.InnerText
+            Return Title
         End If
 
-        Return "Suck a weenee"
+        Return "Title not found"
 
     End Function
+
+    Private Sub WebBrowserNavigate(URL As String)
+
+        WebBrowser1.Navigate(URL)
+
+    End Sub
+
+    Private Function ScrapeDaiToEthPriceCoinranking(URL As String)
+
+        Dim GivenURL = URL
+        Dim Web = New HtmlWeb
+        Dim Doc = Web.Load(GivenURL)
+        Dim TitleNode = Doc.DocumentNode.SelectSingleNode("//*[@id='__layout']/div/div[3]/section/div[3]/div/div[1]/div/table/tbody/tr[2]/td[2]")
+        Dim Title As String
+        If TitleNode IsNot Nothing Then
+            Title = TitleNode.InnerText
+            Return Title
+        End If
+
+        Return "No data for this exchange"
+
+    End Function
+
+#End Region
 
 #End Region
 

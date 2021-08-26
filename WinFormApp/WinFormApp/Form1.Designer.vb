@@ -36,11 +36,9 @@ Partial Class Form1
         Me.EightBallLabel = New System.Windows.Forms.Label()
         Me.Magic8BallButton = New System.Windows.Forms.Button()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
-        Me.Uniswap = New System.Windows.Forms.Button()
-        Me.webScrape1TextBox = New System.Windows.Forms.TextBox()
+        Me.DaiToEthPrices = New System.Windows.Forms.Button()
+        Me.WebScrape1TextBox = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Sushiswap = New System.Windows.Forms.Button()
-        Me.OneInch = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.NameBox = New System.Windows.Forms.TextBox()
         Me.AttributeBox = New System.Windows.Forms.TextBox()
@@ -69,6 +67,7 @@ Partial Class Form1
         Me.DexTicker = New System.Windows.Forms.NumericUpDown()
         Me.ButtonResetCharacter = New System.Windows.Forms.Button()
         Me.ButtonUpdateStats = New System.Windows.Forms.Button()
+        Me.WebBrowserScraper = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.StrTicker, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,16 +105,16 @@ Partial Class Form1
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(512, 328)
+        Me.RichTextBox1.Location = New System.Drawing.Point(705, 403)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(152, 98)
+        Me.RichTextBox1.Size = New System.Drawing.Size(264, 236)
         Me.RichTextBox1.TabIndex = 3
         Me.RichTextBox1.Text = ""
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(509, 311)
+        Me.Label2.Location = New System.Drawing.Point(702, 385)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(85, 13)
         Me.Label2.TabIndex = 4
@@ -197,25 +196,25 @@ Partial Class Form1
         Me.WebBrowser1.Margin = New System.Windows.Forms.Padding(2)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(15, 16)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(400, 199)
+        Me.WebBrowser1.Size = New System.Drawing.Size(400, 417)
         Me.WebBrowser1.TabIndex = 13
         '
-        'Uniswap
+        'DaiToEthPrices
         '
-        Me.Uniswap.Location = New System.Drawing.Point(490, 9)
-        Me.Uniswap.Margin = New System.Windows.Forms.Padding(2)
-        Me.Uniswap.Name = "Uniswap"
-        Me.Uniswap.Size = New System.Drawing.Size(101, 19)
-        Me.Uniswap.TabIndex = 14
-        Me.Uniswap.Text = "Uniswap"
-        Me.Uniswap.UseVisualStyleBackColor = True
+        Me.DaiToEthPrices.Location = New System.Drawing.Point(419, 224)
+        Me.DaiToEthPrices.Margin = New System.Windows.Forms.Padding(2)
+        Me.DaiToEthPrices.Name = "DaiToEthPrices"
+        Me.DaiToEthPrices.Size = New System.Drawing.Size(89, 20)
+        Me.DaiToEthPrices.TabIndex = 14
+        Me.DaiToEthPrices.Text = "Dai - Eth Prices"
+        Me.DaiToEthPrices.UseVisualStyleBackColor = True
         '
-        'webScrape1TextBox
+        'WebScrape1TextBox
         '
-        Me.webScrape1TextBox.Location = New System.Drawing.Point(123, 191)
-        Me.webScrape1TextBox.Name = "webScrape1TextBox"
-        Me.webScrape1TextBox.Size = New System.Drawing.Size(290, 20)
-        Me.webScrape1TextBox.TabIndex = 15
+        Me.WebScrape1TextBox.Location = New System.Drawing.Point(123, 191)
+        Me.WebScrape1TextBox.Name = "WebScrape1TextBox"
+        Me.WebScrape1TextBox.Size = New System.Drawing.Size(290, 20)
+        Me.WebScrape1TextBox.TabIndex = 15
         '
         'Label5
         '
@@ -226,26 +225,6 @@ Partial Class Form1
         Me.Label5.Size = New System.Drawing.Size(104, 13)
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "Enter Web Site URL"
-        '
-        'Sushiswap
-        '
-        Me.Sushiswap.Location = New System.Drawing.Point(490, 32)
-        Me.Sushiswap.Margin = New System.Windows.Forms.Padding(2)
-        Me.Sushiswap.Name = "Sushiswap"
-        Me.Sushiswap.Size = New System.Drawing.Size(101, 19)
-        Me.Sushiswap.TabIndex = 17
-        Me.Sushiswap.Text = "Sushiswap"
-        Me.Sushiswap.UseVisualStyleBackColor = True
-        '
-        'OneInch
-        '
-        Me.OneInch.Location = New System.Drawing.Point(490, 55)
-        Me.OneInch.Margin = New System.Windows.Forms.Padding(2)
-        Me.OneInch.Name = "OneInch"
-        Me.OneInch.Size = New System.Drawing.Size(101, 19)
-        Me.OneInch.TabIndex = 18
-        Me.OneInch.Text = "1inch"
-        Me.OneInch.UseVisualStyleBackColor = True
         '
         'Label13
         '
@@ -259,7 +238,7 @@ Partial Class Form1
         '
         'NameBox
         '
-        Me.NameBox.Location = New System.Drawing.Point(875, 32)
+        Me.NameBox.Location = New System.Drawing.Point(1258, 323)
         Me.NameBox.Margin = New System.Windows.Forms.Padding(2)
         Me.NameBox.Name = "NameBox"
         Me.NameBox.Size = New System.Drawing.Size(76, 20)
@@ -267,7 +246,7 @@ Partial Class Form1
         '
         'AttributeBox
         '
-        Me.AttributeBox.Location = New System.Drawing.Point(875, 55)
+        Me.AttributeBox.Location = New System.Drawing.Point(1258, 300)
         Me.AttributeBox.Margin = New System.Windows.Forms.Padding(2)
         Me.AttributeBox.Name = "AttributeBox"
         Me.AttributeBox.Size = New System.Drawing.Size(76, 20)
@@ -285,30 +264,30 @@ Partial Class Form1
         '
         'ButtonCreateCharacter
         '
-        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(932, 170)
+        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(1340, 428)
         Me.ButtonCreateCharacter.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonCreateCharacter.Name = "ButtonCreateCharacter"
-        Me.ButtonCreateCharacter.Size = New System.Drawing.Size(72, 43)
+        Me.ButtonCreateCharacter.Size = New System.Drawing.Size(80, 43)
         Me.ButtonCreateCharacter.TabIndex = 45
         Me.ButtonCreateCharacter.Text = "Create Character"
         Me.ButtonCreateCharacter.UseVisualStyleBackColor = True
         '
         'ButtonClear
         '
-        Me.ButtonClear.Location = New System.Drawing.Point(740, 214)
+        Me.ButtonClear.Location = New System.Drawing.Point(1173, 622)
         Me.ButtonClear.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonClear.Name = "ButtonClear"
-        Me.ButtonClear.Size = New System.Drawing.Size(73, 52)
+        Me.ButtonClear.Size = New System.Drawing.Size(161, 19)
         Me.ButtonClear.TabIndex = 46
         Me.ButtonClear.Text = "Clear"
         Me.ButtonClear.UseVisualStyleBackColor = True
         '
         'ButtonDisplayAllCharacters
         '
-        Me.ButtonDisplayAllCharacters.Location = New System.Drawing.Point(664, 214)
+        Me.ButtonDisplayAllCharacters.Location = New System.Drawing.Point(1338, 578)
         Me.ButtonDisplayAllCharacters.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonDisplayAllCharacters.Name = "ButtonDisplayAllCharacters"
-        Me.ButtonDisplayAllCharacters.Size = New System.Drawing.Size(72, 52)
+        Me.ButtonDisplayAllCharacters.Size = New System.Drawing.Size(82, 52)
         Me.ButtonDisplayAllCharacters.TabIndex = 47
         Me.ButtonDisplayAllCharacters.Tag = "0"
         Me.ButtonDisplayAllCharacters.Text = "Display Characters"
@@ -319,8 +298,9 @@ Partial Class Form1
         Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 16
-        Me.ListBox1.Location = New System.Drawing.Point(490, 78)
+        Me.ListBox1.Location = New System.Drawing.Point(1011, 486)
         Me.ListBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListBox1.MultiColumn = True
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(323, 132)
         Me.ListBox1.TabIndex = 48
@@ -330,7 +310,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Character3Radio)
         Me.GroupBox1.Controls.Add(Me.Character2Radio)
         Me.GroupBox1.Controls.Add(Me.Character1Radio)
-        Me.GroupBox1.Location = New System.Drawing.Point(829, 219)
+        Me.GroupBox1.Location = New System.Drawing.Point(1340, 284)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(97, 69)
         Me.GroupBox1.TabIndex = 57
@@ -382,7 +362,7 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.StrengthRadio)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Location = New System.Drawing.Point(818, 32)
+        Me.GroupBox2.Location = New System.Drawing.Point(1202, 300)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(52, 180)
         Me.GroupBox2.TabIndex = 58
@@ -462,16 +442,16 @@ Partial Class Form1
         '
         'ButtonSkillRoll
         '
-        Me.ButtonSkillRoll.Location = New System.Drawing.Point(932, 224)
+        Me.ButtonSkillRoll.Location = New System.Drawing.Point(1340, 359)
         Me.ButtonSkillRoll.Name = "ButtonSkillRoll"
-        Me.ButtonSkillRoll.Size = New System.Drawing.Size(72, 64)
+        Me.ButtonSkillRoll.Size = New System.Drawing.Size(80, 64)
         Me.ButtonSkillRoll.TabIndex = 59
         Me.ButtonSkillRoll.Text = "d20 Skill Roll"
         Me.ButtonSkillRoll.UseVisualStyleBackColor = True
         '
         'StrTicker
         '
-        Me.StrTicker.Location = New System.Drawing.Point(875, 80)
+        Me.StrTicker.Location = New System.Drawing.Point(1258, 348)
         Me.StrTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.StrTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.StrTicker.Name = "StrTicker"
@@ -482,65 +462,65 @@ Partial Class Form1
         '
         'ChrTicker
         '
-        Me.ChrTicker.Location = New System.Drawing.Point(875, 193)
+        Me.ChrTicker.Location = New System.Drawing.Point(1255, 460)
         Me.ChrTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.ChrTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.ChrTicker.Name = "ChrTicker"
-        Me.ChrTicker.Size = New System.Drawing.Size(51, 20)
+        Me.ChrTicker.Size = New System.Drawing.Size(54, 20)
         Me.ChrTicker.TabIndex = 61
         Me.ChrTicker.Tag = "5"
         Me.ChrTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'WisTicker
         '
-        Me.WisTicker.Location = New System.Drawing.Point(875, 169)
+        Me.WisTicker.Location = New System.Drawing.Point(1255, 437)
         Me.WisTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.WisTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.WisTicker.Name = "WisTicker"
-        Me.WisTicker.Size = New System.Drawing.Size(51, 20)
+        Me.WisTicker.Size = New System.Drawing.Size(54, 20)
         Me.WisTicker.TabIndex = 62
         Me.WisTicker.Tag = "4"
         Me.WisTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'IntTicker
         '
-        Me.IntTicker.Location = New System.Drawing.Point(875, 146)
+        Me.IntTicker.Location = New System.Drawing.Point(1255, 414)
         Me.IntTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.IntTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.IntTicker.Name = "IntTicker"
-        Me.IntTicker.Size = New System.Drawing.Size(51, 20)
+        Me.IntTicker.Size = New System.Drawing.Size(54, 20)
         Me.IntTicker.TabIndex = 63
         Me.IntTicker.Tag = "3"
         Me.IntTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'ConTicker
         '
-        Me.ConTicker.Location = New System.Drawing.Point(876, 124)
+        Me.ConTicker.Location = New System.Drawing.Point(1258, 392)
         Me.ConTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.ConTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.ConTicker.Name = "ConTicker"
-        Me.ConTicker.Size = New System.Drawing.Size(50, 20)
+        Me.ConTicker.Size = New System.Drawing.Size(51, 20)
         Me.ConTicker.TabIndex = 64
         Me.ConTicker.Tag = "2"
         Me.ConTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'DexTicker
         '
-        Me.DexTicker.Location = New System.Drawing.Point(876, 102)
+        Me.DexTicker.Location = New System.Drawing.Point(1258, 370)
         Me.DexTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.DexTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.DexTicker.Name = "DexTicker"
-        Me.DexTicker.Size = New System.Drawing.Size(50, 20)
+        Me.DexTicker.Size = New System.Drawing.Size(51, 20)
         Me.DexTicker.TabIndex = 65
         Me.DexTicker.Tag = "1"
         Me.DexTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'ButtonResetCharacter
         '
-        Me.ButtonResetCharacter.Location = New System.Drawing.Point(865, 401)
+        Me.ButtonResetCharacter.Location = New System.Drawing.Point(1340, 522)
         Me.ButtonResetCharacter.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonResetCharacter.Name = "ButtonResetCharacter"
-        Me.ButtonResetCharacter.Size = New System.Drawing.Size(72, 52)
+        Me.ButtonResetCharacter.Size = New System.Drawing.Size(80, 52)
         Me.ButtonResetCharacter.TabIndex = 66
         Me.ButtonResetCharacter.Tag = "1"
         Me.ButtonResetCharacter.Text = "Reset Character"
@@ -548,13 +528,22 @@ Partial Class Form1
         '
         'ButtonUpdateStats
         '
-        Me.ButtonUpdateStats.Location = New System.Drawing.Point(932, 123)
+        Me.ButtonUpdateStats.Location = New System.Drawing.Point(1340, 475)
         Me.ButtonUpdateStats.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonUpdateStats.Name = "ButtonUpdateStats"
-        Me.ButtonUpdateStats.Size = New System.Drawing.Size(72, 43)
+        Me.ButtonUpdateStats.Size = New System.Drawing.Size(80, 43)
         Me.ButtonUpdateStats.TabIndex = 67
         Me.ButtonUpdateStats.Text = "Update Stats"
         Me.ButtonUpdateStats.UseVisualStyleBackColor = True
+        '
+        'WebBrowserScraper
+        '
+        Me.WebBrowserScraper.Location = New System.Drawing.Point(419, 191)
+        Me.WebBrowserScraper.Name = "WebBrowserScraper"
+        Me.WebBrowserScraper.Size = New System.Drawing.Size(89, 20)
+        Me.WebBrowserScraper.TabIndex = 68
+        Me.WebBrowserScraper.Text = "Scrape"
+        Me.WebBrowserScraper.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -562,7 +551,9 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1101, 473)
+        Me.ClientSize = New System.Drawing.Size(1521, 651)
+        Me.Controls.Add(Me.WebBrowserScraper)
+        Me.Controls.Add(Me.DaiToEthPrices)
         Me.Controls.Add(Me.ButtonUpdateStats)
         Me.Controls.Add(Me.ButtonResetCharacter)
         Me.Controls.Add(Me.DexTicker)
@@ -580,11 +571,8 @@ Partial Class Form1
         Me.Controls.Add(Me.ButtonCreateCharacter)
         Me.Controls.Add(Me.AttributeBox)
         Me.Controls.Add(Me.NameBox)
-        Me.Controls.Add(Me.OneInch)
-        Me.Controls.Add(Me.Sushiswap)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.webScrape1TextBox)
-        Me.Controls.Add(Me.Uniswap)
+        Me.Controls.Add(Me.WebScrape1TextBox)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Controls.Add(Me.Magic8BallButton)
         Me.Controls.Add(Me.EightBallLabel)
@@ -631,11 +619,9 @@ Partial Class Form1
     Friend WithEvents EightBallLabel As Label
     Friend WithEvents Magic8BallButton As Button
     Friend WithEvents WebBrowser1 As WebBrowser
-    Friend WithEvents Uniswap As Button
-    Friend WithEvents webScrape1TextBox As TextBox
+    Friend WithEvents DaiToEthPrices As Button
+    Friend WithEvents WebScrape1TextBox As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Sushiswap As Button
-    Friend WithEvents OneInch As Button
     Friend WithEvents Label13 As Label
     Friend WithEvents NameBox As TextBox
     Friend WithEvents AttributeBox As TextBox
@@ -664,4 +650,5 @@ Partial Class Form1
     Friend WithEvents DexTicker As NumericUpDown
     Friend WithEvents ButtonResetCharacter As Button
     Friend WithEvents ButtonUpdateStats As Button
+    Friend WithEvents WebBrowserScraper As Button
 End Class
