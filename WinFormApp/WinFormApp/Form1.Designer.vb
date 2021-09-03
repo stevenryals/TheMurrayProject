@@ -68,6 +68,7 @@ Partial Class Form1
         Me.ButtonResetCharacter = New System.Windows.Forms.Button()
         Me.ButtonUpdateStats = New System.Windows.Forms.Button()
         Me.WebBrowserScraper = New System.Windows.Forms.Button()
+        Me.ButtonManUTopPlayers = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.StrTicker, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -462,33 +463,33 @@ Partial Class Form1
         '
         'ChrTicker
         '
-        Me.ChrTicker.Location = New System.Drawing.Point(1255, 460)
+        Me.ChrTicker.Location = New System.Drawing.Point(1258, 460)
         Me.ChrTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.ChrTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.ChrTicker.Name = "ChrTicker"
-        Me.ChrTicker.Size = New System.Drawing.Size(54, 20)
+        Me.ChrTicker.Size = New System.Drawing.Size(51, 20)
         Me.ChrTicker.TabIndex = 61
         Me.ChrTicker.Tag = "5"
         Me.ChrTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'WisTicker
         '
-        Me.WisTicker.Location = New System.Drawing.Point(1255, 437)
+        Me.WisTicker.Location = New System.Drawing.Point(1258, 437)
         Me.WisTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.WisTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.WisTicker.Name = "WisTicker"
-        Me.WisTicker.Size = New System.Drawing.Size(54, 20)
+        Me.WisTicker.Size = New System.Drawing.Size(51, 20)
         Me.WisTicker.TabIndex = 62
         Me.WisTicker.Tag = "4"
         Me.WisTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'IntTicker
         '
-        Me.IntTicker.Location = New System.Drawing.Point(1255, 414)
+        Me.IntTicker.Location = New System.Drawing.Point(1258, 414)
         Me.IntTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.IntTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.IntTicker.Name = "IntTicker"
-        Me.IntTicker.Size = New System.Drawing.Size(54, 20)
+        Me.IntTicker.Size = New System.Drawing.Size(51, 20)
         Me.IntTicker.TabIndex = 63
         Me.IntTicker.Tag = "3"
         Me.IntTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
@@ -545,6 +546,15 @@ Partial Class Form1
         Me.WebBrowserScraper.Text = "Scrape"
         Me.WebBrowserScraper.UseVisualStyleBackColor = True
         '
+        'ButtonManUTopPlayers
+        '
+        Me.ButtonManUTopPlayers.Location = New System.Drawing.Point(419, 259)
+        Me.ButtonManUTopPlayers.Name = "ButtonManUTopPlayers"
+        Me.ButtonManUTopPlayers.Size = New System.Drawing.Size(89, 20)
+        Me.ButtonManUTopPlayers.TabIndex = 69
+        Me.ButtonManUTopPlayers.Text = "Man U Top 5"
+        Me.ButtonManUTopPlayers.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -552,6 +562,7 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1521, 651)
+        Me.Controls.Add(Me.ButtonManUTopPlayers)
         Me.Controls.Add(Me.WebBrowserScraper)
         Me.Controls.Add(Me.DaiToEthPrices)
         Me.Controls.Add(Me.ButtonUpdateStats)
@@ -651,4 +662,5 @@ Partial Class Form1
     Friend WithEvents ButtonResetCharacter As Button
     Friend WithEvents ButtonUpdateStats As Button
     Friend WithEvents WebBrowserScraper As Button
+    Friend WithEvents ButtonManUTopPlayers As Button
 End Class
