@@ -290,6 +290,47 @@ Public Class Form1
 
     End Sub
 
+    'Private Function SkillOfSelectedCharacter() As Integer
+
+    '    Try
+
+    '        Dim CharacterAndSkillSelected As Integer
+
+
+    '        If StrengthRadio.Checked Then
+
+    '            CharacterAndSkillSelected = StrTicker.Value
+
+    '        ElseIf DexterityRadio.Checked Then
+
+    '            CharacterAndSkillSelected = DexTicker.Value
+
+    '        ElseIf ConstitutionRadio.Checked Then
+
+    '            CharacterAndSkillSelected = ConTicker.Value
+
+    '        ElseIf IntelligenceRadio.Checked Then
+
+    '            CharacterAndSkillSelected = IntTicker.Value
+
+    '        ElseIf WisdomRadio.Checked Then
+
+    '            CharacterAndSkillSelected = WisTicker.Value
+
+    '        ElseIf CharismaRadio.Checked Then
+
+    '            CharacterAndSkillSelected = ChrTicker.Value
+
+    '        End If
+
+    '        Return CharacterAndSkillSelected
+
+    '    Catch ex As NullReferenceException
+
+    '    End Try
+
+    'End Function
+
     Private Function WhichCharacter()
 
         'Checks for which character is selected
