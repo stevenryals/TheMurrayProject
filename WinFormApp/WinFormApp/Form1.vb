@@ -83,35 +83,40 @@ Public Class Form1
 
 #End Region
 #Region "Buttons"
-    Private Sub ButtonCreateCharacter_Click(sender As Object, e As EventArgs) Handles ButtonCreateCharacter.Click
+    Private Sub ButtonCreateCharacter_Click() Handles ButtonCreateCharacter.Click
         'Creates and displays character. When character is unspecified, goes 1, 2, 3. Or can create a specified character
 
-        'If WhichCharacter() Is Nothing Then
+        If WhichCharacter() Is Nothing Then
 
-        '    Call SetCharacter(Index, )
-        '    NameBox.Text = ""
-        '    AttributeBox.Text = ""
-        '    Call DisplayCharacter(Character1, Character2, Character3)
-        '    Index += 1
 
-        'Else
+            Call SetCharacter(Nothing, Index)
+            Index += 1
+            If Index = 3 Then
 
-        Call SetCharacter(WhichCharacter)
-        NameBox.Text = ""
-        AttributeBox.Text = ""
-        Call DisplayCharacter(WhichCharacter,,)
+                Index = 0
 
-        '    End If
+            End If
+
+        Else
+
+            Call SetCharacter(WhichCharacter, Nothing)
+
+        End If
+
+        Call DisplaysCharacters()
+        Call ClearForm()
 
     End Sub
 
-    Private Sub ButtonResetCharacter_Click(sender As Object, e As EventArgs) Handles ButtonResetCharacter.Click
+    Private Sub ButtonResetCharacter_Click() Handles ButtonResetCharacter.Click
+
         'resets specified character
         Call CharacterResetter(WhichCharacter)
 
     End Sub
 
-    Private Sub ButtonClear_Click(sender As Object, e As EventArgs) Handles ButtonClear.Click
+    Private Sub ButtonClear_Click() Handles ButtonClear.Click
+
         'Clear ListBox
         ListBox1.Items.Clear()
         ListBox1.Text = ""
@@ -119,16 +124,18 @@ Public Class Form1
     End Sub
 
     Private Sub ButtonDisplayAllCharacters_Click(sender As Object, e As EventArgs) Handles ButtonDisplayAllCharacters.Click, ButtonCreateCharacter.Click
+
         'clears listbox then displays character based on each buttons Tag property
         ListBox1.Items.Clear()
         ListBox1.Text = ""
 
         Dim btn As Button = CType(sender, Button)
-        Call DisplayCharacter(Character1, Character2, Character3)
+        Call DisplaysCharacters()
 
     End Sub
 
     Private Sub ButtonSkillRoller_click(sender As Object, e As EventArgs) Handles ButtonSkillRoll.Click
+
         'takes initial input of the radiobutton checked and combines it with the Tag of the skill button clicked
         Dim Roll20 = AddD20(SkillOfSelectedCharacter(WhichCharacter))
         RichTextBox1.Text = Roll20.ToString
@@ -140,48 +147,72 @@ Public Class Form1
         ListBox1.Items.Clear()
         ListBox1.Text = ""
         'Call UpdateCharacter(SkillOfSelectedCharacter(WhichCharacter))
-        Call DisplayCharacter(Character1, Character2, Character3)
+        Call DisplaysCharacters()
 
     End Sub
 
 #End Region
 #Region "Functions"
 
-    Private Sub SetCharacter(Optional SelectedCharacter As Character = Nothing)
+    Private Sub SetCharacter(Optional SelectedCharacter As Character = Nothing, Optional Index As Integer = 0)
+
         'index counts characters entered
         Try
-            ' If i = 0 Or SelectedCharacter Is Character1 Then
-            SelectedCharacter.Name = NameBox.Text
-            SelectedCharacter.Attributes = AttributeBox.Text
-            SelectedCharacter.Strength = CInt(StrTicker.Value)
-            SelectedCharacter.Dexterity = CInt(DexTicker.Value)
-            SelectedCharacter.Constitution = CInt(ConTicker.Value)
-            SelectedCharacter.Intelligence = CInt(IntTicker.Value)
-            SelectedCharacter.Wisdom = CInt(WisTicker.Value)
-            SelectedCharacter.Charisma = CInt(ChrTicker.Value)
 
-            '' ElseIf i = 1 Or SelectedCharacter Is Character2 Then
-            'Character2.Name = NameBox.Text
-            '    Character2.Attributes = AttributeBox.Text
-            '    Character2.Strength = CInt(StrTicker.Value)
-            '    Character2.Dexterity = CInt(DexTicker.Value)
-            '    Character2.Constitution = CInt(ConTicker.Value)
-            '    Character2.Intelligence = CInt(IntTicker.Value)
-            '    Character2.Wisdom = CInt(WisTicker.Value)
-            '    Character2.Charisma = CInt(ChrTicker.Value)
+            If SelectedCharacter IsNot Nothing Then
 
-            '' Else
-            ''Character3.Name = NameBox.Text
-            'Character3.Attributes = AttributeBox.Text
-            '    Character3.Strength = CInt(StrTicker.Value)
-            '    Character3.Dexterity = CInt(DexTicker.Value)
-            '    Character3.Constitution = CInt(ConTicker.Value)
-            '    Character3.Intelligence = CInt(IntTicker.Value)
-            '    Character3.Wisdom = CInt(WisTicker.Value)
-            '    Character3.Charisma = CInt(ChrTicker.Value)
-            ''  End If
+                SelectedCharacter.Name = NameBox.Text
+                SelectedCharacter.Attributes = AttributeBox.Text
+                SelectedCharacter.Strength = CInt(StrTicker.Value)
+                SelectedCharacter.Dexterity = CInt(DexTicker.Value)
+                SelectedCharacter.Constitution = CInt(ConTicker.Value)
+                SelectedCharacter.Intelligence = CInt(IntTicker.Value)
+                SelectedCharacter.Wisdom = CInt(WisTicker.Value)
+                SelectedCharacter.Charisma = CInt(ChrTicker.Value)
+
+            Else
+
+                If Index = 0 Then
+
+                    Character1.Name = NameBox.Text
+                    Character1.Attributes = AttributeBox.Text
+                    Character1.Strength = CInt(StrTicker.Value)
+                    Character1.Dexterity = CInt(DexTicker.Value)
+                    Character1.Constitution = CInt(ConTicker.Value)
+                    Character1.Intelligence = CInt(IntTicker.Value)
+                    Character1.Wisdom = CInt(WisTicker.Value)
+                    Character1.Charisma = CInt(ChrTicker.Value)
+
+                ElseIf Index = 1 Then
+
+                    Character2.Name = NameBox.Text
+                    Character2.Attributes = AttributeBox.Text
+                    Character2.Strength = CInt(StrTicker.Value)
+                    Character2.Dexterity = CInt(DexTicker.Value)
+                    Character2.Constitution = CInt(ConTicker.Value)
+                    Character2.Intelligence = CInt(IntTicker.Value)
+                    Character2.Wisdom = CInt(WisTicker.Value)
+                    Character2.Charisma = CInt(ChrTicker.Value)
+
+                Else
+
+                    Character3.Name = NameBox.Text
+                    Character3.Attributes = AttributeBox.Text
+                    Character3.Strength = CInt(StrTicker.Value)
+                    Character3.Dexterity = CInt(DexTicker.Value)
+                    Character3.Constitution = CInt(ConTicker.Value)
+                    Character3.Intelligence = CInt(IntTicker.Value)
+                    Character3.Wisdom = CInt(WisTicker.Value)
+                    Character3.Charisma = CInt(ChrTicker.Value)
+
+                End If
+
+            End If
+
         Catch ex As NullReferenceException
+
         End Try
+
     End Sub
 
     Private Sub CharacterResetter(SelectedCharacter As Character)
@@ -199,7 +230,8 @@ Public Class Form1
 
     End Sub
 
-    Private Sub DisplayCharacter(Optional SelectedCharacter As Character = Nothing, Optional SelectedCharacter2 As Character = Nothing, Optional SelectedCharacter3 As Character = Nothing)
+    Private Sub DisplaysCharacters()
+
         'create string to display character info
         Dim StrToString1 As String
         Dim StrToString2 As String
@@ -210,48 +242,47 @@ Public Class Form1
 
         'string 1 is top row of name and attributes, 2 is second row of your stats
         Try
-            If SelectedCharacter Is Character1 Then
 
-                StrToString1 = "1. " & Character1.Name & ":  " _
+
+            StrToString1 = "1. " & Character1.Name & ":  " _
                     & Character1.Attributes
-                StrToString2 = "   STR: " & Character1.Strength _
+            StrToString2 = "   STR: " & Character1.Strength _
                     & "  DEX: " & Character1.Dexterity _
                     & "  CON: " & Character1.Constitution _
                     & "  INT: " & Character1.Intelligence _
                     & "  WIS: " & Character1.Wisdom _
                     & "  CHR: " & Character1.Charisma
 
-                ListBox1.Items.Add(StrToString1)
-                ListBox1.Items.Add(StrToString2)
-            End If
-            If SelectedCharacter Is Character2 Or SelectedCharacter2 Is Character2 Then
+            ListBox1.Items.Add(StrToString1)
+            ListBox1.Items.Add(StrToString2)
 
-                StrToString3 = "2. " & Character2.Name & ":  " _
+
+
+            StrToString3 = "2. " & Character2.Name & ":  " _
                     & Character2.Attributes
-                StrToString4 = "   STR: " & Character2.Strength _
+            StrToString4 = "   STR: " & Character2.Strength _
                 & "  DEX: " & Character2.Dexterity _
                 & "  CON: " & Character2.Constitution _
                 & "  INT: " & Character2.Intelligence _
                 & "  WIS: " & Character2.Wisdom _
                 & "  CHR: " & Character2.Charisma
 
-                ListBox1.Items.Add(StrToString3)
-                ListBox1.Items.Add(StrToString4)
-            End If
-            If SelectedCharacter Is Character3 Or SelectedCharacter3 Is Character3 Then
+            ListBox1.Items.Add(StrToString3)
+            ListBox1.Items.Add(StrToString4)
 
-                StrToString5 = "3. " & Character3.Name & ":  " _
+
+            StrToString5 = "3. " & Character3.Name & ":  " _
                     & Character3.Attributes
-                StrToString6 = "   STR: " & Character3.Strength _
+            StrToString6 = "   STR: " & Character3.Strength _
                     & "  DEX: " & Character3.Dexterity _
                     & "  CON: " & Character3.Constitution _
                     & "  INT: " & Character3.Intelligence _
                     & "  WIS: " & Character3.Wisdom _
                     & "  CHR: " & Character3.Charisma
 
-                ListBox1.Items.Add(StrToString5)
-                ListBox1.Items.Add(StrToString6)
-            End If
+            ListBox1.Items.Add(StrToString5)
+            ListBox1.Items.Add(StrToString6)
+
 
         Catch ex As ArgumentNullException
 
@@ -276,11 +307,15 @@ Public Class Form1
                 SelectedCharacter = Character2
                 Return SelectedCharacter
 
-            Else
+            ElseIf Character3Radio.Checked = True Then
 
                 SelectedCharacter = Character3
 
                 Return SelectedCharacter
+
+            Else
+
+                Return Nothing
 
             End If
 
@@ -292,49 +327,7 @@ Public Class Form1
 
     End Function
 
-    'Private Function WhichSkill()
 
-    '    ' Checks which skill is selected
-
-    '    Dim SelectedSkill As Integer
-
-    '    Try
-
-    '        If StrengthRadio.Checked = True Then
-
-    '            SelectedSkill = WhichCharacter.strength
-
-    '        ElseIf DexterityRadio.Checked = True Then
-
-    '            SelectedSkill = WhichCharacter.dexterity
-
-    '        ElseIf ConstitutionRadio.Checked = True Then
-
-    '            SelectedSkill = WhichCharacter.constitution
-
-    '        ElseIf IntelligenceRadio.Checked = True Then
-
-    '            SelectedSkill = WhichCharacter.intelligence
-
-    '        ElseIf WisdomRadio.Checked = True Then
-
-    '            SelectedSkill = WhichCharacter.wisdom
-
-    '        Else
-
-    '            SelectedSkill = WhichCharacter.charisma
-
-    '        End If
-
-    '        Exit Try
-
-    '    Catch ex As InvalidCastException
-
-    '    End Try
-
-    '    Return CInt(SelectedSkill)
-
-    'End Function
 
     Private Function SkillOfSelectedCharacter(SelectedCharacter As Character) As Integer
 
@@ -399,6 +392,19 @@ Public Class Form1
         Return DiceResult
 
     End Function
+
+    Private Sub ClearForm()
+
+        NameBox.Text = ""
+        AttributeBox.Text = ""
+        StrTicker.Value = 10
+        DexTicker.Value = 10
+        ConTicker.Value = 10
+        IntTicker.Value = 10
+        WisTicker.Value = 10
+        ChrTicker.Value = 10
+
+    End Sub
 
 #End Region
 #End Region

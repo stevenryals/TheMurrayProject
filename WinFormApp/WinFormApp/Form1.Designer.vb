@@ -459,7 +459,7 @@ Partial Class Form1
         Me.StrTicker.Size = New System.Drawing.Size(51, 20)
         Me.StrTicker.TabIndex = 60
         Me.StrTicker.Tag = "0"
-        Me.StrTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.StrTicker.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'ChrTicker
         '
@@ -470,7 +470,7 @@ Partial Class Form1
         Me.ChrTicker.Size = New System.Drawing.Size(51, 20)
         Me.ChrTicker.TabIndex = 61
         Me.ChrTicker.Tag = "5"
-        Me.ChrTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.ChrTicker.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'WisTicker
         '
@@ -481,7 +481,7 @@ Partial Class Form1
         Me.WisTicker.Size = New System.Drawing.Size(51, 20)
         Me.WisTicker.TabIndex = 62
         Me.WisTicker.Tag = "4"
-        Me.WisTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.WisTicker.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'IntTicker
         '
@@ -492,7 +492,7 @@ Partial Class Form1
         Me.IntTicker.Size = New System.Drawing.Size(51, 20)
         Me.IntTicker.TabIndex = 63
         Me.IntTicker.Tag = "3"
-        Me.IntTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.IntTicker.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'ConTicker
         '
@@ -503,7 +503,7 @@ Partial Class Form1
         Me.ConTicker.Size = New System.Drawing.Size(51, 20)
         Me.ConTicker.TabIndex = 64
         Me.ConTicker.Tag = "2"
-        Me.ConTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.ConTicker.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'DexTicker
         '
@@ -514,7 +514,7 @@ Partial Class Form1
         Me.DexTicker.Size = New System.Drawing.Size(51, 20)
         Me.DexTicker.TabIndex = 65
         Me.DexTicker.Tag = "1"
-        Me.DexTicker.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.DexTicker.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'ButtonResetCharacter
         '
