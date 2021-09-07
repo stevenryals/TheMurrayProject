@@ -144,10 +144,9 @@ Public Class Form1
 
     Private Sub ButtonUpdateStats_Click(sender As Object, e As EventArgs) Handles ButtonUpdateStats.Click
 
-        ListBox1.Items.Clear()
-        ListBox1.Text = ""
-        'Call UpdateCharacter(SkillOfSelectedCharacter(WhichCharacter))
+        Call UpdateCharacter(WhichCharacter)
         Call DisplaysCharacters()
+        Call ClearForm()
 
     End Sub
 
@@ -290,46 +289,46 @@ Public Class Form1
 
     End Sub
 
-    'Private Function SkillOfSelectedCharacter() As Integer
+    Private Function WhichSkill() As Integer
 
-    '    Try
+        Try
 
-    '        Dim CharacterAndSkillSelected As Integer
+            Dim SkillSelected As Integer
 
 
-    '        If StrengthRadio.Checked Then
+            If StrengthRadio.Checked Then
 
-    '            CharacterAndSkillSelected = StrTicker.Value
+                SkillSelected = StrTicker.Value
 
-    '        ElseIf DexterityRadio.Checked Then
+            ElseIf DexterityRadio.Checked Then
 
-    '            CharacterAndSkillSelected = DexTicker.Value
+                SkillSelected = DexTicker.Value
 
-    '        ElseIf ConstitutionRadio.Checked Then
+            ElseIf ConstitutionRadio.Checked Then
 
-    '            CharacterAndSkillSelected = ConTicker.Value
+                SkillSelected = ConTicker.Value
 
-    '        ElseIf IntelligenceRadio.Checked Then
+            ElseIf IntelligenceRadio.Checked Then
 
-    '            CharacterAndSkillSelected = IntTicker.Value
+                SkillSelected = IntTicker.Value
 
-    '        ElseIf WisdomRadio.Checked Then
+            ElseIf WisdomRadio.Checked Then
 
-    '            CharacterAndSkillSelected = WisTicker.Value
+                SkillSelected = WisTicker.Value
 
-    '        ElseIf CharismaRadio.Checked Then
+            ElseIf CharismaRadio.Checked Then
 
-    '            CharacterAndSkillSelected = ChrTicker.Value
+                SkillSelected = ChrTicker.Value
 
-    '        End If
+            End If
 
-    '        Return CharacterAndSkillSelected
+            Return SkillSelected
 
-    '    Catch ex As NullReferenceException
+        Catch ex As NullReferenceException
 
-    '    End Try
+        End Try
 
-    'End Function
+    End Function
 
     Private Function WhichCharacter()
 
@@ -414,20 +413,18 @@ Public Class Form1
     Private Function UpdateCharacter(SelectedCharacter As Character)
 
         'index counts characters entered
-        Dim OriginalCharacter As Character
-        OriginalCharacter.Name = WhichCharacter.Name
-        OriginalCharacter.Attributes = WhichCharacter.Attributes
+        Dim OriginalCharacter As Character = SelectedCharacter
+        'Call CharacterResetter(SelectedCharacter)
+        'Call SetCharacter(OriginalCharacter)
+        Call SkillOfSelectedCharacter(OriginalCharacter)
 
-
-        Call CharacterResetter(SelectedCharacter)
-
-        'Dim UpdatedCharacter = OriginalCharacter + SkillOfSelectedCharacter(WhichCharacter)
 
         Return OriginalCharacter
 
     End Function
 
     Private Function AddD20(SelectedCharacterAndSkill) As Integer
+
         ' le dice
         Dim DiceResult As Integer = New Random().Next(0, 21) + SkillOfSelectedCharacter(WhichCharacter)
         Return DiceResult
