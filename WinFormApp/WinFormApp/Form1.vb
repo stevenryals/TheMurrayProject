@@ -112,24 +112,20 @@ Public Class Form1
 
         'resets specified character
         Call CharacterResetter(WhichCharacter)
+        Call DisplaysCharacters()
 
     End Sub
 
     Private Sub ButtonClear_Click() Handles ButtonClear.Click
 
         'Clear ListBox
-        ListBox1.Items.Clear()
-        ListBox1.Text = ""
+        Call ClearListBox()
 
     End Sub
 
     Private Sub ButtonDisplayAllCharacters_Click(sender As Object, e As EventArgs) Handles ButtonDisplayAllCharacters.Click, ButtonCreateCharacter.Click
 
         'clears listbox then displays character based on each buttons Tag property
-        ListBox1.Items.Clear()
-        ListBox1.Text = ""
-
-        Dim btn As Button = CType(sender, Button)
         Call DisplaysCharacters()
 
     End Sub
@@ -137,14 +133,13 @@ Public Class Form1
     Private Sub ButtonSkillRoller_click(sender As Object, e As EventArgs) Handles ButtonSkillRoll.Click
 
         'takes initial input of the radiobutton checked and combines it with the Tag of the skill button clicked
-        Dim Roll20 = AddD20(SkillOfSelectedCharacter(WhichCharacter))
-        RichTextBox1.Text = Roll20.ToString
+        RichTextBox1.Text = AddD20(SkillOfSelectedCharacter(WhichCharacter)).ToString
 
     End Sub
 
     Private Sub ButtonUpdateStats_Click(sender As Object, e As EventArgs) Handles ButtonUpdateStats.Click
 
-        Call UpdateCharacter(WhichCharacter)
+        Call UpdateCharacterStat(WhichCharacter)
         Call DisplaysCharacters()
         Call ClearForm()
 
@@ -231,6 +226,7 @@ Public Class Form1
 
     Private Sub DisplaysCharacters()
 
+        Call ClearListBox()
         'create string to display character info
         Dim StrToString1 As String
         Dim StrToString2 As String
@@ -289,46 +285,44 @@ Public Class Form1
 
     End Sub
 
-    Private Function WhichSkill() As Integer
+    Private Sub UpdateCharacterStat(SelectedCharacter As Character)
 
         Try
 
-            Dim SkillSelected As Integer
+
 
 
             If StrengthRadio.Checked Then
 
-                SkillSelected = StrTicker.Value
+                SelectedCharacter.Strength = StrTicker.Value
 
             ElseIf DexterityRadio.Checked Then
 
-                SkillSelected = DexTicker.Value
+                SelectedCharacter.Dexterity = DexTicker.Value
 
             ElseIf ConstitutionRadio.Checked Then
 
-                SkillSelected = ConTicker.Value
+                SelectedCharacter.Constitution = ConTicker.Value
 
             ElseIf IntelligenceRadio.Checked Then
 
-                SkillSelected = IntTicker.Value
+                SelectedCharacter.Intelligence = IntTicker.Value
 
             ElseIf WisdomRadio.Checked Then
 
-                SkillSelected = WisTicker.Value
+                SelectedCharacter.Wisdom = WisTicker.Value
 
             ElseIf CharismaRadio.Checked Then
 
-                SkillSelected = ChrTicker.Value
+                SelectedCharacter.Charisma = ChrTicker.Value
 
             End If
-
-            Return SkillSelected
 
         Catch ex As NullReferenceException
 
         End Try
 
-    End Function
+    End Sub
 
     Private Function WhichCharacter()
 
@@ -410,19 +404,6 @@ Public Class Form1
 
     End Function
 
-    Private Function UpdateCharacter(SelectedCharacter As Character)
-
-        'index counts characters entered
-        Dim OriginalCharacter As Character = SelectedCharacter
-        'Call CharacterResetter(SelectedCharacter)
-        'Call SetCharacter(OriginalCharacter)
-        Call SkillOfSelectedCharacter(OriginalCharacter)
-
-
-        Return OriginalCharacter
-
-    End Function
-
     Private Function AddD20(SelectedCharacterAndSkill) As Integer
 
         ' le dice
@@ -441,6 +422,13 @@ Public Class Form1
         IntTicker.Value = 10
         WisTicker.Value = 10
         ChrTicker.Value = 10
+
+    End Sub
+
+    Private Sub ClearListBox()
+
+        ListBox1.Items.Clear()
+        ListBox1.Text = ""
 
     End Sub
 
