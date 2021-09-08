@@ -53,33 +53,21 @@ Public Class Form1
 
 #Region "D&D Player"
 #Region "Character Instantiate"
-    Public Class Character
-
-        Public Name As String
-        Public Attributes As String
-        Public Strength As Integer
-        Public Dexterity As Integer
-        Public Constitution As Integer
-        Public Intelligence As Integer
-        Public Wisdom As Integer
-        Public Charisma As Integer
-
-    End Class
 
     'Store player objects
-    Dim Character1 As Character
-    Dim Character2 As Character
-    Dim Character3 As Character
+    Dim Character1 As Character = New Character()
+    Dim Character2 As Character = New Character()
+    Dim Character3 As Character = New Character()
     Dim Index As Integer = 0
 
-    Private Sub Form1_Load(Sender As Object, e As EventArgs) Handles MyBase.Load
-        'Create Character instances
+    'Private Sub Form1_Load(Sender As Object, e As EventArgs) Handles MyBase.Load
+    '    'Create Character instances
 
-        Character1 = New Character()
-        Character2 = New Character()
-        Character3 = New Character()
+    '    Character1 = New Character()
+    '    Character2 = New Character()
+    '    Character3 = New Character()
 
-    End Sub
+    'End Sub
 
 #End Region
 #Region "Buttons"
@@ -133,7 +121,7 @@ Public Class Form1
     Private Sub ButtonSkillRoller_click(sender As Object, e As EventArgs) Handles ButtonSkillRoll.Click
 
         'takes initial input of the radiobutton checked and combines it with the Tag of the skill button clicked
-        RichTextBox1.Text = AddD20(SkillOfSelectedCharacter(WhichCharacter)).ToString
+        RichTextBox1.Text = AddD20().ToString
 
     End Sub
 
@@ -404,7 +392,7 @@ Public Class Form1
 
     End Function
 
-    Private Function AddD20(SelectedCharacterAndSkill) As Integer
+    Private Function AddD20() As Integer
 
         ' le dice
         Dim DiceResult As Integer = New Random().Next(0, 21) + SkillOfSelectedCharacter(WhichCharacter)

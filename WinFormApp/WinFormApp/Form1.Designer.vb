@@ -239,7 +239,7 @@ Partial Class Form1
         '
         'NameBox
         '
-        Me.NameBox.Location = New System.Drawing.Point(1258, 323)
+        Me.NameBox.Location = New System.Drawing.Point(1258, 300)
         Me.NameBox.Margin = New System.Windows.Forms.Padding(2)
         Me.NameBox.Name = "NameBox"
         Me.NameBox.Size = New System.Drawing.Size(76, 20)
@@ -247,7 +247,7 @@ Partial Class Form1
         '
         'AttributeBox
         '
-        Me.AttributeBox.Location = New System.Drawing.Point(1258, 300)
+        Me.AttributeBox.Location = New System.Drawing.Point(1258, 323)
         Me.AttributeBox.Margin = New System.Windows.Forms.Padding(2)
         Me.AttributeBox.Name = "AttributeBox"
         Me.AttributeBox.Size = New System.Drawing.Size(76, 20)
