@@ -58,6 +58,8 @@ Public Class Form1
     Dim Character1 As Character = New Character()
     Dim Character2 As Character = New Character()
     Dim Character3 As Character = New Character()
+    Dim Character4 As Character = New Character()
+    Dim Character5 As Character = New Character()
     Dim Index As Integer = 0
 
     'Private Sub Form1_Load(Sender As Object, e As EventArgs) Handles MyBase.Load
@@ -79,7 +81,7 @@ Public Class Form1
 
             Call SetCharacter(Nothing, Index)
             Index += 1
-            If Index = 3 Then
+            If Index = 5 Then
 
                 Index = 0
 
@@ -176,6 +178,28 @@ Public Class Form1
                     Character2.Wisdom = CInt(WisTicker.Value)
                     Character2.Charisma = CInt(ChrTicker.Value)
 
+                ElseIf Index = 2 Then
+
+                    Character3.Name = NameBox.Text
+                    Character3.Attributes = AttributeBox.Text
+                    Character3.Strength = CInt(StrTicker.Value)
+                    Character3.Dexterity = CInt(DexTicker.Value)
+                    Character3.Constitution = CInt(ConTicker.Value)
+                    Character3.Intelligence = CInt(IntTicker.Value)
+                    Character3.Wisdom = CInt(WisTicker.Value)
+                    Character3.Charisma = CInt(ChrTicker.Value)
+
+                ElseIf Index = 3 Then
+
+                    Character4.Name = NameBox.Text
+                    Character4.Attributes = AttributeBox.Text
+                    Character4.Strength = CInt(StrTicker.Value)
+                    Character4.Dexterity = CInt(DexTicker.Value)
+                    Character4.Constitution = CInt(ConTicker.Value)
+                    Character4.Intelligence = CInt(IntTicker.Value)
+                    Character4.Wisdom = CInt(WisTicker.Value)
+                    Character4.Charisma = CInt(ChrTicker.Value)
+
                 Else
 
                     Character3.Name = NameBox.Text
@@ -222,6 +246,10 @@ Public Class Form1
         Dim StrToString4 As String
         Dim StrToString5 As String
         Dim StrToString6 As String
+        Dim StrToString7 As String
+        Dim StrToString8 As String
+        Dim StrToString9 As String
+        Dim StrToString10 As String
 
         'string 1 is top row of name and attributes, 2 is second row of your stats
         Try
@@ -239,8 +267,6 @@ Public Class Form1
             ListBox1.Items.Add(StrToString1)
             ListBox1.Items.Add(StrToString2)
 
-
-
             StrToString3 = "2. " & Character2.Name & ":  " _
                     & Character2.Attributes
             StrToString4 = "   STR: " & Character2.Strength _
@@ -253,7 +279,6 @@ Public Class Form1
             ListBox1.Items.Add(StrToString3)
             ListBox1.Items.Add(StrToString4)
 
-
             StrToString5 = "3. " & Character3.Name & ":  " _
                     & Character3.Attributes
             StrToString6 = "   STR: " & Character3.Strength _
@@ -265,6 +290,30 @@ Public Class Form1
 
             ListBox1.Items.Add(StrToString5)
             ListBox1.Items.Add(StrToString6)
+
+            StrToString7 = "4. " & Character4.Name & ":  " _
+                    & Character4.Attributes
+            StrToString8 = "   STR: " & Character4.Strength _
+                    & "  DEX: " & Character4.Dexterity _
+                    & "  CON: " & Character4.Constitution _
+                    & "  INT: " & Character4.Intelligence _
+                    & "  WIS: " & Character4.Wisdom _
+                    & "  CHR: " & Character4.Charisma
+
+            ListBox1.Items.Add(StrToString7)
+            ListBox1.Items.Add(StrToString8)
+
+            StrToString9 = "5. " & Character5.Name & ":  " _
+                    & Character5.Attributes
+            StrToString10 = "   STR: " & Character5.Strength _
+                    & "  DEX: " & Character5.Dexterity _
+                    & "  CON: " & Character5.Constitution _
+                    & "  INT: " & Character5.Intelligence _
+                    & "  WIS: " & Character5.Wisdom _
+                    & "  CHR: " & Character5.Charisma
+
+            ListBox1.Items.Add(StrToString9)
+            ListBox1.Items.Add(StrToString10)
 
 
         Catch ex As ArgumentNullException
@@ -332,6 +381,18 @@ Public Class Form1
             ElseIf Character3Radio.Checked = True Then
 
                 SelectedCharacter = Character3
+
+                Return SelectedCharacter
+
+            ElseIf Character4Radio.Checked = True Then
+
+                SelectedCharacter = Character4
+
+                Return SelectedCharacter
+
+            ElseIf Character5Radio.Checked = True Then
+
+                SelectedCharacter = Character5
 
                 Return SelectedCharacter
 
@@ -444,12 +505,6 @@ Public Class Form1
 
     End Sub
 
-    Private Sub ButtonManUTopPlayers_Click(sender As Object, e As EventArgs) Handles ButtonManUTopPlayers.Click
-
-        RichTextBox1.Text = ScrapeManUTopPlayersRating("https://www.whoscored.com/Teams/32/Show/England-Manchester-United")
-
-    End Sub
-
 #End Region
 
 #Region "Functions"
@@ -488,22 +543,6 @@ Public Class Form1
         End If
 
         Return "No data for this exchange"
-
-    End Function
-
-    Private Function ScrapeManUTopPlayersRating(URL As String)
-
-        Dim GivenURL = URL
-        Dim Web = New HtmlWeb
-        Dim Doc = Web.Load(GivenURL)
-        Dim TitleNode = Doc.DocumentNode.SelectSingleNode("//*[@id='player-table-statistics-body']/tr[1]/td[2]")
-        Dim Title As String
-        If TitleNode IsNot Nothing Then
-            Title = TitleNode.InnerHtml
-            Return Title
-        End If
-
-        Return "Error, guess they just suck?"
 
     End Function
 

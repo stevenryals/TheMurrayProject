@@ -68,7 +68,9 @@ Partial Class Form1
         Me.ButtonResetCharacter = New System.Windows.Forms.Button()
         Me.ButtonUpdateStats = New System.Windows.Forms.Button()
         Me.WebBrowserScraper = New System.Windows.Forms.Button()
-        Me.ButtonManUTopPlayers = New System.Windows.Forms.Button()
+        Me.Character5Radio = New System.Windows.Forms.RadioButton()
+        Me.Character4Radio = New System.Windows.Forms.RadioButton()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.StrTicker, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,6 +79,7 @@ Partial Class Form1
         CType(Me.IntTicker, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConTicker, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DexTicker, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'productTextbox
@@ -239,7 +242,7 @@ Partial Class Form1
         '
         'NameBox
         '
-        Me.NameBox.Location = New System.Drawing.Point(1258, 300)
+        Me.NameBox.Location = New System.Drawing.Point(162, 55)
         Me.NameBox.Margin = New System.Windows.Forms.Padding(2)
         Me.NameBox.Name = "NameBox"
         Me.NameBox.Size = New System.Drawing.Size(76, 20)
@@ -247,7 +250,7 @@ Partial Class Form1
         '
         'AttributeBox
         '
-        Me.AttributeBox.Location = New System.Drawing.Point(1258, 323)
+        Me.AttributeBox.Location = New System.Drawing.Point(162, 79)
         Me.AttributeBox.Margin = New System.Windows.Forms.Padding(2)
         Me.AttributeBox.Name = "AttributeBox"
         Me.AttributeBox.Size = New System.Drawing.Size(76, 20)
@@ -265,7 +268,7 @@ Partial Class Form1
         '
         'ButtonCreateCharacter
         '
-        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(1340, 428)
+        Me.ButtonCreateCharacter.Location = New System.Drawing.Point(243, 79)
         Me.ButtonCreateCharacter.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonCreateCharacter.Name = "ButtonCreateCharacter"
         Me.ButtonCreateCharacter.Size = New System.Drawing.Size(80, 43)
@@ -275,20 +278,20 @@ Partial Class Form1
         '
         'ButtonClear
         '
-        Me.ButtonClear.Location = New System.Drawing.Point(1173, 622)
+        Me.ButtonClear.Location = New System.Drawing.Point(1278, 528)
         Me.ButtonClear.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonClear.Name = "ButtonClear"
-        Me.ButtonClear.Size = New System.Drawing.Size(161, 19)
+        Me.ButtonClear.Size = New System.Drawing.Size(175, 19)
         Me.ButtonClear.TabIndex = 46
         Me.ButtonClear.Text = "Clear"
         Me.ButtonClear.UseVisualStyleBackColor = True
         '
         'ButtonDisplayAllCharacters
         '
-        Me.ButtonDisplayAllCharacters.Location = New System.Drawing.Point(1338, 578)
+        Me.ButtonDisplayAllCharacters.Location = New System.Drawing.Point(1093, 528)
         Me.ButtonDisplayAllCharacters.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonDisplayAllCharacters.Name = "ButtonDisplayAllCharacters"
-        Me.ButtonDisplayAllCharacters.Size = New System.Drawing.Size(82, 52)
+        Me.ButtonDisplayAllCharacters.Size = New System.Drawing.Size(175, 19)
         Me.ButtonDisplayAllCharacters.TabIndex = 47
         Me.ButtonDisplayAllCharacters.Tag = "0"
         Me.ButtonDisplayAllCharacters.Text = "Display Characters"
@@ -299,28 +302,30 @@ Partial Class Form1
         Me.ListBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 16
-        Me.ListBox1.Location = New System.Drawing.Point(1011, 486)
+        Me.ListBox1.Location = New System.Drawing.Point(1093, 328)
         Me.ListBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox1.MultiColumn = True
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(323, 132)
+        Me.ListBox1.Size = New System.Drawing.Size(360, 196)
         Me.ListBox1.TabIndex = 48
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Character5Radio)
+        Me.GroupBox1.Controls.Add(Me.Character4Radio)
         Me.GroupBox1.Controls.Add(Me.Character3Radio)
         Me.GroupBox1.Controls.Add(Me.Character2Radio)
         Me.GroupBox1.Controls.Add(Me.Character1Radio)
-        Me.GroupBox1.Location = New System.Drawing.Point(1340, 284)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 106)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(97, 69)
+        Me.GroupBox1.Size = New System.Drawing.Size(97, 129)
         Me.GroupBox1.TabIndex = 57
         Me.GroupBox1.TabStop = False
         '
         'Character3Radio
         '
         Me.Character3Radio.AutoSize = True
-        Me.Character3Radio.Location = New System.Drawing.Point(0, 52)
+        Me.Character3Radio.Location = New System.Drawing.Point(0, 65)
         Me.Character3Radio.Name = "Character3Radio"
         Me.Character3Radio.Size = New System.Drawing.Size(80, 17)
         Me.Character3Radio.TabIndex = 2
@@ -332,7 +337,7 @@ Partial Class Form1
         'Character2Radio
         '
         Me.Character2Radio.AutoSize = True
-        Me.Character2Radio.Location = New System.Drawing.Point(0, 33)
+        Me.Character2Radio.Location = New System.Drawing.Point(0, 42)
         Me.Character2Radio.Name = "Character2Radio"
         Me.Character2Radio.Size = New System.Drawing.Size(80, 17)
         Me.Character2Radio.TabIndex = 1
@@ -344,7 +349,7 @@ Partial Class Form1
         'Character1Radio
         '
         Me.Character1Radio.AutoSize = True
-        Me.Character1Radio.Location = New System.Drawing.Point(0, 16)
+        Me.Character1Radio.Location = New System.Drawing.Point(0, 19)
         Me.Character1Radio.Name = "Character1Radio"
         Me.Character1Radio.Size = New System.Drawing.Size(80, 17)
         Me.Character1Radio.TabIndex = 0
@@ -363,7 +368,7 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.StrengthRadio)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Location = New System.Drawing.Point(1202, 300)
+        Me.GroupBox2.Location = New System.Drawing.Point(105, 55)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(52, 180)
         Me.GroupBox2.TabIndex = 58
@@ -443,7 +448,7 @@ Partial Class Form1
         '
         'ButtonSkillRoll
         '
-        Me.ButtonSkillRoll.Location = New System.Drawing.Point(1340, 359)
+        Me.ButtonSkillRoll.Location = New System.Drawing.Point(243, 11)
         Me.ButtonSkillRoll.Name = "ButtonSkillRoll"
         Me.ButtonSkillRoll.Size = New System.Drawing.Size(80, 64)
         Me.ButtonSkillRoll.TabIndex = 59
@@ -452,7 +457,7 @@ Partial Class Form1
         '
         'StrTicker
         '
-        Me.StrTicker.Location = New System.Drawing.Point(1258, 348)
+        Me.StrTicker.Location = New System.Drawing.Point(163, 103)
         Me.StrTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.StrTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.StrTicker.Name = "StrTicker"
@@ -463,7 +468,7 @@ Partial Class Form1
         '
         'ChrTicker
         '
-        Me.ChrTicker.Location = New System.Drawing.Point(1258, 460)
+        Me.ChrTicker.Location = New System.Drawing.Point(162, 215)
         Me.ChrTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.ChrTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.ChrTicker.Name = "ChrTicker"
@@ -474,7 +479,7 @@ Partial Class Form1
         '
         'WisTicker
         '
-        Me.WisTicker.Location = New System.Drawing.Point(1258, 437)
+        Me.WisTicker.Location = New System.Drawing.Point(162, 192)
         Me.WisTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.WisTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.WisTicker.Name = "WisTicker"
@@ -485,7 +490,7 @@ Partial Class Form1
         '
         'IntTicker
         '
-        Me.IntTicker.Location = New System.Drawing.Point(1258, 414)
+        Me.IntTicker.Location = New System.Drawing.Point(162, 169)
         Me.IntTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.IntTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.IntTicker.Name = "IntTicker"
@@ -496,7 +501,7 @@ Partial Class Form1
         '
         'ConTicker
         '
-        Me.ConTicker.Location = New System.Drawing.Point(1258, 392)
+        Me.ConTicker.Location = New System.Drawing.Point(162, 147)
         Me.ConTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.ConTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.ConTicker.Name = "ConTicker"
@@ -507,7 +512,7 @@ Partial Class Form1
         '
         'DexTicker
         '
-        Me.DexTicker.Location = New System.Drawing.Point(1258, 370)
+        Me.DexTicker.Location = New System.Drawing.Point(162, 125)
         Me.DexTicker.Maximum = New Decimal(New Integer() {20, 0, 0, 0})
         Me.DexTicker.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.DexTicker.Name = "DexTicker"
@@ -518,7 +523,7 @@ Partial Class Form1
         '
         'ButtonResetCharacter
         '
-        Me.ButtonResetCharacter.Location = New System.Drawing.Point(1340, 522)
+        Me.ButtonResetCharacter.Location = New System.Drawing.Point(243, 181)
         Me.ButtonResetCharacter.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonResetCharacter.Name = "ButtonResetCharacter"
         Me.ButtonResetCharacter.Size = New System.Drawing.Size(80, 52)
@@ -529,10 +534,10 @@ Partial Class Form1
         '
         'ButtonUpdateStats
         '
-        Me.ButtonUpdateStats.Location = New System.Drawing.Point(1340, 475)
+        Me.ButtonUpdateStats.Location = New System.Drawing.Point(243, 126)
         Me.ButtonUpdateStats.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonUpdateStats.Name = "ButtonUpdateStats"
-        Me.ButtonUpdateStats.Size = New System.Drawing.Size(80, 43)
+        Me.ButtonUpdateStats.Size = New System.Drawing.Size(80, 51)
         Me.ButtonUpdateStats.TabIndex = 67
         Me.ButtonUpdateStats.Text = "Update Stats"
         Me.ButtonUpdateStats.UseVisualStyleBackColor = True
@@ -546,14 +551,52 @@ Partial Class Form1
         Me.WebBrowserScraper.Text = "Scrape"
         Me.WebBrowserScraper.UseVisualStyleBackColor = True
         '
-        'ButtonManUTopPlayers
+        'Character5Radio
         '
-        Me.ButtonManUTopPlayers.Location = New System.Drawing.Point(419, 259)
-        Me.ButtonManUTopPlayers.Name = "ButtonManUTopPlayers"
-        Me.ButtonManUTopPlayers.Size = New System.Drawing.Size(89, 20)
-        Me.ButtonManUTopPlayers.TabIndex = 69
-        Me.ButtonManUTopPlayers.Text = "Man U Top 5"
-        Me.ButtonManUTopPlayers.UseVisualStyleBackColor = True
+        Me.Character5Radio.AutoSize = True
+        Me.Character5Radio.Location = New System.Drawing.Point(0, 111)
+        Me.Character5Radio.Name = "Character5Radio"
+        Me.Character5Radio.Size = New System.Drawing.Size(80, 17)
+        Me.Character5Radio.TabIndex = 69
+        Me.Character5Radio.TabStop = True
+        Me.Character5Radio.Tag = "0"
+        Me.Character5Radio.Text = "Character 5"
+        Me.Character5Radio.UseVisualStyleBackColor = True
+        '
+        'Character4Radio
+        '
+        Me.Character4Radio.AutoSize = True
+        Me.Character4Radio.Location = New System.Drawing.Point(0, 88)
+        Me.Character4Radio.Name = "Character4Radio"
+        Me.Character4Radio.Size = New System.Drawing.Size(80, 17)
+        Me.Character4Radio.TabIndex = 70
+        Me.Character4Radio.TabStop = True
+        Me.Character4Radio.Tag = "0"
+        Me.Character4Radio.Text = "Character 4"
+        Me.Character4Radio.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.GroupBox2)
+        Me.GroupBox3.Controls.Add(Me.NameBox)
+        Me.GroupBox3.Controls.Add(Me.AttributeBox)
+        Me.GroupBox3.Controls.Add(Me.ButtonResetCharacter)
+        Me.GroupBox3.Controls.Add(Me.ButtonUpdateStats)
+        Me.GroupBox3.Controls.Add(Me.StrTicker)
+        Me.GroupBox3.Controls.Add(Me.DexTicker)
+        Me.GroupBox3.Controls.Add(Me.ButtonSkillRoll)
+        Me.GroupBox3.Controls.Add(Me.ChrTicker)
+        Me.GroupBox3.Controls.Add(Me.GroupBox1)
+        Me.GroupBox3.Controls.Add(Me.ButtonCreateCharacter)
+        Me.GroupBox3.Controls.Add(Me.WisTicker)
+        Me.GroupBox3.Controls.Add(Me.IntTicker)
+        Me.GroupBox3.Controls.Add(Me.ConTicker)
+        Me.GroupBox3.Location = New System.Drawing.Point(1093, 81)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(416, 238)
+        Me.GroupBox3.TabIndex = 69
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "GroupBox3"
         '
         'Form1
         '
@@ -562,26 +605,12 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1521, 651)
-        Me.Controls.Add(Me.ButtonManUTopPlayers)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.WebBrowserScraper)
         Me.Controls.Add(Me.DaiToEthPrices)
-        Me.Controls.Add(Me.ButtonUpdateStats)
-        Me.Controls.Add(Me.ButtonResetCharacter)
-        Me.Controls.Add(Me.DexTicker)
-        Me.Controls.Add(Me.ConTicker)
-        Me.Controls.Add(Me.IntTicker)
-        Me.Controls.Add(Me.WisTicker)
-        Me.Controls.Add(Me.ChrTicker)
-        Me.Controls.Add(Me.StrTicker)
-        Me.Controls.Add(Me.ButtonSkillRoll)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.ButtonDisplayAllCharacters)
         Me.Controls.Add(Me.ButtonClear)
-        Me.Controls.Add(Me.ButtonCreateCharacter)
-        Me.Controls.Add(Me.AttributeBox)
-        Me.Controls.Add(Me.NameBox)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.WebScrape1TextBox)
         Me.Controls.Add(Me.WebBrowser1)
@@ -611,6 +640,8 @@ Partial Class Form1
         CType(Me.IntTicker, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConTicker, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DexTicker, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -662,5 +693,7 @@ Partial Class Form1
     Friend WithEvents ButtonResetCharacter As Button
     Friend WithEvents ButtonUpdateStats As Button
     Friend WithEvents WebBrowserScraper As Button
-    Friend WithEvents ButtonManUTopPlayers As Button
+    Friend WithEvents Character5Radio As RadioButton
+    Friend WithEvents Character4Radio As RadioButton
+    Friend WithEvents GroupBox3 As GroupBox
 End Class
